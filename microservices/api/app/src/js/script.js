@@ -1891,7 +1891,7 @@ $scope.getUserProfile = function(){
     //Call JSON API for signup
     $http({
       method : "POST",
-      url : "https://auth.unluckily34.hasura-app.io/user/logout",
+      url : "https://auth.unluckily34.hasura-app.io/v1/user/logout",
       withCredentials : true,
       headers : {
         'Content-type' : 'application/json','Authorization' : 'Bearer '+getCookie("auth_token")
