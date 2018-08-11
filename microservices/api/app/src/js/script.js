@@ -2041,8 +2041,7 @@ muserProfileApp.controller("muserProfileCtrl",function($scope,$http){
     })
   };
   $scope.uploadDP = function(file){
-  sunNotify("<i class = 'fa fa-spinner fa-spin'></i> <strong>Uploading...</strong>","alert-warning");
-    console.log("test");
+  sunNotify("<i class = 'fa fa-spinner fa-spin'></i> <strong>test Uploading...</strong>","alert-warning");
   for(i = 0;i<100;i++){
     proggy(30+(i/1000));
   }
