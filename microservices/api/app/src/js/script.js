@@ -1745,7 +1745,7 @@ $scope.getUserInfo = function(){
   console.log(getCookie("auth_token"));
   $http({
     method : "GET",
-    url : "https://auth.unluckily34.hasura-app.io/user/info",
+    url : "https://auth.unluckily34.hasura-app.io/v1/user/info",
     withCredentials : true,
     headers : {
       'Content-type' : 'application/json','Authorization' : 'Bearer '+getCookie("auth_token")
