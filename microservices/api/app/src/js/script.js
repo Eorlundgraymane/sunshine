@@ -1550,9 +1550,8 @@ profileApp.controller("profileCtrl",function($scope,$http){
     usedata["args"] = {};
     usedata["args"]["table"] = "users";
     usedata["args"].objects =  [{
-        "id":parseInt(getCookie("hasura_id")),
-        "username":getCookie("username"),
-        "email":getCookie("email")
+        "hasura_id":parseInt(getCookie("hasura_id")),
+        "mobile" : getCookie("mobile")
       }];
     //////console.log(JSON.stringify(usedata));
 
@@ -1569,7 +1568,8 @@ profileApp.controller("profileCtrl",function($scope,$http){
       proggy(50);
       document.getElementById('verifybutton').value = "Verified!! User added to Database!! Creating Profile...";
       //////console.log(response);
-      $scope.getPicLink(newuser);
+      setCookie("proimage","");
+      $scope.profileSetup(newuser);
     },function myError(response){
       if(response.data["error"].split(".")[0] === "Uniqueness violation"){
         sunNotify("<strong><i class = 'fa fa-spinner fa-spin'></i> User Account already setup...Setting up Profile</strong>","alert-info");
