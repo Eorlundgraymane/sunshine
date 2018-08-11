@@ -1511,7 +1511,7 @@ profileApp.controller("profileCtrl",function($scope,$http){
       },function myError(response){
         proggy(0);
         alert("Trouble setting up profile "+response.data.message);
-        //////console.log(response);        
+        //////console.log(response);
       });
     },5000);
   }
