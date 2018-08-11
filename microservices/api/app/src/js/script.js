@@ -3037,7 +3037,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
     usedata["args"]["table"] = "status";
     usedata["args"].objects =  [{
         "id":parseInt(getCookie("hasura_id")),
-        "current":"online",
+        "status":"online",
       }];
       usedata["args"]["returning"] = ["created"];
       $http({
@@ -4797,7 +4797,7 @@ mchatListApp.controller("mchatListCtrl",function($scope,$http){
     usedata["args"]["table"] = "status";
     usedata["args"].objects =  [{
         "id":parseInt(getCookie("hasura_id")),
-        "current":"online",
+        "status":"online",
       }];
       usedata["args"]["returning"] = ["created"];
       $http({
