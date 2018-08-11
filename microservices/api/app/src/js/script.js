@@ -480,6 +480,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
     var file = document.getElementById("newpostimg").files[0];
     var newimg  = $scope.newpostimg;
     var date = new Date();
+    console.log(JSON.parse(getCookie("userdata")));
     var dpurl = "https://filestore.unluckily34.hasura-app.io/v1/file/"+JSON.parse(getCookie("userdata"))[0].id+"-"+date.getTime();
       ////console.log(dpurl);
       $http({
@@ -2046,7 +2047,7 @@ muserProfileApp.controller("muserProfileCtrl",function($scope,$http){
     proggy(30+(i/1000));
   }
   var date = new Date();
-  var dpurl = "https://filestore.unluckily34.hasura-app.io/v1/file/"+JSON.parse(getCookie("userdata"))[0].id+"-"+date.getTime();
+  var dpurl = "https://filestore.unluckily34.hasura-app.io/v1/file/"+JSON.parse(getCookie("userdata"))[0].hasura_id+"-"+date.getTime();
     ////console.log(dpurl);
     $http({
       method : "POST",
