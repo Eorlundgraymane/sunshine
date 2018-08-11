@@ -1117,7 +1117,7 @@ muserApp.controller("muserCtrl",function($scope,$http){
     //Call JSON API for signup
     $http({
       method : "POST",
-      url : "https://auth.unluckily34.hasura-app.io/user/logout",
+      url : "https://auth.unluckily34.hasura-app.io/v1/user/logout",
       withCredentials : true,
       headers : {
         'Content-type' : 'application/json','Authorization' : 'Bearer '+getCookie("auth_token")
@@ -1238,7 +1238,7 @@ userApp.controller("userCtrl",function($scope,$http){
     //Call JSON API for signup
     $http({
       method : "POST",
-      url : "https://auth.unluckily34.hasura-app.io/user/logout",
+      url : "https://auth.unluckily34.hasura-app.io/v1/user/logout",
       withCredentials : true,
       headers : {
         'Content-type' : 'application/json','Authorization' : 'Bearer '+getCookie("auth_token")
@@ -1589,7 +1589,7 @@ profileApp.controller("profileCtrl",function($scope,$http){
     //Call JSON API for signup
     $http({
       method : "POST",
-      url : "https://auth.unluckily34.hasura-app.io/user/logout",
+      url : "https://auth.unluckily34.hasura-app.io/v1/user/logout",
       withCredentials : true,
       headers : {
         'Content-type' : 'application/json','Authorization' : 'Bearer '+getCookie("auth_token")
@@ -2129,7 +2129,7 @@ muserProfileApp.controller("muserProfileCtrl",function($scope,$http){
     //Call JSON API for signup
     $http({
       method : "POST",
-      url : "https://auth.unluckily34.hasura-app.io/user/logout",
+      url : "https://auth.unluckily34.hasura-app.io/v1/user/logout",
       withCredentials : true,
       headers : {
         'Content-type' : 'application/json','Authorization' : 'Bearer '+getCookie("auth_token")
@@ -2523,7 +2523,7 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
     //Call JSON API for signup
     $http({
       method : "POST",
-      url : "https://auth.unluckily34.hasura-app.io/user/logout",
+      url : "https://auth.unluckily34.hasura-app.io/v1/user/logout",
       withCredentials : true,
       headers : {
         'Content-type' : 'application/json','Authorization' : 'Bearer '+getCookie("auth_token")
@@ -2657,7 +2657,7 @@ $scope.logout = function(){
   //Call JSON API for signup
   $http({
     method : "POST",
-    url : "https://auth.unluckily34.hasura-app.io/user/logout",
+    url : "https://auth.unluckily34.hasura-app.io/v1/user/logout",
     withCredentials : true,
     headers : {
       'Content-type' : 'application/json','Authorization' : 'Bearer '+getCookie("auth_token"),
@@ -3833,7 +3833,7 @@ mshineTableApp.controller("mshineTableCtrl",function($scope,$http){
     //Call JSON API for signup
     $http({
       method : "POST",
-      url : "https://auth.unluckily34.hasura-app.io/user/logout",
+      url : "https://auth.unluckily34.hasura-app.io/v1/user/logout",
       withCredentials : true,
       headers : {
         'Content-type' : 'application/json','Authorization' : 'Bearer '+getCookie("auth_token")
