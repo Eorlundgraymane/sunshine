@@ -1,0 +1,7 @@
+- args:
+    sql: CREATE TABLE "friends"("reqid" integer NOT NULL, "recid" integer NOT NULL,
+      "created" date NOT NULL DEFAULT now(), PRIMARY KEY ("reqid","recid") )
+  type: run_sql
+- args:
+    name: friends
+  type: add_existing_table_or_view
