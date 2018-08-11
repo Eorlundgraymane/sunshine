@@ -2455,7 +2455,7 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
       }).then(function mySuccess(response){
         proggy(60);
         ////console.log(response);
-        $scope.profileUpdate("proimage",dpurl);
+        $scope.profileUpdate("proimg",dpurl);
       },function myError(response){
         proggy(0);
         ////console.log(response);
