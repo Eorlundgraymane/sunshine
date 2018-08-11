@@ -1,0 +1,8 @@
+- args:
+    name: commented
+    table: profile
+    using:
+      foreign_key_constraint_on:
+        column: id
+        table: comment
+  type: create_array_relationship

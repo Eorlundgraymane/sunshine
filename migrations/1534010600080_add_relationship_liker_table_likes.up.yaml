@@ -1,0 +1,6 @@
+- args:
+    name: liker
+    table: likes
+    using:
+      foreign_key_constraint_on: liker_id
+  type: create_object_relationship

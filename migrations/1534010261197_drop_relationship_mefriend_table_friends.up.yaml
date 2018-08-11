@@ -1,0 +1,4 @@
+- args:
+    relationship: mefriend
+    table: friends
+  type: drop_relationship

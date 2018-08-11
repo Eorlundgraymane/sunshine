@@ -1,0 +1,8 @@
+- args:
+    name: posts
+    table: profile
+    using:
+      foreign_key_constraint_on:
+        column: id
+        table: posts
+  type: create_array_relationship

@@ -1,0 +1,7 @@
+- args:
+    sql: CREATE TABLE "status"("id" integer NOT NULL, "status" text NOT NULL, "created"
+      text NOT NULL DEFAULT 'now();', PRIMARY KEY ("id") )
+  type: run_sql
+- args:
+    name: status
+  type: add_existing_table_or_view

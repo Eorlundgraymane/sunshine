@@ -1,0 +1,8 @@
+- args:
+    name: liked
+    table: profile
+    using:
+      foreign_key_constraint_on:
+        column: liker_id
+        table: likes
+  type: create_array_relationship

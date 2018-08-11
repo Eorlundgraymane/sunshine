@@ -1,0 +1,4 @@
+- args:
+    relationship: user
+    table: profile
+  type: drop_relationship

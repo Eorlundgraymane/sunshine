@@ -1,0 +1,4 @@
+- args:
+    relationship: profike
+    table: status
+  type: drop_relationship

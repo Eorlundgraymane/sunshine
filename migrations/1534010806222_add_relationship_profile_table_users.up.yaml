@@ -1,0 +1,8 @@
+- args:
+    name: profile
+    table: users
+    using:
+      foreign_key_constraint_on:
+        column: id
+        table: profile
+  type: create_array_relationship

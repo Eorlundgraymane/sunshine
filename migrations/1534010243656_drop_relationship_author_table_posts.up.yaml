@@ -1,0 +1,4 @@
+- args:
+    relationship: author
+    table: posts
+  type: drop_relationship
