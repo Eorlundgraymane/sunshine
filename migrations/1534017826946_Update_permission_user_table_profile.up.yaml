@@ -1,0 +1,28 @@
+- args:
+    role: user
+    table: profile
+  type: drop_update_permission
+- args:
+    permission:
+      columns:
+      - id
+      - fname
+      - lname
+      - username
+      - dob
+      - proimg
+      - earthshine
+      - charityshine
+      - healthshine
+      - socialshine
+      - shine
+      - level
+      - created
+      - socialmodified
+      - charitymodified
+      - earthmodified
+      - healthmodified
+      filter: {}
+    role: user
+    table: profile
+  type: create_update_permission

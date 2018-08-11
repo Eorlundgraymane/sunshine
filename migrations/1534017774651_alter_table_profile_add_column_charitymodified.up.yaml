@@ -1,0 +1,4 @@
+- args:
+    sql: ALTER TABLE "profile" ADD COLUMN "charitymodified" timestamptz NULL DEFAULT
+      now();
+  type: run_sql

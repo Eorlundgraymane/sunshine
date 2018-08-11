@@ -1,0 +1,28 @@
+- args:
+    role: user
+    table: profile
+  type: drop_select_permission
+- args:
+    permission:
+      columns:
+      - level
+      - username
+      - lname
+      - fname
+      - earthshine
+      - healthmodified
+      - shine
+      - id
+      - created
+      - charitymodified
+      - socialshine
+      - proimg
+      - healthshine
+      - socialmodified
+      - dob
+      - charityshine
+      - earthmodified
+      filter: {}
+    role: user
+    table: profile
+  type: create_select_permission
