@@ -1,0 +1,11 @@
+- args:
+    permission:
+      columns:
+      - liker_id
+      - shine
+      - id
+      - created
+      filter: {}
+    role: user
+    table: likes
+  type: create_select_permission

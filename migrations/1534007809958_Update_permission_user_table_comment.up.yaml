@@ -1,0 +1,12 @@
+- args:
+    permission:
+      columns:
+      - post_id
+      - comment
+      - comment_id
+      - created
+      - id
+      filter: {}
+    role: user
+    table: comment
+  type: create_select_permission

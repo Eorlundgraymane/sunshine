@@ -1,0 +1,15 @@
+- args:
+    permission:
+      columns:
+      - created
+      - dob
+      - fname
+      - lname
+      - proimg
+      - username
+      filter:
+        id:
+          $eq: X-HASURA-USER-ID
+    role: user
+    table: profile
+  type: create_update_permission

@@ -1,0 +1,8 @@
+- args:
+    permission:
+      filter:
+        liker_id:
+          $eq: X-HASURA-USER-ID
+    role: user
+    table: likes
+  type: create_delete_permission

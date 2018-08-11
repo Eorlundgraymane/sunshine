@@ -1,0 +1,12 @@
+- args:
+    permission:
+      columns:
+      - id
+      - friend_id
+      - created
+      filter:
+        id:
+          $eq: X-HASURA-USER-ID
+    role: user
+    table: friends
+  type: create_select_permission

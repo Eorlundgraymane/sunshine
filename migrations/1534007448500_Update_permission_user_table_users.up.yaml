@@ -1,0 +1,12 @@
+- args:
+    permission:
+      columns:
+      - mobile
+      - hasura_id
+      - created
+      filter:
+        hasura_id:
+          $eq: X-HASURA-USER-ID
+    role: user
+    table: users
+  type: create_select_permission

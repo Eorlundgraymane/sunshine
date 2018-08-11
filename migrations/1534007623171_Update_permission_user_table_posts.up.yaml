@@ -1,0 +1,12 @@
+- args:
+    permission:
+      columns:
+      - posttext
+      - id
+      - post_id
+      - postimg
+      - created
+      filter: {}
+    role: user
+    table: posts
+  type: create_select_permission

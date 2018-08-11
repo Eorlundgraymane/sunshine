@@ -1,0 +1,11 @@
+- args:
+    permission:
+      columns:
+      - created
+      - shine
+      filter:
+        liker_id:
+          $eq: X-HASURA-USER-ID
+    role: user
+    table: likes
+  type: create_update_permission

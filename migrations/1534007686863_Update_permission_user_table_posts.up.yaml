@@ -1,0 +1,12 @@
+- args:
+    permission:
+      columns:
+      - created
+      - postimg
+      - posttext
+      filter:
+        id:
+          $eq: X-HASURA-USER-ID
+    role: user
+    table: posts
+  type: create_update_permission

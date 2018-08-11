@@ -1,0 +1,12 @@
+- args:
+    permission:
+      columns:
+      - created
+      - status
+      - id
+      filter:
+        id:
+          $eq: X-HASURA-USER-ID
+    role: user
+    table: status
+  type: create_update_permission
