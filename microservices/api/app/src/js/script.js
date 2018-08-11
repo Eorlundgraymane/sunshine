@@ -1752,8 +1752,7 @@ $scope.getUserInfo = function(){
   }).then(function mySuccess(response){
     proggy(100);
     //////console.log(response.data.username);
-    setCookie("username",response.data.username);
-    setCookie("email",response.data.email);
+    setCookie("mobile",response.data.mobile);    
     setTimeout(function () {
       window.location="/?mode=setup";
     }, 3000);
