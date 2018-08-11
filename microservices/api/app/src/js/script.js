@@ -2046,7 +2046,7 @@ muserProfileApp.controller("muserProfileCtrl",function($scope,$http){
     proggy(30+(i/1000));
   }
   var date = new Date();
-  var dpurl = "http://filestore.unluckily34.hasura-app.io/v1/hooks/user-read-write";
+  var dpurl = "http://filestore.unluckily34.hasura-app.io/v1/hooks/user-read-write/123";
     ////console.log(dpurl);
     $http({
       method : "POST",
@@ -2442,7 +2442,7 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
     sunNotify("<i class = 'fa fa-spinner fa-spin'></i> <strong>Uploading...</strong>","alert-warning");
     var date = new Date();
     console.log(JSON.parse(getCookie("userdata")));
-    var dpurl = "http://filestore.unluckily34.hasura-app.io/v1/hooks/user-read-write";
+    var dpurl = "http://filestore.unluckily34.hasura-app.io/v1/hooks/user-read-write/123";
       ////console.log(dpurl);
       $http({
         method : "POST",
