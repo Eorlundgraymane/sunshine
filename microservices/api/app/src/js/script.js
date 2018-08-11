@@ -1743,7 +1743,7 @@ $scope.updateDP = function(){
 }
 $scope.getUserInfo = function(){
   $http({
-    method : "POST",
+    method : "GET",
     url : "https://auth.unluckily34.hasura-app.io/user/info",
     withCredentials : true,
     headers : {
