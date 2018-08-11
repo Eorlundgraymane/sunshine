@@ -2046,7 +2046,7 @@ muserProfileApp.controller("muserProfileCtrl",function($scope,$http){
     proggy(30+(i/1000));
   }
   var date = new Date();
-  var dpurl = "https://filestore.unluckily34.hasura-app.io/v1/file/";
+  var dpurl = "http://filestore.unluckily34.hasura-app.io/v1/hooks/user-read-write";
     ////console.log(dpurl);
     $http({
       method : "POST",
@@ -2059,7 +2059,7 @@ muserProfileApp.controller("muserProfileCtrl",function($scope,$http){
     }).then(function mySuccess(response){
       proggy(60);
       ////console.log(response);
-      $scope.profileUpdate("proimage",dpurl);
+      $scope.profileUpdate("proimage",dpurl+response.file_id);
     },function myError(response){
       proggy(0);
       ////console.log(response);
@@ -2442,7 +2442,7 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
     sunNotify("<i class = 'fa fa-spinner fa-spin'></i> <strong>Uploading...</strong>","alert-warning");
     var date = new Date();
     console.log(JSON.parse(getCookie("userdata")));
-    var dpurl = "https://filestore.unluckily34.hasura-app.io/v1/file/";
+    var dpurl = "http://filestore.unluckily34.hasura-app.io/v1/hooks/user-read-write";
       ////console.log(dpurl);
       $http({
         method : "POST",
@@ -2455,7 +2455,7 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
       }).then(function mySuccess(response){
         proggy(60);
         ////console.log(response);
-        $scope.profileUpdate("proimage",dpurl);
+        $scope.profileUpdate("proimage",dpurl+response.file_id);
       },function myError(response){
         proggy(0);
         ////console.log(response);
