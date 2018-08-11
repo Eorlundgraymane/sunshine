@@ -1160,7 +1160,7 @@ muserApp.controller("muserCtrl",function($scope,$http){
     userdata["args"]["columns"][1]={};
     userdata["args"]["columns"][1]["name"] = "profile";
     userdata["args"]["columns"][1]["columns"] = ["*"];
-    userdata["args"]["where"] = {"id" : getCookie('hasura_id')};
+    userdata["args"]["where"] = {"hasura_id" : getCookie('hasura_id')};
     //////console.log(JSON.stringify(userdata));
     $http({
       method : "POST",
@@ -1281,7 +1281,7 @@ userApp.controller("userCtrl",function($scope,$http){
     userdata["args"]["columns"][1]={};
     userdata["args"]["columns"][1]["name"] = "profile";
     userdata["args"]["columns"][1]["columns"] = ["*"];
-    userdata["args"]["where"] = {"id" : getCookie('hasura_id')};
+    userdata["args"]["where"] = {"hasura_id" : getCookie('hasura_id')};
     //////console.log(JSON.stringify(userdata));
     $http({
       method : "POST",
@@ -2172,7 +2172,7 @@ muserProfileApp.controller("muserProfileCtrl",function($scope,$http){
     userdata["args"]["columns"][1]={};
     userdata["args"]["columns"][1]["name"] = "profile";
     userdata["args"]["columns"][1]["columns"] = ["*"];
-    userdata["args"]["where"] = {"id" : getCookie('hasura_id')};
+    userdata["args"]["where"] = {"hasura_id" : getCookie('hasura_id')};
     //////console.log(JSON.stringify(userdata));
     $http({
       method : "POST",
@@ -2334,7 +2334,7 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
       userdata["args"] = {};
       userdata["args"]["table"] = "users";
       userdata["args"]["limit"] = 5;
-      userdata["args"]["order_by"] = "-id";
+      userdata["args"]["order_by"] = "-hasura_id";
       userdata["args"]["columns"] = ["*"];
       userdata["args"]["columns"][1] = {};
       userdata["args"]["columns"][1]["name"] = "profile";
@@ -2566,7 +2566,7 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
     userdata["args"]["columns"][1]={};
     userdata["args"]["columns"][1]["name"] = "profile";
     userdata["args"]["columns"][1]["columns"] = ["*"];
-    userdata["args"]["where"] = {"id" : getCookie('hasura_id')};
+    userdata["args"]["where"] = {"hasura_id" : getCookie('hasura_id')};
     //////console.log(JSON.stringify(userdata));
     $http({
       method : "POST",
@@ -3526,7 +3526,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
     userdata["args"]["columns"][1]={};
     userdata["args"]["columns"][1]["name"] = "profile";
     userdata["args"]["columns"][1]["columns"] = ["*"];
-    userdata["args"]["where"] = {"id" : getCookie('hasura_id')};
+    userdata["args"]["where"] = {"hasura_id" : getCookie('hasura_id')};
     //////console.log(JSON.stringify(userdata));
     $http({
       method : "POST",
@@ -3872,7 +3872,7 @@ mshineTableApp.controller("mshineTableCtrl",function($scope,$http){
     userdata["args"]["columns"][1]={};
     userdata["args"]["columns"][1]["name"] = "profile";
     userdata["args"]["columns"][1]["columns"] = ["*"];
-    userdata["args"]["where"] = {"id" : getCookie('hasura_id')};
+    userdata["args"]["where"] = {"hasura_id" : getCookie('hasura_id')};
     //////console.log(JSON.stringify(userdata));
     $http({
       method : "POST",
