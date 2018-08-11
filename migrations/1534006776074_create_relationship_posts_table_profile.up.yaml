@@ -1,0 +1,9 @@
+- args:
+    name: posts
+    table: profile
+    using:
+      manual_configuration:
+        column_mapping:
+          id: id
+        remote_table: posts
+  type: create_array_relationship

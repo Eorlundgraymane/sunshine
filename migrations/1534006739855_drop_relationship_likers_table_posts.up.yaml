@@ -1,0 +1,4 @@
+- args:
+    relationship: likers
+    table: posts
+  type: drop_relationship

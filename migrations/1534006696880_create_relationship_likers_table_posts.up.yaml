@@ -1,0 +1,9 @@
+- args:
+    name: likers
+    table: posts
+    using:
+      manual_configuration:
+        column_mapping:
+          post_id: id
+        remote_table: likes
+  type: create_array_relationship

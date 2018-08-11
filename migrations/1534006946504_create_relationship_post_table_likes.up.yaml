@@ -1,0 +1,9 @@
+- args:
+    name: post
+    table: likes
+    using:
+      manual_configuration:
+        column_mapping:
+          id: post_id
+        remote_table: posts
+  type: create_object_relationship

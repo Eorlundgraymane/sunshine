@@ -1,0 +1,9 @@
+- args:
+    name: liker
+    table: likes
+    using:
+      manual_configuration:
+        column_mapping:
+          liker_id: id
+        remote_table: profile
+  type: create_object_relationship

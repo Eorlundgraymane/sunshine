@@ -1,0 +1,9 @@
+- args:
+    name: author
+    table: posts
+    using:
+      manual_configuration:
+        column_mapping:
+          id: id
+        remote_table: profile
+  type: create_object_relationship

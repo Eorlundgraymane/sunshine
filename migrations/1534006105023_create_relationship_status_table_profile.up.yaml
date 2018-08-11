@@ -1,0 +1,9 @@
+- args:
+    name: status
+    table: profile
+    using:
+      manual_configuration:
+        column_mapping:
+          id: id
+        remote_table: status
+  type: create_object_relationship

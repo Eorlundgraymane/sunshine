@@ -1,0 +1,9 @@
+- args:
+    name: myfriend
+    table: profile
+    using:
+      manual_configuration:
+        column_mapping:
+          id: friend_id
+        remote_table: friends
+  type: create_array_relationship

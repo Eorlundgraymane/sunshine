@@ -1,0 +1,8 @@
+- args:
+    sql: CREATE TABLE "profile"("id" integer NOT NULL, "fname" text NOT NULL, "lname"
+      text NOT NULL, "username" text NOT NULL UNIQUE, "dob" date NOT NULL, "created"
+      text NOT NULL DEFAULT 'now()', PRIMARY KEY ("username") )
+  type: run_sql
+- args:
+    name: profile
+  type: add_existing_table_or_view

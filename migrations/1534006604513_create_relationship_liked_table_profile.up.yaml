@@ -1,0 +1,9 @@
+- args:
+    name: liked
+    table: profile
+    using:
+      manual_configuration:
+        column_mapping:
+          id: liker_id
+        remote_table: likes
+  type: create_array_relationship

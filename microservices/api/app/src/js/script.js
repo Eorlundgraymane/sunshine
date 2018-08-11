@@ -1744,7 +1744,7 @@ $scope.updateDP = function(){
 $scope.getUserInfo = function(){
   $http({
     method : "POST",
-    url : "https://auth.unluckily34.hasura-app.io/user/account/info",
+    url : "https://auth.unluckily34.hasura-app.io/user/info",
     withCredentials : true,
     headers : {
       'Content-type' : 'application/json','Authorization' : 'Bearer '+getCookie("auth_token")

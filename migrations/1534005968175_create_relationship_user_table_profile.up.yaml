@@ -1,0 +1,9 @@
+- args:
+    name: user
+    table: profile
+    using:
+      manual_configuration:
+        column_mapping:
+          id: hasura_id
+        remote_table: users
+  type: create_object_relationship
