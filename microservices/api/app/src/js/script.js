@@ -2046,7 +2046,7 @@ muserProfileApp.controller("muserProfileCtrl",function($scope,$http){
     proggy(30+(i/1000));
   }
   var date = new Date();
-  var dpurl = "https://filestore.unluckily34.hasura-app.io/v1/file/"+JSON.parse(getCookie("userdata"))[0].id+"-"+date.getTime();
+  var dpurl = "  http://filestore.your-project-domain/v1/hooks/public-read-user-write/"+JSON.parse(getCookie("userdata"))[0].id+"-"+date.getTime();
     ////console.log(dpurl);
     $http({
       method : "POST",
