@@ -2352,8 +2352,8 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
       userdata["args"]["where"]["$and"][0] = {};
       userdata["args"]["where"]["$and"][1] = {};
       userdata["args"]["where"]["$and"][2] = {};
-      userdata["args"]["where"]["$and"][0]["id"] = {};
-      userdata["args"]["where"]["$and"][0]["id"]["$neq"] = getCookie("hasura_id");
+      userdata["args"]["where"]["$and"][0]["hasura_id"] = {};
+      userdata["args"]["where"]["$and"][0]["hasura_id"]["$neq"] = getCookie("hasura_id");
       userdata["args"]["where"]["$and"][1]["$not"] = {};
       userdata["args"]["where"]["$and"][1]["$not"]["profile"] = {};
       userdata["args"]["where"]["$and"][1]["$not"]["profile"]["myfriends"] = {};
