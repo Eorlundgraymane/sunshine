@@ -1,0 +1,1012 @@
+body{
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  font-family:sans-serif;
+}
+#profilepane{
+  height: 60%;
+}
+
+#cc{
+  width: 20%;
+}
+#pkey{
+  width : 70%;
+}
+.chatbtn{
+  float: right;
+}
+#hshine,#cshine,#sshine,#eshine{
+  font-size: 1.75vh;
+}
+.lastseen{
+  font-size: 10px;
+  color: grey;
+  font-weight: lighter;
+}
+.propane{
+  font-size: 2vh;
+  overflow-y: scroll;
+  text-align: center;
+  position: relative;
+  animation-name: bigEntry;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+.shinetable,caption{
+  cursor: default;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  border-bottom : none;
+  border-top : none;
+  overflow: hidden;
+}
+.table>tbody>tr>th{
+    font-size: 2vh;
+    vertical-align: bottom;
+    border-bottom: none;
+    border-top: none;
+    padding: 2vh;
+}
+.table>tbody>tr>td{
+  position: relative;
+  top: -9px;
+  vertical-align: middle;
+  border-bottom: none;
+  border-top: none;
+  padding: 3%;
+}
+.gift{
+  text-align: center;
+  padding-top: 35%;
+}
+.mgift{
+  padding-top: 18%;
+  font-size: 10px;
+  text-align: left;
+}
+.giftbtn{
+  width: 100%;
+}
+.nogft{
+  margin-top: 3%;
+  width: 50%;
+}
+#giftboxdiv,#mgiftbox{
+  border-left : 1px solid rgba(0,0,0,0.3);
+  height: 30%;
+}
+#loggydiv{
+  width: 100%;
+  top: 0;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  position: absolute;
+  z-index: 100;
+}
+.progress-bar{
+  padding: 0;
+  margin: 0;
+  position: absolute;
+}
+.img-wrapper{
+  position: relative;
+}
+.settings{
+  border-radius: 100px;
+  opacity: 0;
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in;
+}
+#earthprog,#healthprog,#charityprog,#socialprog{
+  border: none;
+  height: 2000%;
+  margin-bottom: 10%;
+  border-radius: 5px;
+}
+#proggydiv{
+  z-index: 100;
+}
+.img-overlay{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.settings:hover{
+  opacity: 1;
+}
+.msettings{
+  display: none;
+}
+.img-overlay::before{
+  content: '';
+  display: block;
+  height: 50%;
+}
+.shinelabel{
+  vertical-align:middle;
+  font-size: 100%;
+}
+#sitename{
+  font-size: 150%;
+  cursor: pointer;
+  color: white;
+  text-shadow: 1px 2px 2px black;
+}
+.red{
+  color:grey;
+}
+.green{
+  color: green;
+}
+#user_commands{
+  height: 30px;
+  width: 30px;
+  background-size:cover;
+  border-radius: 100px;
+}
+#editbutton,#meditbutton{
+  color: white;
+}
+#labelnewdp,#labelmnewdp{
+  cursor: pointer;
+}
+#userinfo{
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+#shinetable{
+}
+#chatlist{
+  height: 60%;
+  overflow-y: scroll;
+}
+#userProfileDiv{
+  width: 24%;
+  height: 80%;
+}
+#mchatlist{
+  height: 85%;
+}
+#mshinetable,#mchatlist{
+border: 1px solid rgba0,0,0,0.3);
+}
+.profilepic{
+  object-fit: cover;
+  border-radius: 200px;
+  width: 80px;
+  height: 80px;
+}
+#followAppDiv{
+  height: 50%;
+}
+.sitebanner{
+  padding: 0;
+  width: 100%;
+  margin: 0;
+}
+.follows{
+  font-size: 10px;
+  text-align: left;
+  transition-property: all;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in;
+  padding-left: 5%;
+  padding-right: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
+  margin-top: 2%;
+}
+.shine{
+  background: #5bc0de;
+}
+.postago{
+  font-size: 10px;
+  color: grey;
+  margin-left: 5%;
+}
+.suggests{
+  background-color: #337ab7;
+}
+.online{
+  background: #5cb85c;
+}
+.newchat{
+  background-color: #337ab7;
+}
+.authdp{
+  margin-left: 5%;
+  margin-top: 2%;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  object-fit: cover;
+}
+.level{
+  background-color: #f0ad4e;
+}
+.author{
+  margin-left: 5%;
+  margin-top: 2%;
+}
+#mfriendshead,#suggesthead,#friendshead{
+  font-size: 12px;
+}
+.users{
+  font-size: 10px;
+  text-align: left;
+  transition-property: all;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in;
+  padding-left: 5%;
+  padding-right: 0;
+  margin-bottom: 2%;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-right: 0;
+  margin-left: 0;
+  margin-top: 0;
+}
+.users:hover{
+  cursor: pointer;
+}
+#muserlist{
+  height: 80%;
+  overflow-y: scroll;
+}
+#userlist,#muserlist,#followlist{
+  animation-name: bigEntry;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+.shaded{
+  background-color: grey;
+}
+.btn:focus,.btn:active{
+  outline: none;
+  border: none;
+}
+.bodyrow{
+  height:87%;
+}
+#newspane{
+  overflow: hidden;
+  position: relative;
+  right: 5%;
+}
+#newspanel{
+  overflow-y: scroll;
+  padding-left: 2%;
+  padding-right: 2%;
+  height: 83%;
+}
+.spanel{
+  font-size: 2vh;
+  text-align: center;
+  height: 68%;
+  /*border: 1px solid white;*/
+}
+.npanel{
+  height: 200%;
+  overflow-y: scroll;
+}
+#userinfo{
+  cursor: default;
+}
+.alert{
+  cursor: default;
+}
+.scorepanel{
+  font-size: 2vh;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+
+  overflow: hidden;
+  height: 25%;
+}
+.profileDiv{
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  font-size: 1.3vh;
+  height: 25%;
+}
+.cmtdelbtn{
+}
+.cmtops{
+  float: right;
+  height: 1%;
+  padding: 0;
+  margin: 0;
+}
+.comment{
+  display: inline;
+  line-height: 3;
+  font-size: 12px;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+.cmtbox{
+  margin-left: 5%;
+}
+.likedlist{
+  margin-left: 5%;
+}
+.cmtbtn{
+  font-size: 10px;
+  background: none;
+  padding: 0;
+  margin-left: 5%;
+  margin-bottom: 2%;
+}
+.cmtbtn:hover,.cmtbtn:active,.cmtbox:focus{
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+.post{
+  font-size: 12px;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 3px;
+  border: 1px solid rgba(0,0,0,0.3) ;
+  margin-bottom: 5px;
+}
+.fa-trash-alt{
+  font-size: 10px;
+}
+.likelabel{
+  font-size: 10px;
+}
+.deletebtn{
+  float: right;
+  margin-right: 5%;
+  margin-top: 2%;
+}
+.shinecont{
+  display: inline;
+  position: relative;
+  width: 5%;
+  white-space: nowrap;
+  overflow-x: scroll;
+}
+.shineim{
+  opacity: 1;
+  width: 10%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+.shinecont:hover .shineim{
+  opacity: 0.3;
+}
+.shinecont:hover .shinein{
+  opacity: 1;
+}
+.shinein{
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.likedp{
+  object-fit: cover;
+  width: 32px;
+  height: 32px;
+  border-radius: 200px;
+  margin-left: 1%;
+}
+.posttext{
+  font-size: 12px;
+  margin-left: 5%;
+}
+#cancelbadge{
+  cursor: pointer;
+}
+.posttitle{
+  font-size: 20px;
+}
+.upthumb{
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+  max-width: 128px;
+  max-height: 128px;
+}
+.postopen{
+  height:165px;
+}
+.upthumb:hover{
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+  max-width: 480px;
+  max-height: 240px;
+}
+#postpanel{
+  transition-property: all;
+  transition-timing-function: ease-in;
+  transition-duration: 0.1s;
+  text-align: left;
+}
+.ppanel{
+  font-size: 2vh;
+  text-align: center;
+  overflow: visible;
+  padding-bottom: 15px;
+}
+.user_commands,.user_commands:focus,.user_commands:active,.user_commands:hover{
+  background: none;
+  object-fit: cover;
+  padding: none;
+  float: right;
+  width: 30%;
+}
+.util_button{
+  padding-top: 5%;
+  text-align: center;
+}
+ul,li{
+  padding: 0;
+  list-style: none;
+}
+.youchat{
+  width: 80%;
+  border-radius: 5px;
+  font-size: 10px;
+  text-align: left;
+  text-indent: 3px;
+  padding-left: 3px;
+  background-color: white;
+  margin-top: 5px;
+  float: left;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+#chatbox,#mchatbox{
+  overflow-y: scroll;
+  padding: 3px 3px 3px 3px;
+}
+#chathead,#mchathead{
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+}
+.label{
+  line-height: none;
+  cursor: default;
+}
+.posttitle,.postimgdiv{
+  text-align: center;
+}
+.mychat{
+  width: 80%;
+  text-align: left;
+  text-indent: 3px;
+  padding-right: 3px;
+  margin-top: 5px;
+  border-radius: 5px;
+  font-size: 10px;
+  background-color: lightblue;
+  float: right;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+.cmtdp{
+  width: 24px;
+  height:24px;
+  object-fit: cover;
+  border-radius: 100px;
+}
+.cmtts{
+  display: inline-block;
+  float: right;
+  font-size: 10px;
+  color: gray;
+}
+.chatdp{
+  object-fit: cover;
+  height: 32px;
+  width: 32px;
+  border-radius: 100px;
+}
+.btn{
+  border: none;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in;
+  transition-property: all;
+}
+.postmenu{
+  width: 250%;
+  min-width: 250%;
+}
+.postops{
+  float: right;
+  position: relative;
+}
+.btn:hover{
+  border-bottom: 0.5px solid gray;
+}
+/*Style for Bootstrap animated
+own-menu*/
+.open .dropdown-menu {
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
+.dpmenu {
+  min-width: 10%;
+  float: right;
+  margin-right: 5px;
+  list-style: none;
+  -webkit-transform-origin: top;
+  transform-origin: top;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-transform: scale(1, 0);
+  display: block;
+  transition: all 0.1s ease-out;
+  -webkit-transition: all 0.1s ease-out;
+}
+.dropdown-menu{
+  list-style: none;
+  -webkit-transform-origin: top;
+  transform-origin: top;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-transform: scale(1, 0);
+  display: block;
+  transition: all 0.1s ease-out;
+  -webkit-transition: all 0.1s ease-out;
+}
+/*Styling ended*/
+form{
+  width: 50%;
+}
+.muser_commands{
+  display: none;
+}
+#searchip{
+  width: 100%;
+  height: 4%;
+}
+.searchresults{
+  color: black;
+  position: absolute;
+  z-index: 101;
+  width: 90%;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+}
+#searchresults{
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in;
+  overflow-y: scroll;
+  max-height: 500%;
+  height: 0;
+}
+#search{
+  text-align: center;
+  color: white;
+  display: inline;
+}
+.col-lg-0{
+  display: none;
+}
+.col-xs-0,{
+    display: block;
+  }
+#mchatApp,#chatApp{
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
+}
+#chatApp{
+height:65%;
+}
+#chattext{
+  width: 200%;
+}
+#mchattext{
+  width: 100%;
+}
+#chatlog,#mchatlog{
+  height: 70%;overflow-y: scroll;
+}
+.fullscreen{
+  text-align: center;
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in;
+  height: 0;
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+}
+.fullopen{
+  background-color: black;
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+.fullimg{
+  position: relative;
+  height: 80%;
+  top: 10%;
+}
+@keyframes slideUp {
+  0%{top: 100%;}
+  50%{top: 38%;}
+  75%{top: 42%;}
+  100%{top: 40%;}
+}
+.postimg{
+  height: 50%;
+  width: 100%;
+  object-fit: contain;
+  font-size: 10px;
+}
+.likezone,.likebutton{
+  margin-left: 5%;
+  border: 1px solid black;
+}
+@media screen and (max-width:760px) {
+  .fullscreen{
+    text-align: center;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+    height: 0;
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+  }
+  .fullopen{
+    vertical-align: text-bottom;
+    background-color: black;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    height: 100%;
+    object-fit: contain;
+    width: 100%;
+  }
+  .fullimg{
+    position: relative;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: auto;
+  }
+  #newspane{
+    position: relative;
+    right: 0;
+  }
+  .postopen{
+    height:100px;
+  }
+  .chatdp{
+    object-fit: cover;
+    height: 8%;
+    border-radius: 100px;
+  }
+  .likedp{
+    width: 24px;
+    height: 24px;
+    border-radius: 200px;
+    margin-left: 1%;
+  }
+  @keyframes slideUp {
+    0%{top: 100%;}
+    50%{top: -3%;}
+    75%{top: 3%;}
+    100%{top: 0%;}
+  }
+  #chatlog,#mchatlog{
+    height: 60%;overflow-y: scroll;
+  }
+  .upthumb{
+    max-width: 64px;
+    max-height: 64px;
+  }
+  .posttext{
+    margin-left: 5%;
+    font-size: 10px;
+  }
+  .posttitle{
+    font-size: 15px;
+  }
+  .postimg{
+    object-fit: contain;
+    width: 100%;
+    height: 40%;
+    font-size: 10px;
+  }
+  #mshinetable{
+    border: 1px solid rgba(0,0,0,0.3);
+  }
+  .mnogift{
+    width: 90%;
+    margin-top: 10%;
+  }
+  #eshine,#hshine,#cshine,#sshine{
+    border: none;
+    margin-top: 3.5%;
+    height: 2vh;
+    border-radius: 5px;
+  }
+  .shinetable,caption{
+    cursor: default;
+    overflow: hidden;
+    font-size: 2vh;
+    text-align: center;
+    border-bottom : none;
+    border-top : none;
+  }
+  .table>tbody>tr>th{
+      padding: 2vh;
+      line-height: 0.3vh;
+      vertical-align: top;
+      border-bottom: none;
+      border-top: none;
+  }
+  .table>tbody>tr>td{
+    position: relative;
+    top: -9px;
+    vertical-align: middle;
+    padding: 0.3vh;
+    line-height: 0.3vh;
+    border-bottom: none;
+    border-top: none;
+  }
+  #newspanel{
+    position: relative;
+    padding-left: 5%;
+    padding-right: 5%;
+    height: 80%;
+  }
+.col-xs-0{
+    display: none;
+  }
+  .col-lg-0{
+    display: block;
+  }
+  .profileDiv{
+    padding-top: 2%;
+    font-size: 30%;
+    height: 20%;
+  }
+  form{
+    width: 90%;
+  }
+  #userinfo,#shinetable{
+    border-left : 1px solid rgba(0,0,0,0.3);
+    cursor: default;
+    display: none;
+    border: none;
+  }
+  p,h1,h4{
+    cursor: default;
+  }
+  .muser_commands{
+      display: block;
+      height: 40px;
+      width: 40px;
+      background-size:cover;
+      border-radius: 100px;
+    }
+  #user_commands{
+    display: inline;
+    height: 36px;
+    width: 36px;
+    background-size:cover;
+    border-radius: 100px;
+  }
+  .propic{
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 100px;
+  }
+  .profilepic{
+    object-fit: cover;
+    border-radius: 200px;
+    width: 60px;
+    height: 60px;
+  }
+  .settings{
+    border-bottom-right-radius: 100px;
+    display: none;
+  }
+  .scorepanel{
+    padding-top: 2%;
+    font-size: 60%;
+    overflow: hidden;
+    height: 25vh;
+  }
+  .profileDiv{
+    padding-top: 2%;
+    font-size: 50%;
+    height: 30%;
+  }
+  .img-wrapper{
+    position: inherit;
+  }
+  .hidden{
+    display: none;
+  }
+  .img-overlay{
+    color: white;
+    display: none;
+  }
+  .settings{
+      display: none;
+    }
+  .msettings{
+    height: 10%;
+    display: inline-block;
+  }
+  .col-xs-0,.col-sm-0{
+    display: none;
+  }
+}
+#resetform,#signupform,#loginform,#otpForm,#proupForm{
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  margin:auto;
+}
+input,input:active,input:focus{
+  outline: none;
+}
+.noshow{
+  padding: 5px 5px 5px 5px;
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+  opacity: 0;
+}
+.linkyimg{
+  width: 30px;
+  height:30px;
+  border-radius: 50px;
+  transition-property: all;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in;
+}
+.I-simple-link{
+text-decoration: none;
+}
+.I-simple-link:hover{
+text-decoration: none;
+}
+.linkyimg:hover{
+  width: 40px;
+  height: 40px;
+}
+.yesshow{
+  padding: 5px 5px 5px 5px;
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+  opacity: 1;
+}
+.update{
+  text-align: center;
+  animation-name: bigEntry;
+  animation-duration: 1s;
+  animation-timing-function:ease-out;
+}
+@keyframes bigEntry {
+  0%{right: 200%;}
+  50%{right: -5%;}
+  75%{right: 2%;}
+  100%{right: 0;}
+}
+.blinkshow{
+  padding: 5px 5px 5px 5px;
+  margin: auto;
+  display: block;
+  animation-name: blinky;
+  animation-duration: 1s;
+  animation-iteration-count:infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes blinky{
+  0%{opacity: 0;}
+  50%{opacity: 1;}
+  100%{opacity: 0;}
+}
+@keyframes slideIn{
+  0% {width: 0%;opacity: 0;}
+  80%{width: 110%; opacity: 1;}
+  100%{width: 100%; opacity: 1;}
+}
+@keyframes loadanim {
+  0%{background-color: red}
+  30%{background-color: blue}
+  60%{background-color: yellow}
+  90%{background-color: green}
+  100%{background-color: white}
+}
+select,option{
+  outline: none;
+  width: 30%;
+  height: 3.5%;
+  background-color: white;
+  border: none;
+  border-radius: 2.5px;
+  margin: 1%;
+}
+#first,#middle,#last{
+  display: inline;
+}
+.panel-footer{
+  width: 100%;
+  text-align: center;
+  font-size: 2vh;
+}
+.panel{
+  position: relative;
+  bottom: 0;
+  left: 0;
+  animation-name: slideIn;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    display: none;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    display: none;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    display: none;
+}
+.panel,.panel-footer{
+  padding: 0;
+  margin: 0;
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+}
+.footerlink{
+  color: white;
+  text-decoration: none;
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+.footerlink:hover{
+  color: white;
+  font-size: 150%;
+}
