@@ -2591,7 +2591,7 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
       document.getElementById("user_commands").style = "background-image : url('"+response.data[0].profile[0].proimg+"');";
       document.getElementById("muser_commands").style = "background-image : url('"+response.data[0].profile[0].proimg+"');";
       setCookie("userdata",JSON.stringify(response.data));
-      var template = "<strong><h3><span class = 'badge level'>Level "+response.data[0].profile[0].level+"</span></h3><h4><span class = 'badge shine'>Shine "+response.data[0].profile[0].shine+"</span></h4><p>"+response.data[0].profile.username+"<br>"+response.data[0].profile[0]+"</p></strong>";
+      var template = "<strong><h3><span class = 'badge level'>Level "+response.data[0].profile[0].level+"</span></h3><h4><span class = 'badge shine'>Shine "+response.data[0].profile[0].shine+"</span></h4><p>"+response.data[0].profile.username+"<br></p></strong>";
       document.getElementById("userinfo").innerHTML=template;
       document.getElementById("muserinfo").innerHTML=template;
       document.getElementById("user_commands").title = response.data[0].username;
