@@ -1531,7 +1531,7 @@ profileApp.controller("profileCtrl",function($scope,$http){
           proggy(70);
           if(x.readyState === 4){
             sunNotify("<strong>Could'nt get your Google profile picture. We'll try again the next time you log in..</strong>","alert-danger");
-            setCookie("proimage","");
+            setCookie("proimage","css/propic.png");
             $scope.profileSetup(newuser);
           }
         }
@@ -2441,7 +2441,6 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
   $scope.uploadDP = function(file){
     sunNotify("<i class = 'fa fa-spinner fa-spin'></i> <strong>Uploading...</strong>","alert-warning");
     var date = new Date();
-    console.log(JSON.parse(getCookie("userdata")));
     var dpurl = "https://filestore.unluckily34.hasura-app.io/v1/file/"+JSON.parse(getCookie("userdata"))[0].hasura_id+"-"+date.getTime();
       ////console.log(dpurl);
       $http({
