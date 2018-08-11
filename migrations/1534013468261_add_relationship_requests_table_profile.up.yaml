@@ -1,0 +1,8 @@
+- args:
+    name: requests
+    table: profile
+    using:
+      foreign_key_constraint_on:
+        column: recid
+        table: requests
+  type: create_array_relationship

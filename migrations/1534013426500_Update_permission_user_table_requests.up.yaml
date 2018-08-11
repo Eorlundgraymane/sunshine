@@ -1,0 +1,10 @@
+- args:
+    permission:
+      columns:
+      - recid
+      - created
+      - reqid
+      filter: {}
+    role: user
+    table: requests
+  type: create_select_permission
