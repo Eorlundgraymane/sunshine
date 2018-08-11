@@ -1486,7 +1486,7 @@ profileApp.controller("profileCtrl",function($scope,$http){
         "socialshine" : 0,
         "shine" : 0,
         "level" : 0,
-        "proimage" : getCookie("proimage")
+        "proimg" : getCookie("proimage")
       }];
       //////console.log(JSON.stringify(prodata));
       //Call JSON API for signup
