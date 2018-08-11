@@ -1752,7 +1752,7 @@ $scope.getUserInfo = function(){
   }).then(function mySuccess(response){
     proggy(100);
     //////console.log(response.data.username);
-    setCookie("mobile",response.data.mobile);    
+    setCookie("mobile",response.data.mobile);
     setTimeout(function () {
       window.location="/?mode=setup";
     }, 3000);
@@ -1776,7 +1776,7 @@ $scope.getUserProfile = function(){
   userdata["args"]["columns"][1]={};
   userdata["args"]["columns"][1]["name"] = "profile";
   userdata["args"]["columns"][1]["columns"] = ["*"];
-  userdata["args"]["where"] = {"id" : getCookie('hasura_id')};
+  userdata["args"]["where"] = {"hasura_id" : getCookie('hasura_id')};
   //////console.log(JSON.stringify(userdata));
   $http({
     method : "POST",
