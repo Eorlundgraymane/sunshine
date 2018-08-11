@@ -371,7 +371,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
     deleteData["args"]["where"]["post_id"] = id;
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data : JSON.stringify(deleteData),
       withCredentials : true,
       headers : {
@@ -394,7 +394,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
     deleteData["args"]["where"]["post_id"] = id;
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data : JSON.stringify(deleteData),
       withCredentials : true,
       headers : {
@@ -423,7 +423,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
     console.log(postData);
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data: JSON.stringify(postData),
       withCredentials : true,
       headers:{
@@ -480,7 +480,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
     var file = document.getElementById("newpostimg").files[0];
     var newimg  = $scope.newpostimg;
     var date = new Date();
-    var dpurl = "https://filestore.bluenose47.hasura-app.io/v1/file/"+JSON.parse(getCookie("userdata"))[0].id+"-"+date.getTime();
+    var dpurl = "https://filestore.unluckily34.hasura-app.io/v1/file/"+JSON.parse(getCookie("userdata"))[0].id+"-"+date.getTime();
       ////console.log(dpurl);
       $http({
         method : "POST",
@@ -519,7 +519,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
     deleteData["args"]["where"]["post_id"] = id;
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data : JSON.stringify(deleteData),
       withCredentials : true,
       headers : {
@@ -557,7 +557,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
       }];
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data: JSON.stringify(usedata),
       withCredentials : true,
       headers:{
@@ -604,7 +604,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
     usedata["args"]["where"]["liker_id"] = getCookie("hasura_id");
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data: JSON.stringify(usedata),
       withCredentials : true,
       headers:{
@@ -645,7 +645,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
     usedata["args"]["where"]["id"] = id;
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data: JSON.stringify(usedata),
       withCredentials : true,
       headers:{
@@ -677,7 +677,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
     cmtdata["args"]["order_by"] = "-id";
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data : JSON.stringify(cmtdata),
       withCredentials : true,
       headers : {
@@ -719,7 +719,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
         }];
         $http({
           method : "POST",
-          url : "https://data.bluenose47.hasura-app.io/v1/query",
+          url : "https://data.unluckily34.hasura-app.io/v1/query",
           data : JSON.stringify(cmtdata),
           withCredentials : true,
           headers : {
@@ -750,7 +750,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
     cmtdata["args"]["where"]["post_id"] = id;
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data : JSON.stringify(cmtdata),
       withCredentials : true,
       headers : {
@@ -806,7 +806,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
     feedData["args"]["where"]["post_id"] = id;
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data : JSON.stringify(feedData),
       withCredentials : true,
       headers : {
@@ -931,7 +931,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
     feedData["args"]["order_by"] = "-post_id";
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data : JSON.stringify(feedData),
       withCredentials : true,
       headers : {
@@ -1117,7 +1117,7 @@ muserApp.controller("muserCtrl",function($scope,$http){
     //Call JSON API for signup
     $http({
       method : "POST",
-      url : "https://auth.bluenose47.hasura-app.io/user/logout",
+      url : "https://auth.unluckily34.hasura-app.io/user/logout",
       withCredentials : true,
       headers : {
         'Content-type' : 'application/json','Authorization' : 'Bearer '+getCookie("auth_token")
@@ -1164,7 +1164,7 @@ muserApp.controller("muserCtrl",function($scope,$http){
     //////console.log(JSON.stringify(userdata));
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data : JSON.stringify(userdata),
       withCredentials : true,
       headers : {
@@ -1214,7 +1214,7 @@ userApp.controller("userCtrl",function($scope,$http){
     //Call JSON API for signup
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data: JSON.stringify(usedata),
       withCredentials : true,
       headers:{
@@ -1238,7 +1238,7 @@ userApp.controller("userCtrl",function($scope,$http){
     //Call JSON API for signup
     $http({
       method : "POST",
-      url : "https://auth.bluenose47.hasura-app.io/user/logout",
+      url : "https://auth.unluckily34.hasura-app.io/user/logout",
       withCredentials : true,
       headers : {
         'Content-type' : 'application/json','Authorization' : 'Bearer '+getCookie("auth_token")
@@ -1285,7 +1285,7 @@ userApp.controller("userCtrl",function($scope,$http){
     //////console.log(JSON.stringify(userdata));
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data : JSON.stringify(userdata),
       withCredentials : true,
       headers : {
@@ -1333,7 +1333,7 @@ function testlogout(){
         }
       }
     }
-      x.open('POST','https://auth.compressible41.hasura-app.io/v1/user/logout',true);
+      x.open('POST','https://auth.unluckily34.hasura-app.io/v1/user/logout',true);
       x.setRequestHeader("Authorization", "Bearer "+getCookie("auth_token"));
       x.send();
 }
@@ -1416,7 +1416,7 @@ resetPwdApp.controller = resetPwdApp.controller("resetPwdCtrl",function($scope,$
     preset["password"] = SHA256($scope.resetuser.password);
       $http({
         method : "POST",
-        url : "https://auth.bluenose47.hasura-app.io/password/reset",
+        url : "https://auth.unluckily34.hasura-app.io/password/reset",
         data: JSON.stringify(preset),
         withCredentials : true,
         headers:{
@@ -1491,7 +1491,7 @@ profileApp.controller("profileCtrl",function($scope,$http){
       //Call JSON API for signup
       $http({
         method : "POST",
-        url : "https://data.bluenose47.hasura-app.io/v1/query",
+        url : "https://data.unluckily34.hasura-app.io/v1/query",
         data: JSON.stringify(prodata),
         withCredentials : true,
         headers:{
@@ -1559,7 +1559,7 @@ profileApp.controller("profileCtrl",function($scope,$http){
     //Call JSON API for signup
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data: JSON.stringify(usedata),
       withCredentials : true,
       headers:{
@@ -1589,7 +1589,7 @@ profileApp.controller("profileCtrl",function($scope,$http){
     //Call JSON API for signup
     $http({
       method : "POST",
-      url : "https://auth.bluenose47.hasura-app.io/user/logout",
+      url : "https://auth.unluckily34.hasura-app.io/user/logout",
       withCredentials : true,
       headers : {
         'Content-type' : 'application/json','Authorization' : 'Bearer '+getCookie("auth_token")
@@ -1662,7 +1662,7 @@ $scope.pwdReset = function(){
     preset["email"] = $scope.user.primarykey;
     $http({
       method : "POST",
-      url : "https://auth.bluenose47.hasura-app.io/password/forgot",
+      url : "https://auth.unluckily34.hasura-app.io/password/forgot",
       data: JSON.stringify(preset),
       withCredentials : true,
       headers:{
@@ -1697,7 +1697,7 @@ $scope.profileUpdate = function(field,value){
   //////console.log([proupdata]);
   $http({
     method : "POST",
-    url : "https://data.bluenose47.hasura-app.io/v1/query",
+    url : "https://data.unluckily34.hasura-app.io/v1/query",
     data: JSON.stringify(proupdata),
     withCredentials : true,
     headers:{
@@ -1744,7 +1744,7 @@ $scope.updateDP = function(){
 $scope.getUserInfo = function(){
   $http({
     method : "POST",
-    url : "https://auth.bluenose47.hasura-app.io/user/account/info",
+    url : "https://auth.unluckily34.hasura-app.io/user/account/info",
     withCredentials : true,
     headers : {
       'Content-type' : 'application/json','Authorization' : 'Bearer '+getCookie("auth_token")
@@ -1781,7 +1781,7 @@ $scope.getUserProfile = function(){
   //////console.log(JSON.stringify(userdata));
   $http({
     method : "POST",
-    url : "https://data.bluenose47.hasura-app.io/v1/query",
+    url : "https://data.unluckily34.hasura-app.io/v1/query",
     data : JSON.stringify(userdata),
     withCredentials : true,
     headers : {
@@ -1844,7 +1844,7 @@ $scope.getUserProfile = function(){
     //Call JSON API for signup
     $http({
       method : "POST",
-      url : "https://auth.compressible41.hasura-app.io/v1/login",
+      url : "https://auth.unluckily34.hasura-app.io/v1/login",
       data: JSON.stringify(logindata),
       withCredentials : true,
       headers:{
@@ -1891,7 +1891,7 @@ $scope.getUserProfile = function(){
     //Call JSON API for signup
     $http({
       method : "POST",
-      url : "https://auth.bluenose47.hasura-app.io/user/logout",
+      url : "https://auth.unluckily34.hasura-app.io/user/logout",
       withCredentials : true,
       headers : {
         'Content-type' : 'application/json','Authorization' : 'Bearer '+getCookie("auth_token")
@@ -1979,7 +1979,7 @@ function waitForEmail(em,pwd,$http){
   //////console.log(JSON.stringify(setupLoginData));
   $http({
     method : "POST",
-    url : "https://auth.bluenose47.hasura-app.io/login",
+    url : "https://auth.unluckily34.hasura-app.io/login",
     data: JSON.stringify(setupLoginData),
     withCredentials : true,
     headers:{
@@ -2021,7 +2021,7 @@ muserProfileApp.controller("muserProfileCtrl",function($scope,$http){
     //////console.log([proupdata]);
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data: JSON.stringify(proupdata),
       withCredentials : true,
       headers:{
@@ -2046,7 +2046,7 @@ muserProfileApp.controller("muserProfileCtrl",function($scope,$http){
     proggy(30+(i/1000));
   }
   var date = new Date();
-  var dpurl = "https://filestore.bluenose47.hasura-app.io/v1/file/"+JSON.parse(getCookie("userdata"))[0].id+"-"+date.getTime();
+  var dpurl = "https://filestore.unluckily34.hasura-app.io/v1/file/"+JSON.parse(getCookie("userdata"))[0].id+"-"+date.getTime();
     ////console.log(dpurl);
     $http({
       method : "POST",
@@ -2129,7 +2129,7 @@ muserProfileApp.controller("muserProfileCtrl",function($scope,$http){
     //Call JSON API for signup
     $http({
       method : "POST",
-      url : "https://auth.bluenose47.hasura-app.io/user/logout",
+      url : "https://auth.unluckily34.hasura-app.io/user/logout",
       withCredentials : true,
       headers : {
         'Content-type' : 'application/json','Authorization' : 'Bearer '+getCookie("auth_token")
@@ -2176,7 +2176,7 @@ muserProfileApp.controller("muserProfileCtrl",function($scope,$http){
     //////console.log(JSON.stringify(userdata));
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data : JSON.stringify(userdata),
       withCredentials : true,
       headers : {
@@ -2234,7 +2234,7 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
     usedata["args"]["where"]["reqid"] = getCookie("hasura_id");
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data: JSON.stringify(usedata),
       withCredentials : true,
       headers:{
@@ -2262,7 +2262,7 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
     //Call JSON API for signup
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data: JSON.stringify(usedata),
       withCredentials : true,
       headers:{
@@ -2305,7 +2305,7 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
     userdata["args"]["where"]["myfriends"]["friend_id"] = id;
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data : JSON.stringify(userdata),
       withCredentials : true,
       headers : {
@@ -2362,7 +2362,7 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
       //////console.log(JSON.stringify(userdata));
       $http({
         method : "POST",
-        url : "https://data.bluenose47.hasura-app.io/v1/query",
+        url : "https://data.unluckily34.hasura-app.io/v1/query",
         data : JSON.stringify(userdata),
         withCredentials : true,
         headers : {
@@ -2419,7 +2419,7 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
     //////console.log([proupdata]);
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data: JSON.stringify(proupdata),
       withCredentials : true,
       headers:{
@@ -2441,7 +2441,7 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
   $scope.uploadDP = function(file){
     sunNotify("<i class = 'fa fa-spinner fa-spin'></i> <strong>Uploading...</strong>","alert-warning");
     var date = new Date();
-    var dpurl = "https://filestore.bluenose47.hasura-app.io/v1/file/"+JSON.parse(getCookie("userdata"))[0].id+"-"+date.getTime();
+    var dpurl = "https://filestore.unluckily34.hasura-app.io/v1/file/"+JSON.parse(getCookie("userdata"))[0].id+"-"+date.getTime();
       ////console.log(dpurl);
       $http({
         method : "POST",
@@ -2523,7 +2523,7 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
     //Call JSON API for signup
     $http({
       method : "POST",
-      url : "https://auth.bluenose47.hasura-app.io/user/logout",
+      url : "https://auth.unluckily34.hasura-app.io/user/logout",
       withCredentials : true,
       headers : {
         'Content-type' : 'application/json','Authorization' : 'Bearer '+getCookie("auth_token")
@@ -2570,7 +2570,7 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
     //////console.log(JSON.stringify(userdata));
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data : JSON.stringify(userdata),
       withCredentials : true,
       headers : {
@@ -2633,7 +2633,7 @@ signupmodule.controller("signupCtrl",function($scope,$http){
     //////console.log(JSON.stringify(setupLoginData));
     $http({
       method : "POST",
-      url : "https://auth.bluenose47.hasura-app.io/login",
+      url : "https://auth.unluckily34.hasura-app.io/login",
       data: JSON.stringify(setupLoginData),
       withCredentials : true,
       headers:{
@@ -2657,7 +2657,7 @@ $scope.logout = function(){
   //Call JSON API for signup
   $http({
     method : "POST",
-    url : "https://auth.bluenose47.hasura-app.io/user/logout",
+    url : "https://auth.unluckily34.hasura-app.io/user/logout",
     withCredentials : true,
     headers : {
       'Content-type' : 'application/json','Authorization' : 'Bearer '+getCookie("auth_token"),
@@ -2718,7 +2718,7 @@ $scope.logout = function(){
     //Call JSON API for signup
     $http({
       method : "POST",
-      url : "https://auth.compressible41.hasura-app.io/v1/signup",
+      url : "https://auth.unluckily34.hasura-app.io/v1/signup",
       data: JSON.stringify(data),
       headers:{
         'Content-type' : 'application/json'
@@ -2779,7 +2779,7 @@ $scope.logout = function(){
     //////console.log(JSON.stringify(otpdata));
     $http({
       method : "POST",
-      url : "https://auth.compressible41.hasura-app.io/v1/providers/mobile-password/verify-otp",
+      url : "https://auth.unluckily34.hasura-app.io/v1/providers/mobile-password/verify-otp",
       data : JSON.stringify(otpdata),
       headers : {
         'Content-type' : 'application/json'
@@ -2809,7 +2809,7 @@ $scope.logout = function(){
     //////console.log(resend);
     $http({
       method : "POST",
-      url : "https://auth.bluenose47.hasura-app.io/mobile/resend-otp",
+      url : "https://auth.unluckily34.hasura-app.io/mobile/resend-otp",
       data : JSON.stringify(resend),
       headers : {
         'Content-type' : 'application/json'
@@ -2870,7 +2870,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
     proupdata["args"]["where"] = {"id" : id};
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data: JSON.stringify(proupdata),
       withCredentials : true,
       headers:{
@@ -2914,7 +2914,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
     userdata["args"]["limit"] = "50";
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data : JSON.stringify(userdata),
       withCredentials : true,
       headers : {
@@ -2993,7 +2993,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
     usedata["args"]["where"]["recid"] = getCookie("hasura_id");
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data: JSON.stringify(usedata),
       withCredentials : true,
       headers:{
@@ -3017,7 +3017,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
       }];
       $http({
         method : "POST",
-        url : "https://data.bluenose47.hasura-app.io/v1/query",
+        url : "https://data.unluckily34.hasura-app.io/v1/query",
         data : JSON.stringify(acceptdata),
         withCredentials : true,
         headers : {
@@ -3042,7 +3042,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
       usedata["args"]["returning"] = ["created"];
       $http({
         method : "POST",
-        url : "https://data.bluenose47.hasura-app.io/v1/query",
+        url : "https://data.unluckily34.hasura-app.io/v1/query",
         data : JSON.stringify(usedata),
         withCredentials : true,
         headers : {
@@ -3075,7 +3075,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
     statdata["args"]["where"] = {"user_id" : getCookie("hasura_id")};
       $http({
         method : "POST",
-        url : "https://data.bluenose47.hasura-app.io/v1/query",
+        url : "https://data.unluckily34.hasura-app.io/v1/query",
         data : JSON.stringify(statdata),
         withCredentials : true,
         headers : {
@@ -3115,7 +3115,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
     reqdata["args"]["where"]["recid"] = getCookie("hasura_id");
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data : JSON.stringify(reqdata),
       withCredentials : true,
       headers : {
@@ -3266,7 +3266,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
     chatdata["args"]["columns"][1]["columns"][1]["columns"][2]["where"]["$and"][1]["seen"] = null;
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data : JSON.stringify(chatdata),
       withCredentials : true,
       headers : {
@@ -3306,7 +3306,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
     proupdata["args"]["where"] = {"id" : id};
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data: JSON.stringify(proupdata),
       withCredentials : true,
       headers:{
@@ -3350,7 +3350,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
     userdata["args"]["limit"] = "50";
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data : JSON.stringify(userdata),
       withCredentials : true,
       headers : {
@@ -3402,7 +3402,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
         }];
         $http({
           method : "POST",
-          url : "https://data.bluenose47.hasura-app.io/v1/query",
+          url : "https://data.unluckily34.hasura-app.io/v1/query",
           data : JSON.stringify(chatData),
           withCredentials : true,
           headers : {
@@ -3465,7 +3465,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
     //////console.log([proupdata]);
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data: JSON.stringify(proupdata),
       withCredentials : true,
       headers:{
@@ -3489,7 +3489,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
     addpoint["args"]["returning"] = ["shine","level"];
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data: JSON.stringify(addpoint),
       withCredentials : true,
       headers:{
@@ -3530,7 +3530,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
     //////console.log(JSON.stringify(userdata));
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data : JSON.stringify(userdata),
       withCredentials : true,
       headers : {
@@ -3584,7 +3584,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
     console.log(JSON.stringify(addpoint));
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data: JSON.stringify(addpoint),
       withCredentials : true,
       headers:{
@@ -3672,7 +3672,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
   shineData["args"]["columns"][1]["columns"][1]["columns"] = ["*"];
   $http({
     method : "POST",
-    url : "https://data.bluenose47.hasura-app.io/v1/query",
+    url : "https://data.unluckily34.hasura-app.io/v1/query",
     data : JSON.stringify(shineData),
     withCredentials : true,
     headers : {
@@ -3775,7 +3775,7 @@ mshineTableApp.controller("mshineTableCtrl",function($scope,$http){
     //////console.log([proupdata]);
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data: JSON.stringify(proupdata),
       withCredentials : true,
       headers:{
@@ -3799,7 +3799,7 @@ mshineTableApp.controller("mshineTableCtrl",function($scope,$http){
     addpoint["args"]["returning"] = ["shine","level"];
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data: JSON.stringify(addpoint),
       withCredentials : true,
       headers:{
@@ -3833,7 +3833,7 @@ mshineTableApp.controller("mshineTableCtrl",function($scope,$http){
     //Call JSON API for signup
     $http({
       method : "POST",
-      url : "https://auth.bluenose47.hasura-app.io/user/logout",
+      url : "https://auth.unluckily34.hasura-app.io/user/logout",
       withCredentials : true,
       headers : {
         'Content-type' : 'application/json','Authorization' : 'Bearer '+getCookie("auth_token")
@@ -3876,7 +3876,7 @@ mshineTableApp.controller("mshineTableCtrl",function($scope,$http){
     //////console.log(JSON.stringify(userdata));
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data : JSON.stringify(userdata),
       withCredentials : true,
       headers : {
@@ -3931,7 +3931,7 @@ mshineTableApp.controller("mshineTableCtrl",function($scope,$http){
     console.log(JSON.stringify(addpoint));
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data: JSON.stringify(addpoint),
       withCredentials : true,
       headers:{
@@ -4006,7 +4006,7 @@ mshineTableApp.controller("mshineTableCtrl",function($scope,$http){
   shineData["args"]["columns"][1]["columns"][1]["columns"] = ["*"];
   $http({
     method : "POST",
-    url : "https://data.bluenose47.hasura-app.io/v1/query",
+    url : "https://data.unluckily34.hasura-app.io/v1/query",
     data : JSON.stringify(shineData),
     withCredentials : true,
     headers : {
@@ -4111,7 +4111,7 @@ searchApp.controller("searchCtrl",function($scope,$http){
     usedata["args"]["where"]["reqid"] = getCookie("hasura_id");
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data: JSON.stringify(usedata),
       withCredentials : true,
       headers:{
@@ -4138,7 +4138,7 @@ searchApp.controller("searchCtrl",function($scope,$http){
     //Call JSON API for signup
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data: JSON.stringify(usedata),
       withCredentials : true,
       headers:{
@@ -4167,7 +4167,7 @@ searchApp.controller("searchCtrl",function($scope,$http){
     userdata["args"]["where"]["$and"][1]["recid"] = id;
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data : JSON.stringify(userdata),
       withCredentials : true,
       headers : {
@@ -4204,7 +4204,7 @@ searchApp.controller("searchCtrl",function($scope,$http){
     userdata["args"]["where"]["myfriends"]["friend_id"] = id;
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data : JSON.stringify(userdata),
       withCredentials : true,
       headers : {
@@ -4264,7 +4264,7 @@ searchApp.controller("searchCtrl",function($scope,$http){
       //////console.log(JSON.stringify(userdata));
       $http({
         method : "POST",
-        url : "https://data.bluenose47.hasura-app.io/v1/query",
+        url : "https://data.unluckily34.hasura-app.io/v1/query",
         data : JSON.stringify(userdata),
         withCredentials : true,
         headers : {
@@ -4350,7 +4350,7 @@ mchatApp.controller("mchatCtrl",function($scope,$http){
     proupdata["args"]["where"] = {"id" : id};
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data: JSON.stringify(proupdata),
       withCredentials : true,
       headers:{
@@ -4393,7 +4393,7 @@ mchatApp.controller("mchatCtrl",function($scope,$http){
     userdata["args"]["limit"] = 50;
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data : JSON.stringify(userdata),
       withCredentials : true,
       headers : {
@@ -4445,7 +4445,7 @@ mchatApp.controller("mchatCtrl",function($scope,$http){
         }];
         $http({
           method : "POST",
-          url : "https://data.bluenose47.hasura-app.io/v1/query",
+          url : "https://data.unluckily34.hasura-app.io/v1/query",
           data : JSON.stringify(chatData),
           withCredentials : true,
           headers : {
@@ -4564,7 +4564,7 @@ mchatListApp.controller("mchatListCtrl",function($scope,$http){
     proupdata["args"]["where"] = {"id" : id};
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data: JSON.stringify(proupdata),
       withCredentials : true,
       headers:{
@@ -4607,7 +4607,7 @@ mchatListApp.controller("mchatListCtrl",function($scope,$http){
     userdata["args"]["limit"] = 50;
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data : JSON.stringify(userdata),
       withCredentials : true,
       headers : {
@@ -4760,7 +4760,7 @@ mchatListApp.controller("mchatListCtrl",function($scope,$http){
     chatdata["args"]["columns"][1]["columns"][1]["columns"][2]["where"]["$and"][1]["seen"] = null;
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data : JSON.stringify(chatdata),
       withCredentials : true,
       headers : {
@@ -4802,7 +4802,7 @@ mchatListApp.controller("mchatListCtrl",function($scope,$http){
       usedata["args"]["returning"] = ["created"];
       $http({
         method : "POST",
-        url : "https://data.bluenose47.hasura-app.io/v1/query",
+        url : "https://data.unluckily34.hasura-app.io/v1/query",
         data : JSON.stringify(usedata),
         withCredentials : true,
         headers : {
@@ -4831,7 +4831,7 @@ mchatListApp.controller("mchatListCtrl",function($scope,$http){
     statdata["args"]["where"] = {"user_id" : getCookie("hasura_id")};
       $http({
         method : "POST",
-        url : "https://data.bluenose47.hasura-app.io/v1/query",
+        url : "https://data.unluckily34.hasura-app.io/v1/query",
         data : JSON.stringify(statdata),
         withCredentials : true,
         headers : {
@@ -4866,7 +4866,7 @@ $scope.getRequests = function(){
   reqdata["args"]["where"]["recid"] = getCookie("hasura_id");
   $http({
     method : "POST",
-    url : "https://data.bluenose47.hasura-app.io/v1/query",
+    url : "https://data.unluckily34.hasura-app.io/v1/query",
     data : JSON.stringify(reqdata),
     withCredentials : true,
     headers : {
@@ -4913,7 +4913,7 @@ $scope.getRequests = function(){
     usedata["args"]["where"]["recid"] = getCookie("hasura_id");
     $http({
       method : "POST",
-      url : "https://data.bluenose47.hasura-app.io/v1/query",
+      url : "https://data.unluckily34.hasura-app.io/v1/query",
       data: JSON.stringify(usedata),
       withCredentials : true,
       headers:{
@@ -4942,7 +4942,7 @@ $scope.getRequests = function(){
       }];
       $http({
         method : "POST",
-        url : "https://data.bluenose47.hasura-app.io/v1/query",
+        url : "https://data.unluckily34.hasura-app.io/v1/query",
         data : JSON.stringify(acceptdata),
         withCredentials : true,
         headers : {
