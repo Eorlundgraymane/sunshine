@@ -1,0 +1,13 @@
+- args:
+    permission:
+      columns:
+      - id
+      - friend_id
+      - seen
+      - created
+      - chat_id
+      - text
+      filter: {}
+    role: user
+    table: chats
+  type: create_select_permission

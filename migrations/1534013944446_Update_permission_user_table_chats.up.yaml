@@ -1,0 +1,13 @@
+- args:
+    permission:
+      columns:
+      - chat_id
+      - created
+      - id
+      - friend_id
+      - seen
+      - text
+      filter: {}
+    role: user
+    table: chats
+  type: create_update_permission
