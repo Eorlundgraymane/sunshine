@@ -1,0 +1,4 @@
+- args:
+    role: user
+    table: posts
+  type: drop_delete_permission

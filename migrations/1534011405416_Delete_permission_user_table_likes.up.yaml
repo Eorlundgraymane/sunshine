@@ -1,0 +1,4 @@
+- args:
+    role: user
+    table: likes
+  type: drop_delete_permission

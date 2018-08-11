@@ -1,0 +1,10 @@
+- args:
+    permission:
+      columns:
+      - id
+      - status
+      - created
+      filter: {}
+    role: user
+    table: status
+  type: create_update_permission

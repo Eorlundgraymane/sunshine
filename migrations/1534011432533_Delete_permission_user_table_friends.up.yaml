@@ -1,0 +1,4 @@
+- args:
+    role: user
+    table: friends
+  type: drop_update_permission

@@ -1,0 +1,10 @@
+- args:
+    permission:
+      columns:
+      - created
+      - friend_id
+      - id
+      filter: {}
+    role: user
+    table: friends
+  type: create_update_permission

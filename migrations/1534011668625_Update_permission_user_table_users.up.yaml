@@ -1,0 +1,10 @@
+- args:
+    permission:
+      columns:
+      - mobile
+      - hasura_id
+      - created
+      filter: {}
+    role: user
+    table: users
+  type: create_update_permission
