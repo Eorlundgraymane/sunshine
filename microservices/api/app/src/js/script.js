@@ -2200,7 +2200,7 @@ muserProfileApp.controller("muserProfileCtrl",function($scope,$http){
           document.getElementById("user_commands").style = "background-image : url('/css/propic.png');";
       }
       setCookie("userdata",JSON.stringify(response.data));
-      var template = "<strong><h3><span class = 'badge level'>Level "+response.data[0].profile[0].level+"</span></h3><h4><span class = 'badge shine'>Shine "+response.data[0].profile[0].shine+"</span></h4><p>"+response.data[0].username+"<br>"+response.data[0].profile[0].fname+" "+response.data[0].profile[0].lname+"<br>"+response.data[0].email+"</p></strong>";
+      var template = "<strong><h3><span class = 'badge level'>Level "+response.data[0].profile[0].level+"</span></h3><h4><span class = 'badge shine'>Shine "+response.data[0].profile[0].shine+"</span></h4><p>"+response.data[0].profile[0].username+"<br></p></strong>";
       document.getElementById("userinfo").innerHTML=template;
       document.getElementById("muserinfo").innerHTML=template;
       document.getElementById("user_commands").title = response.data[0].username;
@@ -3548,7 +3548,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
       document.getElementById("user_commands").style = "background-image : url('"+response.data[0].profile[0].proimg+"');";
       document.getElementById("muser_commands").style = "background-image : url('"+response.data[0].profile[0].proimg+"');";
       setCookie("userdata",JSON.stringify(response.data));
-      var template = "<strong><h3><span class = 'badge level'>Level "+response.data[0].profile[0].level+"</span></h3><h4><span title = '"+((100 * response.data[0].profile[0].level) - (response.data[0].profile[0].shine - 100*(response.data[0].profile[0].level-1)))+" more points for next level' class = 'badge shine'>Shine "+response.data[0].profile[0].shine+"</span></h4><p>"+response.data[0].username+"<br>"+response.data[0].profile[0].fname+" "+response.data[0].profile[0].lname+"<br>"+response.data[0].email+"</p></strong>";
+      var template = "<strong><h3><span class = 'badge level'>Level "+response.data[0].profile[0].level+"</span></h3><h4><span title = '"+((100 * response.data[0].profile[0].level) - (response.data[0].profile[0].shine - 100*(response.data[0].profile[0].level-1)))+" more points for next level' class = 'badge shine'>Shine "+response.data[0].profile[0].shine+"</span></h4><p>"+response.data[0].profile[0].username+"<br></p></strong>";
       document.getElementById("userinfo").innerHTML=template;
       document.getElementById("muserinfo").innerHTML=template;
       document.getElementById("user_commands").title = response.data[0].username;
@@ -3894,7 +3894,7 @@ mshineTableApp.controller("mshineTableCtrl",function($scope,$http){
       document.getElementById("user_commands").style = "background-image : url('"+response.data[0].profile[0].proimg+"');";
       document.getElementById("muser_commands").style = "background-image : url('"+response.data[0].profile[0].proimg+"');";
       setCookie("userdata",JSON.stringify(response.data));
-      var template = "<strong><h3><span class = 'badge level'>Level "+response.data[0].profile[0].level+"</span></h3><h4><span title = '"+((100 * response.data[0].profile[0].level) - (response.data[0].profile[0].shine - 100*(response.data[0].profile[0].level-1)))+" more points for next level' class = 'badge shine'>Shine "+response.data[0].profile[0].shine+"</span></h4><p>"+response.data[0].username+"<br>"+response.data[0].profile[0].fname+" "+response.data[0].profile[0].lname+"<br>"+response.data[0].email+"</p></strong>";
+      var template = "<strong><h3><span class = 'badge level'>Level "+response.data[0].profile[0].level+"</span></h3><h4><span title = '"+((100 * response.data[0].profile[0].level) - (response.data[0].profile[0].shine - 100*(response.data[0].profile[0].level-1)))+" more points for next level' class = 'badge shine'>Shine "+response.data[0].profile[0].shine+"</span></h4><p>"+response.data[0].profile[0].username+"<br></p></strong>";
       document.getElementById("userinfo").innerHTML=template;
       document.getElementById("muserinfo").innerHTML=template;
       document.getElementById("user_commands").title = response.data[0].username;
