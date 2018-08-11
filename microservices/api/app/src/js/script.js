@@ -697,7 +697,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
         }else{
           del = "";
         }
-        document.getElementById("cmtul"+id).innerHTML+= "<li class = 'comment' id = "+each.id+"><img src = '"+each.commentor.proimage+"' title = '"+each.commentor.fname+"' class = 'cmtdp'> "+each.comment+" "+del+"<div class = 'cmtts'>"+chat_ago(each.created)+"</div> </li><br>";
+        document.getElementById("cmtul"+id).innerHTML+= "<li class = 'comment' id = "+each.id+"><img src = '"+each.commentor.proimg+"' title = '"+each.commentor.fname+"' class = 'cmtdp'> "+each.comment+" "+del+"<div class = 'cmtts'>"+chat_ago(each.created)+"</div> </li><br>";
       }
       document.getElementById('cmtbtn'+id).innerHTML = "<strong>"+ccount+" Comments</strong>";
     },function myError(response){
@@ -771,7 +771,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
           }else{
             del = "";
           }
-          document.getElementById("cmtul"+id).innerHTML+= "<li class = 'comment' id = "+each.id+"><img src = '"+each.commentor.proimage+"' title = '"+each.commentor.fname+"' class = 'cmtdp'> "+each.comment+" "+del+"<div class = 'cmtts'>"+chat_ago(each.created)+"</div></li><br>";
+          document.getElementById("cmtul"+id).innerHTML+= "<li class = 'comment' id = "+each.id+"><img src = '"+each.commentor.proimg+"' title = '"+each.commentor.fname+"' class = 'cmtdp'> "+each.comment+" "+del+"<div class = 'cmtts'>"+chat_ago(each.created)+"</div></li><br>";
         }
         document.getElementById('cmtbtn'+id).innerHTML = "<strong>"+ccount+" Comments</strong>";
       }else{
@@ -850,7 +850,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
           }
           if(likerscount <=5){
             likerscount++;
-            liked += "<div class = 'shinecont'><img src = '"+each1.liker.proimage+"' class = 'likedp shineim' title = '"+each1.liker.fname+"'><div class = 'shinein'><span class = 'label label-"+shinecol+" likelabel'><i class = 'fas fa-"+shinebut+"'></i></span></div></div>";
+            liked += "<div class = 'shinecont'><img src = '"+each1.liker.proimg+"' class = 'likedp shineim' title = '"+each1.liker.fname+"'><div class = 'shinein'><span class = 'label label-"+shinecol+" likelabel'><i class = 'fas fa-"+shinebut+"'></i></span></div></div>";
             likersmore = 0;
           }else{
             likersmore = 1;
@@ -902,7 +902,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
         }else{
           deletetext = "";
         }
-        newlist += "<li id = 'postid"+each.post_id+"' class = 'post'>"+deletetext+"<img src = '"+each.author.proimage+"' class = 'authdp'><span class = 'badge label label-warning level'>"+each.author.level+"</span><p class = 'author'><strong>"+each.author.fname+" "+each.author.lname+"</strong></p><p class = 'postago'><strong>"+chat_ago(each.created)+"</strong></p><h6 class = 'postimgdiv'>"+postimg+"</h6><p2 class = 'posttext'>"+each.posttext+"</p2><br><br>"+liketext+"<div id = 'liked"+each.post_id+"' class = 'likedlist'>"+liked+" </div><br><div class = 'cmtsctn' id = 'cmtlist"+each.post_id+"'><button id = 'cmtbtn"+each.post_id+"'type = 'button' onclick = 'angular.element(this).scope().getComments("+id+");' class = 'btn btn-default cmtbtn'><strong>"+each.comments.length+" Comments</strong></button></div></li>";
+        newlist += "<li id = 'postid"+each.post_id+"' class = 'post'>"+deletetext+"<img src = '"+each.author.proimg+"' class = 'authdp'><span class = 'badge label label-warning level'>"+each.author.level+"</span><p class = 'author'><strong>"+each.author.fname+" "+each.author.lname+"</strong></p><p class = 'postago'><strong>"+chat_ago(each.created)+"</strong></p><h6 class = 'postimgdiv'>"+postimg+"</h6><p2 class = 'posttext'>"+each.posttext+"</p2><br><br>"+liketext+"<div id = 'liked"+each.post_id+"' class = 'likedlist'>"+liked+" </div><br><div class = 'cmtsctn' id = 'cmtlist"+each.post_id+"'><button id = 'cmtbtn"+each.post_id+"'type = 'button' onclick = 'angular.element(this).scope().getComments("+id+");' class = 'btn btn-default cmtbtn'><strong>"+each.comments.length+" Comments</strong></button></div></li>";
       }
       $('#postid'+id).replaceWith(newlist);
     },function myError(response)    {
@@ -976,7 +976,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
           }
           if(likerscount <=5){
             likerscount++;
-            liked += "<div class = 'shinecont'><img src = '"+each1.liker.proimage+"' class = 'likedp shineim' title = '"+each1.liker.fname+"'><div class = 'shinein'><span class = 'label label-"+shinecol+" likelabel'><i class = 'fas fa-"+shinebut+"'></i></span></div></div>";
+            liked += "<div class = 'shinecont'><img src = '"+each1.liker.proimg+"' class = 'likedp shineim' title = '"+each1.liker.fname+"'><div class = 'shinein'><span class = 'label label-"+shinecol+" likelabel'><i class = 'fas fa-"+shinebut+"'></i></span></div></div>";
             likersmore = 0;
           }else{
             likersmore = 1;
@@ -1028,7 +1028,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
         }else{
           deletetext = "";
         }
-        newlist += "<li id = 'postid"+each.post_id+"' class = 'post'>"+deletetext+"<img src = '"+each.author.proimage+"' class = 'authdp'><span class = 'badge label label-warning level'>"+each.author.level+"</span><p class = 'author'><strong>"+each.author.fname+" "+each.author.lname+"</strong></p><p class = 'postago'><strong>"+chat_ago(each.created)+"</strong></p><h6 class = 'postimgdiv'>"+postimg+"</h6><p2 class = 'posttext'>"+each.posttext+"</p2><br><br>"+liketext+"<div id = 'liked"+each.post_id+"' class = 'likedlist'>"+liked+" </div><br><div class = 'cmtsctn' id = 'cmtlist"+each.post_id+"'><button id = 'cmtbtn"+each.post_id+"' type = 'button' onclick = 'angular.element(this).scope().getComments("+each.post_id+");' class = 'btn btn-default cmtbtn'><strong>"+each.comments.length+" Comments</strong></button></div></li>";
+        newlist += "<li id = 'postid"+each.post_id+"' class = 'post'>"+deletetext+"<img src = '"+each.author.proimg+"' class = 'authdp'><span class = 'badge label label-warning level'>"+each.author.level+"</span><p class = 'author'><strong>"+each.author.fname+" "+each.author.lname+"</strong></p><p class = 'postago'><strong>"+chat_ago(each.created)+"</strong></p><h6 class = 'postimgdiv'>"+postimg+"</h6><p2 class = 'posttext'>"+each.posttext+"</p2><br><br>"+liketext+"<div id = 'liked"+each.post_id+"' class = 'likedlist'>"+liked+" </div><br><div class = 'cmtsctn' id = 'cmtlist"+each.post_id+"'><button id = 'cmtbtn"+each.post_id+"' type = 'button' onclick = 'angular.element(this).scope().getComments("+each.post_id+");' class = 'btn btn-default cmtbtn'><strong>"+each.comments.length+" Comments</strong></button></div></li>";
       }
       if(newlist !=  prevfeed){
         news.innerHTML = newlist;
@@ -1800,15 +1800,15 @@ $scope.getUserProfile = function(){
         setCookie("userdata",JSON.stringify(response.data));
         //////console.log(getCookie("userdata"));
         //////console.log(getCookie("email"));
-        //////console.log(response.data[0]["profile"][0].proimage);
-        if(response.data[0]["profile"][0].proimage === "" && getCookie("email").split("@")[1] === "gmail.com"){
+        //////console.log(response.data[0]["profile"][0].proimg);
+        if(response.data[0]["profile"][0].proimg === "" && getCookie("email").split("@")[1] === "gmail.com"){
         sunNotify("<strong>No profile picture saved, Looks like you have a gmail ID, we will add your Google Profile photo as your Sunshine profile photo...hang on</strong> ","alert-info");
         setTimeout(function(){
           $scope.updateDP();
         },3000);
         }
         else{
-          setCookie("proimage",response.data[0]["profile"][0].proimage);
+          setCookie("proimage",response.data[0]["profile"][0].proimg);
           sunNotify("<strong><i class = 'fa fa-spinner fa-spin'></i> Loading Page...</strong>","alert-warning");
           setTimeout(function(){
             window.location = "/?mode=home";
@@ -2075,7 +2075,7 @@ muserProfileApp.controller("muserProfileCtrl",function($scope,$http){
         proggy(10);
         document.getElementById("meditbutton").classList.remove("msettings");
         document.getElementById('labelmnewdp').innerHTML = "<i class = 'fa fa-spinner fa-spin'></i>";
-        var dpurl = JSON.parse(getCookie("userdata"))[0].profile[0].proimage;
+        var dpurl = JSON.parse(getCookie("userdata"))[0].profile[0].proimg;
         $http({
           method : "DELETE",
           url : dpurl,
@@ -2192,11 +2192,11 @@ muserProfileApp.controller("muserProfileCtrl",function($scope,$http){
       var dob = new Date(response.data[0].profile[0].dob);
       days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
       mons = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-      document.getElementById("profilepic").src = response.data[0].profile[0].proimage;
-      document.getElementById("mprofilepic").src = response.data[0].profile[0].proimage;
-      document.getElementById("user_commands").style = "background-image : url('"+response.data[0].profile[0].proimage+"');";
-      document.getElementById("muser_commands").style = "background-image : url('"+response.data[0].profile[0].proimage+"');";
-      if(response.data[0].profile[0].proimage === "" || response.data[0].profile[0].proimage === null){
+      document.getElementById("profilepic").src = response.data[0].profile[0].proimg;
+      document.getElementById("mprofilepic").src = response.data[0].profile[0].proimg;
+      document.getElementById("user_commands").style = "background-image : url('"+response.data[0].profile[0].proimg+"');";
+      document.getElementById("muser_commands").style = "background-image : url('"+response.data[0].profile[0].proimg+"');";
+      if(response.data[0].profile[0].proimg === "" || response.data[0].profile[0].proimg === null){
           document.getElementById("user_commands").style = "background-image : url('/css/propic.png');";
       }
       setCookie("userdata",JSON.stringify(response.data));
@@ -2280,12 +2280,12 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
   $scope.checkRequests = function(id,each,searchlist){
       if(each.profile.length > 0){
         if(each.profile[0].requests.length === 1){
-          searchlist += "<li class = 'follows alert alert-info'><button onclick = 'angular.element(this).scope().cancelRequest("+each.profile[0].id+");' title = 'Cancel Request' class ='btn btn-info btn-sm' type = 'button'><i class='fas fa-minus-circle'></i></button> <img src= '"+each.profile[0].proimage+"' alt = 'No Image' class = 'chatdp'/> <strong>"+each.profile[0].fname+"</strong></li>";
+          searchlist += "<li class = 'follows alert alert-info'><button onclick = 'angular.element(this).scope().cancelRequest("+each.profile[0].id+");' title = 'Cancel Request' class ='btn btn-info btn-sm' type = 'button'><i class='fas fa-minus-circle'></i></button> <img src= '"+each.profile[0].proimg+"' alt = 'No Image' class = 'chatdp'/> <strong>"+each.profile[0].fname+"</strong></li>";
           document.getElementById("followlist").innerHTML += searchlist;
         }
         else if(each.profile[0].requests.length === 0){
           $scope.sugcount++;
-          searchlist += "<li class = 'follows alert alert-info'><button onclick = 'angular.element(this).scope().addFriend("+each.profile[0].id+");' title = 'Add friend' class = 'btn btn-info btn-sm' type = 'button'><i class = 'fas fa-user-plus'></i></button> <img src= '"+each.profile[0].proimage+"' alt = 'No Image' class = 'chatdp'/><strong>"+each.profile[0].fname+"</strong> </li>";
+          searchlist += "<li class = 'follows alert alert-info'><button onclick = 'angular.element(this).scope().addFriend("+each.profile[0].id+");' title = 'Add friend' class = 'btn btn-info btn-sm' type = 'button'><i class = 'fas fa-user-plus'></i></button> <img src= '"+each.profile[0].proimg+"' alt = 'No Image' class = 'chatdp'/><strong>"+each.profile[0].fname+"</strong> </li>";
           document.getElementById("followlist").innerHTML += searchlist;
         }
       }
@@ -2470,7 +2470,7 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
         proggy(10);
         document.getElementById("editbutton").classList.remove("settings");
         document.getElementById('labelnewdp').innerHTML = "<i class = 'fa fa-spinner fa-spin'></i>";
-        var dpurl = JSON.parse(getCookie("userdata"))[0].profile[0].proimage;
+        var dpurl = JSON.parse(getCookie("userdata"))[0].profile[0].proimg;
         $http({
           method : "DELETE",
           url : dpurl,
@@ -2586,10 +2586,10 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
       var dob = new Date(response.data[0].profile[0].dob);
       days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
       mons = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-      document.getElementById("profilepic").src = response.data[0].profile[0].proimage;
-      document.getElementById("mprofilepic").src = response.data[0].profile[0].proimage;
-      document.getElementById("user_commands").style = "background-image : url('"+response.data[0].profile[0].proimage+"');";
-      document.getElementById("muser_commands").style = "background-image : url('"+response.data[0].profile[0].proimage+"');";
+      document.getElementById("profilepic").src = response.data[0].profile[0].proimg;
+      document.getElementById("mprofilepic").src = response.data[0].profile[0].proimg;
+      document.getElementById("user_commands").style = "background-image : url('"+response.data[0].profile[0].proimg+"');";
+      document.getElementById("muser_commands").style = "background-image : url('"+response.data[0].profile[0].proimg+"');";
       setCookie("userdata",JSON.stringify(response.data));
       var template = "<strong><h3><span class = 'badge level'>Level "+response.data[0].profile[0].level+"</span></h3><h4><span class = 'badge shine'>Shine "+response.data[0].profile[0].shine+"</span></h4><p>"+response.data[0].username+"<br>"+response.data[0].profile[0].fname+" "+response.data[0].profile[0].lname+"<br>"+response.data[0].email+"</p></strong>";
       document.getElementById("userinfo").innerHTML=template;
@@ -3127,7 +3127,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
       for(each of response.data){
         document.getElementById("reqcount").innerHTML = ++reqcount;
         list += each.requester.fname+" ";
-        newlist += "<li class = 'alert alert-info users' title = 'Accept Request from "+each.requester.fname+"'><span class = 'badge level'>"+each.requester.level+"</span><button onclick = 'angular.element(this).scope().acceptRequest("+each.recid+","+each.reqid+");' type = 'button' class = 'btn btn-primary btn-sm'><strong>Accept</strong></button> <button onclick = 'angular.element(this).scope().deleteRequest("+each.reqid+");' type = 'button' class = 'btn btn-danger btn-sm' title = 'Delete Request from "+each.requester.fname+"'><strong>Delete</strong></button> <img src = '"+each.requester.proimage+"' class = 'chatdp'/> <strong>"+each.requester.fname+"</strong></li><br>"
+        newlist += "<li class = 'alert alert-info users' title = 'Accept Request from "+each.requester.fname+"'><span class = 'badge level'>"+each.requester.level+"</span><button onclick = 'angular.element(this).scope().acceptRequest("+each.recid+","+each.reqid+");' type = 'button' class = 'btn btn-primary btn-sm'><strong>Accept</strong></button> <button onclick = 'angular.element(this).scope().deleteRequest("+each.reqid+");' type = 'button' class = 'btn btn-danger btn-sm' title = 'Delete Request from "+each.requester.fname+"'><strong>Delete</strong></button> <img src = '"+each.requester.proimg+"' class = 'chatdp'/> <strong>"+each.requester.fname+"</strong></li><br>"
       }
       //console.log("\nrequests : "+reqcount+"\n notified : "+notif);
       if(reqcount > notif && reqcount > 0){
@@ -3204,15 +3204,15 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
             var cr = each.friend_profile.online[0].created
             ////console.log(cr);
             if(time_ago(cr) === 1){
-              newlist = "<li class = 'alert alert-info users' title = '"+each.friend_profile.fname+"'> <i class = 'green fas fa-circle'></i> <img src = '"+each.friend_profile.proimage+"' class = 'chatdp'/><span class = 'badge level'>"+each.friend_profile.level+"</span><span class = 'badge newchat newchat_"+each.friend_profile.id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+"  <button onclick = 'angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.id+")' type = 'button' class = 'chatbtn btn btn-success'  ><i class = 'fa fa-comment'></i></button></strong></li>" + newlist;
+              newlist = "<li class = 'alert alert-info users' title = '"+each.friend_profile.fname+"'> <i class = 'green fas fa-circle'></i> <img src = '"+each.friend_profile.proimg+"' class = 'chatdp'/><span class = 'badge level'>"+each.friend_profile.level+"</span><span class = 'badge newchat newchat_"+each.friend_profile.id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+"  <button onclick = 'angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.id+")' type = 'button' class = 'chatbtn btn btn-success'  ><i class = 'fa fa-comment'></i></button></strong></li>" + newlist;
               $scope.newcount ++;
             }
             else{
-            newlist += "<li class = 'alert alert-info users' title = '"+each.friend_profile.fname+" online "+chat_ago(cr)+"'> <i class = 'red far fa-circle'></i> <img src = '"+each.friend_profile.proimage+"' class = 'chatdp'/><span class = 'badge level'>"+each.friend_profile.level+"</span><span class = 'badge newchat newchat_"+each.friend_profile.id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+" <button onclick = 'angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.id+")' type = 'button' class = 'chatbtn btn btn-info'><i class = 'fa fa-comment'></i></button></strong></li>";
+            newlist += "<li class = 'alert alert-info users' title = '"+each.friend_profile.fname+" online "+chat_ago(cr)+"'> <i class = 'red far fa-circle'></i> <img src = '"+each.friend_profile.proimg+"' class = 'chatdp'/><span class = 'badge level'>"+each.friend_profile.level+"</span><span class = 'badge newchat newchat_"+each.friend_profile.id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+" <button onclick = 'angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.id+")' type = 'button' class = 'chatbtn btn btn-info'><i class = 'fa fa-comment'></i></button></strong></li>";
             }
         }
         else{
-        newlist += "<li class = 'alert alert-info users' title = '"+each.friend_profile.fname+"'> <i class = 'red far fa-circle'></i> <img src = '"+each.friend_profile.proimage+"' class = 'chatdp'/> <span class = 'badge level'>"+each.friend_profile.level+"</span><span class = 'badge newchat newchat_"+each.friend_profile.id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+" <button onclick = 'angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.id+")' type = 'button' class = 'chatbtn btn btn-info' ><i class = 'fa fa-comment'></i></button></strong></li>";
+        newlist += "<li class = 'alert alert-info users' title = '"+each.friend_profile.fname+"'> <i class = 'red far fa-circle'></i> <img src = '"+each.friend_profile.proimg+"' class = 'chatdp'/> <span class = 'badge level'>"+each.friend_profile.level+"</span><span class = 'badge newchat newchat_"+each.friend_profile.id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+" <button onclick = 'angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.id+")' type = 'button' class = 'chatbtn btn btn-info' ><i class = 'fa fa-comment'></i></button></strong></li>";
         }
       //console.log(JSON.stringify(users));
         if(iterator+1 < limit){
@@ -3543,10 +3543,10 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
       var dob = new Date(response.data[0].profile[0].dob);
       days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
       mons = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-      document.getElementById("profilepic").src = response.data[0].profile[0].proimage;
-      document.getElementById("mprofilepic").src = response.data[0].profile[0].proimage;
-      document.getElementById("user_commands").style = "background-image : url('"+response.data[0].profile[0].proimage+"');";
-      document.getElementById("muser_commands").style = "background-image : url('"+response.data[0].profile[0].proimage+"');";
+      document.getElementById("profilepic").src = response.data[0].profile[0].proimg;
+      document.getElementById("mprofilepic").src = response.data[0].profile[0].proimg;
+      document.getElementById("user_commands").style = "background-image : url('"+response.data[0].profile[0].proimg+"');";
+      document.getElementById("muser_commands").style = "background-image : url('"+response.data[0].profile[0].proimg+"');";
       setCookie("userdata",JSON.stringify(response.data));
       var template = "<strong><h3><span class = 'badge level'>Level "+response.data[0].profile[0].level+"</span></h3><h4><span title = '"+((100 * response.data[0].profile[0].level) - (response.data[0].profile[0].shine - 100*(response.data[0].profile[0].level-1)))+" more points for next level' class = 'badge shine'>Shine "+response.data[0].profile[0].shine+"</span></h4><p>"+response.data[0].username+"<br>"+response.data[0].profile[0].fname+" "+response.data[0].profile[0].lname+"<br>"+response.data[0].email+"</p></strong>";
       document.getElementById("userinfo").innerHTML=template;
@@ -3889,10 +3889,10 @@ mshineTableApp.controller("mshineTableCtrl",function($scope,$http){
       var dob = new Date(response.data[0].profile[0].dob);
       days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
       mons = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-      document.getElementById("profilepic").src = response.data[0].profile[0].proimage;
-      document.getElementById("mprofilepic").src = response.data[0].profile[0].proimage;
-      document.getElementById("user_commands").style = "background-image : url('"+response.data[0].profile[0].proimage+"');";
-      document.getElementById("muser_commands").style = "background-image : url('"+response.data[0].profile[0].proimage+"');";
+      document.getElementById("profilepic").src = response.data[0].profile[0].proimg;
+      document.getElementById("mprofilepic").src = response.data[0].profile[0].proimg;
+      document.getElementById("user_commands").style = "background-image : url('"+response.data[0].profile[0].proimg+"');";
+      document.getElementById("muser_commands").style = "background-image : url('"+response.data[0].profile[0].proimg+"');";
       setCookie("userdata",JSON.stringify(response.data));
       var template = "<strong><h3><span class = 'badge level'>Level "+response.data[0].profile[0].level+"</span></h3><h4><span title = '"+((100 * response.data[0].profile[0].level) - (response.data[0].profile[0].shine - 100*(response.data[0].profile[0].level-1)))+" more points for next level' class = 'badge shine'>Shine "+response.data[0].profile[0].shine+"</span></h4><p>"+response.data[0].username+"<br>"+response.data[0].profile[0].fname+" "+response.data[0].profile[0].lname+"<br>"+response.data[0].email+"</p></strong>";
       document.getElementById("userinfo").innerHTML=template;
@@ -4176,12 +4176,12 @@ searchApp.controller("searchCtrl",function($scope,$http){
     }).then(function mySuccess(response){
       ////console.log(response.data);
       if(response.data.length > 0 && $scope.searchip != "" ){
-        searchlist += "<li class = 'alert alert-info'><button onclick = 'angular.element(this).scope().cancelRequest("+each.profile[0].id+");' title = 'Cancel Request' class ='btn btn-info btn-sm' type = 'button'><i class='fas fa-minus-circle'></i></button> "+each.profile[0].fname+"<img src= '"+each.profile[0].proimage+"' class = 'chatdp'/></li>";
+        searchlist += "<li class = 'alert alert-info'><button onclick = 'angular.element(this).scope().cancelRequest("+each.profile[0].id+");' title = 'Cancel Request' class ='btn btn-info btn-sm' type = 'button'><i class='fas fa-minus-circle'></i></button> "+each.profile[0].fname+"<img src= '"+each.profile[0].proimg+"' class = 'chatdp'/></li>";
         document.getElementById("searchresults").innerHTML += searchlist;
         document.getElementById("searchresults").style = "height : auto";
       }
       else if($scope.searchip != "" ){
-        searchlist += "<li class = 'alert alert-info'><button onclick = 'angular.element(this).scope().addFriend("+each.profile[0].id+");' title = 'Add friend' class = 'btn btn-info btn-sm' type = 'button'><i class = 'fas fa-user-plus'></i></button> "+each.profile[0].fname+"<img src= '"+each.profile[0].proimage+"' class = 'chatdp'/></li>";
+        searchlist += "<li class = 'alert alert-info'><button onclick = 'angular.element(this).scope().addFriend("+each.profile[0].id+");' title = 'Add friend' class = 'btn btn-info btn-sm' type = 'button'><i class = 'fas fa-user-plus'></i></button> "+each.profile[0].fname+"<img src= '"+each.profile[0].proimg+"' class = 'chatdp'/></li>";
         document.getElementById("searchresults").innerHTML += searchlist;
         document.getElementById("searchresults").style = "height : auto";
       }
@@ -4213,7 +4213,7 @@ searchApp.controller("searchCtrl",function($scope,$http){
     }).then(function mySuccess(response){
       if(response.data.length > 0){
         if(response.data[0].myfriends.length > 0 && $scope.searchip != "" ){
-            searchlist += "<li class = 'alert alert-info'><i class='far fa-check-circle'></i> "+each.profile[0].fname+"<img src= '"+each.profile[0].proimage+"' class = 'chatdp'/></li>";
+            searchlist += "<li class = 'alert alert-info'><i class='far fa-check-circle'></i> "+each.profile[0].fname+"<img src= '"+each.profile[0].proimg+"' class = 'chatdp'/></li>";
             document.getElementById("searchresults").innerHTML += searchlist;
             document.getElementById("searchresults").style = "height : auto";
         }
@@ -4693,15 +4693,15 @@ mchatListApp.controller("mchatListCtrl",function($scope,$http){
             var cr = each.friend_profile.online[0].created
             ////console.log(cr);
             if(time_ago(cr) === 1){
-              newlist = "<li class = 'alert alert-info users' title = '"+each.friend_profile.fname+"'> <i class = 'green fas fa-circle'></i> <img src = '"+each.friend_profile.proimage+"' class = 'chatdp'/> <span class = 'badge level'>"+each.friend_profile.level+"</span><span class = 'badge newchat newchat_"+each.friend_profile.id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+" <button onclick ='angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.id+")' type = 'button' class = 'chatbtn btn btn-success' title = 'Message "+each.friend_profile.fname+"'><i class = 'fa fa-comment'></i></button></strong></li>" + newlist;
+              newlist = "<li class = 'alert alert-info users' title = '"+each.friend_profile.fname+"'> <i class = 'green fas fa-circle'></i> <img src = '"+each.friend_profile.proimg+"' class = 'chatdp'/> <span class = 'badge level'>"+each.friend_profile.level+"</span><span class = 'badge newchat newchat_"+each.friend_profile.id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+" <button onclick ='angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.id+")' type = 'button' class = 'chatbtn btn btn-success' title = 'Message "+each.friend_profile.fname+"'><i class = 'fa fa-comment'></i></button></strong></li>" + newlist;
               $scope.newcount ++;
             }
             else{
-            newlist += "<li class = 'alert alert-info users' title = '"+each.friend_profile.fname+" online at "+chat_ago(cr)+"'> <i class = 'red far fa-circle'></i> <img src = '"+each.friend_profile.proimage+"' class = 'chatdp'/><span class = 'badge level'>"+each.friend_profile.level+"</span> <span class = 'badge newchat newchat_"+each.friend_profile.id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+" <button onclick = 'angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.id+")' type = 'button' class = 'chatbtn btn btn-info' title = 'Message "+each.friend_profile.fname+"'><i class = 'fa fa-comment'></i></button></strong></li>";
+            newlist += "<li class = 'alert alert-info users' title = '"+each.friend_profile.fname+" online at "+chat_ago(cr)+"'> <i class = 'red far fa-circle'></i> <img src = '"+each.friend_profile.proimg+"' class = 'chatdp'/><span class = 'badge level'>"+each.friend_profile.level+"</span> <span class = 'badge newchat newchat_"+each.friend_profile.id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+" <button onclick = 'angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.id+")' type = 'button' class = 'chatbtn btn btn-info' title = 'Message "+each.friend_profile.fname+"'><i class = 'fa fa-comment'></i></button></strong></li>";
             }
         }
         else{
-        newlist += "<li class = 'alert alert-info users' title = '"+each.friend_profile.fname+"'> <i class = 'red far fa-circle'></i> <img src = '"+each.friend_profile.proimage+"' class = 'chatdp'/><span class = 'badge level'>"+each.friend_profile.level+"</span> <span class = 'badge newchat newchat_"+each.friend_profile.id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+"  <button onclick = 'angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.id+")' type = 'button' class = 'chatbtn btn btn-info' title = 'Message "+each.friend_profile.fname+"'><i class = 'fa fa-comment'></i></button></strong></li>";
+        newlist += "<li class = 'alert alert-info users' title = '"+each.friend_profile.fname+"'> <i class = 'red far fa-circle'></i> <img src = '"+each.friend_profile.proimg+"' class = 'chatdp'/><span class = 'badge level'>"+each.friend_profile.level+"</span> <span class = 'badge newchat newchat_"+each.friend_profile.id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+"  <button onclick = 'angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.id+")' type = 'button' class = 'chatbtn btn btn-info' title = 'Message "+each.friend_profile.fname+"'><i class = 'fa fa-comment'></i></button></strong></li>";
         }
       //console.log(JSON.stringify(users));
         if(iterator+1 < limit){
@@ -4878,7 +4878,7 @@ $scope.getRequests = function(){
     for(each of response.data){
       document.getElementById("reqcount").innerHTML = ++reqcount;
       list += each.requester.fname+" ";
-      newlist += "<li class = 'alert alert-info users' title = 'Accept Request from "+each.requester.fname+"'><span class = 'badge level'>"+each.requester.level+"</span><button onclick = 'angular.element(this).scope().acceptRequest("+each.recid+","+each.reqid+");' type = 'button' class = 'btn btn-primary btn-sm'><strong>Accept</strong></button> <button onclick = 'angular.element(this).scope().deleteRequest("+each.reqid+");' type = 'button' class = 'btn btn-danger btn-sm' title = 'Delete Request from "+each.requester.fname+"'><strong>Delete</strong></button> <img src = '"+each.requester.proimage+"' class = 'chatdp'/> <strong>"+each.requester.fname+"</strong></li><br>"
+      newlist += "<li class = 'alert alert-info users' title = 'Accept Request from "+each.requester.fname+"'><span class = 'badge level'>"+each.requester.level+"</span><button onclick = 'angular.element(this).scope().acceptRequest("+each.recid+","+each.reqid+");' type = 'button' class = 'btn btn-primary btn-sm'><strong>Accept</strong></button> <button onclick = 'angular.element(this).scope().deleteRequest("+each.reqid+");' type = 'button' class = 'btn btn-danger btn-sm' title = 'Delete Request from "+each.requester.fname+"'><strong>Delete</strong></button> <img src = '"+each.requester.proimg+"' class = 'chatdp'/> <strong>"+each.requester.fname+"</strong></li><br>"
     }
     //console.log("\nrequests : "+reqcount+"\n notified : "+notif);
     if(reqcount > notif && reqcount > 0){
