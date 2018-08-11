@@ -1,0 +1,6 @@
+- args:
+    name: recepient
+    table: chats
+    using:
+      foreign_key_constraint_on: friend_id
+  type: create_object_relationship

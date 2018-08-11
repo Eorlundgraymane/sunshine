@@ -1,0 +1,8 @@
+- args:
+    name: sent
+    table: profile
+    using:
+      foreign_key_constraint_on:
+        column: id
+        table: chats
+  type: create_array_relationship

@@ -1,0 +1,6 @@
+- args:
+    name: sender
+    table: chats
+    using:
+      foreign_key_constraint_on: id
+  type: create_object_relationship
