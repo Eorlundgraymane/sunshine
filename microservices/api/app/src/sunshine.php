@@ -71,8 +71,10 @@
         <legend align = "center"><strong>Profile</strong></legend>
         <label for = "first">First Name*:</label>
         <input ng-model = "newuser.firstname" ng-required = "true" type = "text" class = "form-control" id ="first" placeholder="First Name">
-        <label for = "last">Surname*:</label>
+        <label for = "last">Last Name*:</label>
         <input ng-model = "newuser.lastname" ng-required = "true" type = "text" class = "form-control" id ="last" placeholder="Surname">
+        <label for = "uname">Username*:</label>
+        <input ng-model = "newuser.username" ng-required = "true" type = "text" class = "form-control" id ="uname" placeholder="Username">
         <label for = "dob">Date of Birth*:</label>
         <span id = "datevalid" class = "hidden label label-danger">Invalid Date</span>
         <div name = "dob">

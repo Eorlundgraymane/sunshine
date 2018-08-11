@@ -1478,6 +1478,7 @@ profileApp.controller("profileCtrl",function($scope,$http){
         "user_id" : parseInt(getCookie("hasura_id")),
         "fname" : newuser.firstname,
         "lname" : newuser.lastname,
+        "username" : newuser.username,
         "dob":(""+newuser.year+"/"+newuser.month+"/"+newuser.day),
         "earthshine" : 0,
         "healthshine" : 0,
@@ -1509,9 +1510,8 @@ profileApp.controller("profileCtrl",function($scope,$http){
         }, 3000);
       },function myError(response){
         proggy(0);
-        alert("Troule setting up profile");
-        //////console.log(response);
-        $scope.logout();
+        alert("Trouble setting up profile "+response.data.message);
+        //////console.log(response);        
       });
     },5000);
   }
