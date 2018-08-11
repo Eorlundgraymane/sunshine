@@ -1475,7 +1475,7 @@ profileApp.controller("profileCtrl",function($scope,$http){
     setTimeout(function(){
       prodata["args"]["table"] = "profile";
       prodata["args"].objects = [{
-        "user_id" : parseInt(getCookie("hasura_id")),
+        "id" : parseInt(getCookie("hasura_id")),
         "fname" : newuser.firstname,
         "lname" : newuser.lastname,
         "username" : newuser.username,
