@@ -2441,6 +2441,7 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
   $scope.uploadDP = function(file){
     sunNotify("<i class = 'fa fa-spinner fa-spin'></i> <strong>Uploading...</strong>","alert-warning");
     var date = new Date();
+    console.log(JSON.parse(getCookie("userdata")));
     var dpurl = "https://filestore.unluckily34.hasura-app.io/v1/file/"+JSON.parse(getCookie("userdata"))[0].id+"-"+date.getTime();
       ////console.log(dpurl);
       $http({
