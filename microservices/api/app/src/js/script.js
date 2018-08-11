@@ -1568,7 +1568,7 @@ profileApp.controller("profileCtrl",function($scope,$http){
       proggy(50);
       document.getElementById('verifybutton').value = "Verified!! User added to Database!! Creating Profile...";
       //////console.log(response);
-      setCookie("proimage","");
+      setCookie("proimage","css/propic.png");
       $scope.profileSetup(newuser);
     },function myError(response){
       if(response.data["error"].split(".")[0] === "Uniqueness violation"){
