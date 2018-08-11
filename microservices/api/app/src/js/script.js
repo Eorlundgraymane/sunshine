@@ -416,7 +416,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
     postData["args"] = {};
     postData["args"]["table"] = "posts";
     postData["args"].objects = [{
-      "user_id":getCookie("hasura_id"),
+      "id":getCookie("hasura_id"),
       "posttext":posttext,
       "postimg":upfileurl
     }];
@@ -692,7 +692,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
       var ccount = 0;
       for(each of response.data){
         ccount++;
-        if(""+each.commentor.user_id === getCookie("hasura_id")){
+        if(""+each.commentor.id === getCookie("hasura_id")){
           del = "<div class = 'dropdown cmtops'><button type = 'button' class = 'cmtdelbtn btn btn-default dropdown-toggle' data-toggle = 'dropdown'>...</button><div class = 'dropdown-menu dropdown-menu-right cmtmenu'><button type = 'button' title = 'Delete Comment' class = 'deletebtn btn btn-danger' onclick = 'angular.element(this).scope().deleteComment("+each.id+","+each.post_id+");' ><strong>Delete</strong></button></div></div>";
         }else{
           del = "";
@@ -713,7 +713,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
       cmtdata["args"] = {};
       cmtdata["args"]["table"] = "comments";
       cmtdata["args"].objects =  [{
-          "user_id":parseInt(getCookie("hasura_id")),
+          "id":parseInt(getCookie("hasura_id")),
           "post_id":id,
           "comment":document.getElementById("newcmt"+id).value
         }];
@@ -766,7 +766,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
         document.getElementById("cmtlist"+id).appendChild(cmtele);
         for(each of response.data){
           ccount++;
-          if(""+each.commentor.user_id === getCookie("hasura_id")){
+          if(""+each.commentor.id === getCookie("hasura_id")){
             del = "<div class = 'dropdown cmtops'><button type = 'button' class = 'cmtdelbtn btn btn-default dropdown-toggle ' data-toggle = 'dropdown'>...</button><div class = 'dropdown-menu dropdown-menu-right cmtmenu'><button type = 'button' title = 'Delete Comment' class = 'deletebtn btn btn-danger' onclick = 'angular.element(this).scope().deleteComment("+each.id+","+each.post_id+");' ><strong>Delete</strong></button></div></div>";
           }else{
             del = "";
@@ -866,9 +866,9 @@ newsApp.controller("newsCtrl",function($scope,$http){
         if(likersmore === 1){
           liked += "and others ";
         }
-        if(ilike === 0 && (""+each.author.user_id != getCookie("hasura_id"))){
+        if(ilike === 0 && (""+each.author.id != getCookie("hasura_id"))){
           liketext = '<div class = "dropdown"><button id = "likeme'+each.post_id+'" type = "button" class = "likebutton btn btn-default dropdown-toggle" data-toggle = "dropdown"><strong>Like</strong></button><span class = "dropdown-menu"><button type = "button" class = "btn btn-danger" onclick = "angular.element(this).scope().addLike('+each.post_id+',\'health\')" ><i class = "fa fa-heart"></i></button> <button type = "button" class = "btn btn-success" onclick = "angular.element(this).scope().addLike('+each.post_id+',\'earth\')"><i class = "fa fa-leaf"></i></button> <button type = "button" class = "btn btn-warning" onclick = "angular.element(this).scope().addLike('+each.post_id+',\'charity\')"><i class = "fa fa-gift"></i></button> <button type = "button" class = "btn btn-primary" onclick = "angular.element(this).scope().addLike('+each.post_id+',\'social\')"><i class = "fa fa-globe"></i></button></span></div><br>';
-        }else if(""+each.author.user_id != getCookie("hasura_id")){
+        }else if(""+each.author.id != getCookie("hasura_id")){
           switch(meshined){
             case "health":
             shinecol = "danger";
@@ -897,7 +897,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
         }else{
           postimg = "<img src = '"+each.postimg+"' onclick = \"fullscreen('"+each.postimg+"')\" class = 'postimg' alt ='Image not Found'>";
         }
-        if(""+each.author.user_id === getCookie("hasura_id")){
+        if(""+each.author.id === getCookie("hasura_id")){
           deletetext = "<div class = 'dropdown postops'><button type = 'button' class = 'btn btn-default dropdown-toggle postops' data-toggle = 'dropdown'>...</button><div class = 'dropdown-menu dropdown-menu-right postmenu'><button type = 'button' title = 'Delete Post' class = 'deletebtn btn btn-danger' onclick = 'angular.element(this).scope().deleteLikes("+each.post_id+",\""+each.postimg+"\");' ><strong>Delete</strong></button></div></div>";
         }else{
           deletetext = "";
@@ -992,9 +992,9 @@ newsApp.controller("newsCtrl",function($scope,$http){
         if(likersmore === 1){
           liked += "and others ";
         }
-        if(ilike === 0 && (""+each.author.user_id != getCookie("hasura_id"))){
+        if(ilike === 0 && (""+each.author.id != getCookie("hasura_id"))){
           liketext = '<div class = "dropdown"><button id = "likeme'+each.post_id+'" type = "button" class = "likebutton btn btn-default dropdown-toggle" data-toggle = "dropdown"><strong>Like</strong></button><span class = "dropdown-menu"><button type = "button" class = "btn btn-danger" onclick = "angular.element(this).scope().addLike('+each.post_id+',\'health\')" ><i class = "fa fa-heart"></i></button> <button type = "button" class = "btn btn-success" onclick = "angular.element(this).scope().addLike('+each.post_id+',\'earth\')"><i class = "fa fa-leaf"></i></button> <button type = "button" class = "btn btn-warning" onclick = "angular.element(this).scope().addLike('+each.post_id+',\'charity\')"><i class = "fa fa-gift"></i></button> <button type = "button" class = "btn btn-primary" onclick = "angular.element(this).scope().addLike('+each.post_id+',\'social\')"><i class = "fa fa-globe"></i></button></span></div><br>';
-        }else if(""+each.author.user_id != getCookie("hasura_id")){
+        }else if(""+each.author.id != getCookie("hasura_id")){
           switch(meshined){
             case "health":
             shinecol = "danger";
@@ -1023,7 +1023,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
         }else{
           postimg = "<img onclick = \"fullscreen('"+each.postimg+"')\" src = '"+each.postimg+"' class = 'postimg' alt ='Image not Found'>";
         }
-        if(""+each.author.user_id === getCookie("hasura_id")){
+        if(""+each.author.id === getCookie("hasura_id")){
           deletetext = "<div class = 'dropdown postops'><button type = 'button' class = 'btn btn-default dropdown-toggle postops' data-toggle = 'dropdown'>...</button><div class = 'dropdown-menu dropdown-menu-right postmenu'><button type = 'button' title = 'Delete Post' class = 'deletebtn btn btn-danger' onclick = 'angular.element(this).scope().deleteLikes("+each.post_id+",\""+each.postimg+"\");' ><strong>Delete</strong></button></div></div>";
         }else{
           deletetext = "";
@@ -1689,10 +1689,10 @@ $scope.profileUpdate = function(field,value){
   proupdata["args"]["table"] = "profile";
   proupdata["args"]["$set"] = {};
   proupdata["args"]["$set"][field] = value;
-  proupdata["args"]["where"] = {"user_id" : getCookie("hasura_id")};
+  proupdata["args"]["where"] = {"id" : getCookie("hasura_id")};
     /*"table" : "profile",
     "$set" : {field : value},
-    "where" : {"user_id" : getCookie("hasura_id")}
+    "where" : {"id" : getCookie("hasura_id")}
   };*/
   //////console.log([proupdata]);
   $http({
@@ -2017,7 +2017,7 @@ muserProfileApp.controller("muserProfileCtrl",function($scope,$http){
     proupdata["args"]["table"] = "profile";
     proupdata["args"]["$set"] = {};
     proupdata["args"]["$set"][field] = value;
-    proupdata["args"]["where"] = {"user_id" : getCookie("hasura_id")};
+    proupdata["args"]["where"] = {"id" : getCookie("hasura_id")};
     //////console.log([proupdata]);
     $http({
       method : "POST",
@@ -2280,12 +2280,12 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
   $scope.checkRequests = function(id,each,searchlist){
       if(each.profile.length > 0){
         if(each.profile[0].requests.length === 1){
-          searchlist += "<li class = 'follows alert alert-info'><button onclick = 'angular.element(this).scope().cancelRequest("+each.profile[0].user_id+");' title = 'Cancel Request' class ='btn btn-info btn-sm' type = 'button'><i class='fas fa-minus-circle'></i></button> <img src= '"+each.profile[0].proimage+"' alt = 'No Image' class = 'chatdp'/> <strong>"+each.profile[0].fname+"</strong></li>";
+          searchlist += "<li class = 'follows alert alert-info'><button onclick = 'angular.element(this).scope().cancelRequest("+each.profile[0].id+");' title = 'Cancel Request' class ='btn btn-info btn-sm' type = 'button'><i class='fas fa-minus-circle'></i></button> <img src= '"+each.profile[0].proimage+"' alt = 'No Image' class = 'chatdp'/> <strong>"+each.profile[0].fname+"</strong></li>";
           document.getElementById("followlist").innerHTML += searchlist;
         }
         else if(each.profile[0].requests.length === 0){
           $scope.sugcount++;
-          searchlist += "<li class = 'follows alert alert-info'><button onclick = 'angular.element(this).scope().addFriend("+each.profile[0].user_id+");' title = 'Add friend' class = 'btn btn-info btn-sm' type = 'button'><i class = 'fas fa-user-plus'></i></button> <img src= '"+each.profile[0].proimage+"' alt = 'No Image' class = 'chatdp'/><strong>"+each.profile[0].fname+"</strong> </li>";
+          searchlist += "<li class = 'follows alert alert-info'><button onclick = 'angular.element(this).scope().addFriend("+each.profile[0].id+");' title = 'Add friend' class = 'btn btn-info btn-sm' type = 'button'><i class = 'fas fa-user-plus'></i></button> <img src= '"+each.profile[0].proimage+"' alt = 'No Image' class = 'chatdp'/><strong>"+each.profile[0].fname+"</strong> </li>";
           document.getElementById("followlist").innerHTML += searchlist;
         }
       }
@@ -2300,7 +2300,7 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
     userdata["args"]["columns"][1]["name"] = "myfriends";
     userdata["args"]["columns"][1]["columns"] = ["*"];
     userdata["args"]["where"] = {};
-    userdata["args"]["where"]["user_id"] = getCookie("hasura_id");
+    userdata["args"]["where"]["id"] = getCookie("hasura_id");
     userdata["args"]["where"]["myfriends"] = {};
     userdata["args"]["where"]["myfriends"]["friend_id"] = id;
     $http({
@@ -2415,7 +2415,7 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
     proupdata["args"]["table"] = "profile";
     proupdata["args"]["$set"] = {};
     proupdata["args"]["$set"][field] = value;
-    proupdata["args"]["where"] = {"user_id" : getCookie("hasura_id")};
+    proupdata["args"]["where"] = {"id" : getCookie("hasura_id")};
     //////console.log([proupdata]);
     $http({
       method : "POST",
@@ -2836,10 +2836,10 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
   $scope.newcount = "";
   $scope.checkChat = function(newchats){
     for(each of newchats){
-      var newchaties = document.getElementsByClassName("newchat_"+each.friend_profile.user_id);
+      var newchaties = document.getElementsByClassName("newchat_"+each.friend_profile.id);
       if(each.friend_profile.sent.length != 0){
         if(document.getElementById("chathead").innerHTML === "<strong>"+each.friend_profile.fname+"</strong>" || document.getElementById("mchathead").innerHTML === "<strong>"+each.friend_profile.fname+"</strong>" ){
-          $scope.getChats(each.friend_profile.user_id);
+          $scope.getChats(each.friend_profile.id);
         }
         for(news of newchaties){
           news.innerHTML = each.friend_profile.sent.length;
@@ -2849,7 +2849,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
         }
       }else{
         if(document.getElementById("chathead").innerHTML === "<strong>"+each.friend_profile.fname+"</strong>" || document.getElementById("mchathead").innerHTML === "<strong>"+each.friend_profile.fname+"</strong>" ){
-          $scope.getChats(each.friend_profile.user_id);
+          $scope.getChats(each.friend_profile.id);
         }
         for(news of newchaties){
           news.innerHTML = "";
@@ -2897,13 +2897,13 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
     userdata["args"]["where"]["$or"][0]["$and"] = [{}];
     userdata["args"]["where"]["$or"][0]["$and"][0] = {};
     userdata["args"]["where"]["$or"][0]["$and"][1] = {};
-    userdata["args"]["where"]["$or"][0]["$and"][0]["user_id"] = getCookie("hasura_id");
+    userdata["args"]["where"]["$or"][0]["$and"][0]["id"] = getCookie("hasura_id");
     userdata["args"]["where"]["$or"][0]["$and"][1]["friend_id"] = id;
     userdata["args"]["where"]["$or"][1]["$and"] = [{}];
     userdata["args"]["where"]["$or"][1]["$and"][0] = {};
     userdata["args"]["where"]["$or"][1]["$and"][1] = {};
     userdata["args"]["where"]["$or"][1]["$and"][0]["friend_id"] = getCookie("hasura_id");
-    userdata["args"]["where"]["$or"][1]["$and"][1]["user_id"] = id;
+    userdata["args"]["where"]["$or"][1]["$and"][1]["id"] = id;
     userdata["args"]["columns"][1]={};
     userdata["args"]["columns"][1]["name"] = "sender";
     userdata["args"]["columns"][1]["columns"] = ["*"];
@@ -2926,9 +2926,9 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
         document.getElementById("mchatlog").innerHTML = "";
         if(response.data.length > 0){
           for(each of response.data.reverse()){
-            if(each.sender.user_id === parseInt(getCookie("hasura_id")) && each.seen === null){
+            if(each.sender.id === parseInt(getCookie("hasura_id")) && each.seen === null){
               chatloglist+="<li class = 'mychat'><strong>"+each.text+"</strong><br>"+chat_ago(each.created)+"<br>Sent</li>";
-            }else if(each.sender.user_id === parseInt(getCookie("hasura_id"))){
+            }else if(each.sender.id === parseInt(getCookie("hasura_id"))){
               chatloglist+="<li class = 'mychat'><strong>"+each.text+"</strong><br>"+chat_ago(each.created)+"<br>Seen "+chat_ago(each.seen)+"</li>";
             }else{
               chatloglist+="<li class = 'youchat'><strong>"+each.text+"</strong><br>"+chat_ago(each.created)+"<br></li>";
@@ -3012,7 +3012,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
     acceptdata["args"] = {};
     acceptdata["args"]["table"] = "friends";
     acceptdata["args"].objects =  [{
-        "user_id":id1,
+        "id":id1,
         "friend_id":id2,
       }];
       $http({
@@ -3036,7 +3036,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
     usedata["args"] = {};
     usedata["args"]["table"] = "status";
     usedata["args"].objects =  [{
-        "user_id":parseInt(getCookie("hasura_id")),
+        "id":parseInt(getCookie("hasura_id")),
         "current":"online",
       }];
       usedata["args"]["returning"] = ["created"];
@@ -3072,7 +3072,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
     statdata["type"] = "delete";
     statdata["args"] = {};
     statdata["args"]["table"] = "status";
-    statdata["args"]["where"] = {"user_id" : getCookie("hasura_id")};
+    statdata["args"]["where"] = {"id" : getCookie("hasura_id")};
       $http({
         method : "POST",
         url : "https://data.unluckily34.hasura-app.io/v1/query",
@@ -3196,23 +3196,23 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
       users = JSON.parse(users);
       //console.log(users);
       var limit = users.length;
-      //console.log("Adding "+each.friend_profile.user_id+"\n");
-        ////console.log("Info of "+each.friend_profile.user_id+"\n");
+      //console.log("Adding "+each.friend_profile.id+"\n");
+        ////console.log("Info of "+each.friend_profile.id+"\n");
         ////console.log(response);
         if(each.friend_profile.online.length > 0){
-          ////console.log(each.friend_profile.user_id+" is offline");
+          ////console.log(each.friend_profile.id+" is offline");
             var cr = each.friend_profile.online[0].created
             ////console.log(cr);
             if(time_ago(cr) === 1){
-              newlist = "<li class = 'alert alert-info users' title = '"+each.friend_profile.fname+"'> <i class = 'green fas fa-circle'></i> <img src = '"+each.friend_profile.proimage+"' class = 'chatdp'/><span class = 'badge level'>"+each.friend_profile.level+"</span><span class = 'badge newchat newchat_"+each.friend_profile.user_id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+"  <button onclick = 'angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.user_id+")' type = 'button' class = 'chatbtn btn btn-success'  ><i class = 'fa fa-comment'></i></button></strong></li>" + newlist;
+              newlist = "<li class = 'alert alert-info users' title = '"+each.friend_profile.fname+"'> <i class = 'green fas fa-circle'></i> <img src = '"+each.friend_profile.proimage+"' class = 'chatdp'/><span class = 'badge level'>"+each.friend_profile.level+"</span><span class = 'badge newchat newchat_"+each.friend_profile.id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+"  <button onclick = 'angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.id+")' type = 'button' class = 'chatbtn btn btn-success'  ><i class = 'fa fa-comment'></i></button></strong></li>" + newlist;
               $scope.newcount ++;
             }
             else{
-            newlist += "<li class = 'alert alert-info users' title = '"+each.friend_profile.fname+" online "+chat_ago(cr)+"'> <i class = 'red far fa-circle'></i> <img src = '"+each.friend_profile.proimage+"' class = 'chatdp'/><span class = 'badge level'>"+each.friend_profile.level+"</span><span class = 'badge newchat newchat_"+each.friend_profile.user_id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+" <button onclick = 'angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.user_id+")' type = 'button' class = 'chatbtn btn btn-info'><i class = 'fa fa-comment'></i></button></strong></li>";
+            newlist += "<li class = 'alert alert-info users' title = '"+each.friend_profile.fname+" online "+chat_ago(cr)+"'> <i class = 'red far fa-circle'></i> <img src = '"+each.friend_profile.proimage+"' class = 'chatdp'/><span class = 'badge level'>"+each.friend_profile.level+"</span><span class = 'badge newchat newchat_"+each.friend_profile.id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+" <button onclick = 'angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.id+")' type = 'button' class = 'chatbtn btn btn-info'><i class = 'fa fa-comment'></i></button></strong></li>";
             }
         }
         else{
-        newlist += "<li class = 'alert alert-info users' title = '"+each.friend_profile.fname+"'> <i class = 'red far fa-circle'></i> <img src = '"+each.friend_profile.proimage+"' class = 'chatdp'/> <span class = 'badge level'>"+each.friend_profile.level+"</span><span class = 'badge newchat newchat_"+each.friend_profile.user_id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+" <button onclick = 'angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.user_id+")' type = 'button' class = 'chatbtn btn btn-info' ><i class = 'fa fa-comment'></i></button></strong></li>";
+        newlist += "<li class = 'alert alert-info users' title = '"+each.friend_profile.fname+"'> <i class = 'red far fa-circle'></i> <img src = '"+each.friend_profile.proimage+"' class = 'chatdp'/> <span class = 'badge level'>"+each.friend_profile.level+"</span><span class = 'badge newchat newchat_"+each.friend_profile.id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+" <button onclick = 'angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.id+")' type = 'button' class = 'chatbtn btn btn-info' ><i class = 'fa fa-comment'></i></button></strong></li>";
         }
       //console.log(JSON.stringify(users));
         if(iterator+1 < limit){
@@ -3244,7 +3244,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
     chatdata["args"]["table"] = "profile";
     chatdata["args"]["columns"]=["*"];
     chatdata["args"]["where"] = {};
-    chatdata["args"]["where"]["user_id"] = getCookie("hasura_id");
+    chatdata["args"]["where"]["id"] = getCookie("hasura_id");
     chatdata["args"]["columns"][1]={};
     chatdata["args"]["columns"][1]["name"] = "myfriends";
     chatdata["args"]["columns"][1]["columns"] = ["*"];
@@ -3333,13 +3333,13 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
     userdata["args"]["where"]["$or"][0]["$and"] = [{}];
     userdata["args"]["where"]["$or"][0]["$and"][0] = {};
     userdata["args"]["where"]["$or"][0]["$and"][1] = {};
-    userdata["args"]["where"]["$or"][0]["$and"][0]["user_id"] = getCookie("hasura_id");
+    userdata["args"]["where"]["$or"][0]["$and"][0]["id"] = getCookie("hasura_id");
     userdata["args"]["where"]["$or"][0]["$and"][1]["friend_id"] = id;
     userdata["args"]["where"]["$or"][1]["$and"] = [{}];
     userdata["args"]["where"]["$or"][1]["$and"][0] = {};
     userdata["args"]["where"]["$or"][1]["$and"][1] = {};
     userdata["args"]["where"]["$or"][1]["$and"][0]["friend_id"] = getCookie("hasura_id");
-    userdata["args"]["where"]["$or"][1]["$and"][1]["user_id"] = id;
+    userdata["args"]["where"]["$or"][1]["$and"][1]["id"] = id;
     userdata["args"]["columns"][1]={};
     userdata["args"]["columns"][1]["name"] = "sender";
     userdata["args"]["columns"][1]["columns"] = ["*"];
@@ -3362,9 +3362,9 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
       document.getElementById("mchatlog").innerHTML = "";
       if(response.data.length > 0){
         for(each of response.data.reverse()){
-          if(each.sender.user_id === parseInt(getCookie("hasura_id")) && each.seen === null){
+          if(each.sender.id === parseInt(getCookie("hasura_id")) && each.seen === null){
             chatloglist+="<li class = 'mychat'><strong>"+each.text+"</strong><br>"+chat_ago(each.created)+"<br>Sent</li>";
-          }else if(each.sender.user_id === parseInt(getCookie("hasura_id"))){
+          }else if(each.sender.id === parseInt(getCookie("hasura_id"))){
             chatloglist+="<li class = 'mychat'><strong>"+each.text+"</strong><br>"+chat_ago(each.created)+"<br>Seen "+chat_ago(each.seen)+"</li>";
           }else{
             chatloglist+="<li class = 'youchat'><strong>"+each.text+"</strong><br>"+chat_ago(each.created)+"<br></li>";
@@ -3396,7 +3396,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
       chatData["args"] = {};
       chatData["args"]["table"] = "chats";
       chatData["args"].objects =  [{
-          "user_id":getCookie("hasura_id"),
+          "id":getCookie("hasura_id"),
           "friend_id":id,
           "text":chat,
         }];
@@ -3457,10 +3457,10 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
     proupdata["args"]["table"] = "profile";
     proupdata["args"]["$set"] = {};
     proupdata["args"]["$set"][field] = value;
-    proupdata["args"]["where"] = {"user_id" : getCookie("hasura_id")};
+    proupdata["args"]["where"] = {"id" : getCookie("hasura_id")};
       /*"table" : "profile",
       "$set" : {field : value},
-      "where" : {"user_id" : getCookie("hasura_id")}
+      "where" : {"id" : getCookie("hasura_id")}
     };*/
     //////console.log([proupdata]);
     $http({
@@ -3483,7 +3483,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
     addpoint["args"] = {};
     addpoint["args"]["table"] = "profile";
     addpoint["args"]["where"] = {};
-    addpoint["args"]["where"]["user_id"] = getCookie("hasura_id");
+    addpoint["args"]["where"]["id"] = getCookie("hasura_id");
     addpoint["args"]["$set"] = {};
     addpoint["args"]["$set"]["shine"] = e+s+c+h;
     addpoint["args"]["returning"] = ["shine","level"];
@@ -3575,7 +3575,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
     addpoint["args"] = {};
     addpoint["args"]["table"] = "profile";
     addpoint["args"]["where"] = {};
-    addpoint["args"]["where"]["user_id"] = getCookie("hasura_id");
+    addpoint["args"]["where"]["id"] = getCookie("hasura_id");
     addpoint["args"]["$inc"] = {};
     addpoint["args"]["$inc"][shine] = points;
     addpoint["args"]["$set"] = {};
@@ -3660,7 +3660,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
   shineData["args"]["table"] = "profile";
   shineData["args"]["columns"] = ["*"];
   shineData["args"]["where"] = {};
-  shineData["args"]["where"]["user_id"] = getCookie("hasura_id");
+  shineData["args"]["where"]["id"] = getCookie("hasura_id");
   shineData["args"]["columns"][1] = {};
   shineData["args"]["columns"][2] = {};
   shineData["args"]["columns"][1]["name"] = "posts";
@@ -3767,10 +3767,10 @@ mshineTableApp.controller("mshineTableCtrl",function($scope,$http){
     proupdata["args"]["table"] = "profile";
     proupdata["args"]["$set"] = {};
     proupdata["args"]["$set"][field] = value;
-    proupdata["args"]["where"] = {"user_id" : getCookie("hasura_id")};
+    proupdata["args"]["where"] = {"id" : getCookie("hasura_id")};
       /*"table" : "profile",
       "$set" : {field : value},
-      "where" : {"user_id" : getCookie("hasura_id")}
+      "where" : {"id" : getCookie("hasura_id")}
     };*/
     //////console.log([proupdata]);
     $http({
@@ -3793,7 +3793,7 @@ mshineTableApp.controller("mshineTableCtrl",function($scope,$http){
     addpoint["args"] = {};
     addpoint["args"]["table"] = "profile";
     addpoint["args"]["where"] = {};
-    addpoint["args"]["where"]["user_id"] = getCookie("hasura_id");
+    addpoint["args"]["where"]["id"] = getCookie("hasura_id");
     addpoint["args"]["$set"] = {};
     addpoint["args"]["$set"]["shine"] = e+s+c+h;
     addpoint["args"]["returning"] = ["shine","level"];
@@ -3922,7 +3922,7 @@ mshineTableApp.controller("mshineTableCtrl",function($scope,$http){
     addpoint["args"] = {};
     addpoint["args"]["table"] = "profile";
     addpoint["args"]["where"] = {};
-    addpoint["args"]["where"]["user_id"] = getCookie("hasura_id");
+    addpoint["args"]["where"]["id"] = getCookie("hasura_id");
     addpoint["args"]["$inc"] = {};
     addpoint["args"]["$inc"][shine] = points;
     addpoint["args"]["$set"] = {};
@@ -3994,7 +3994,7 @@ mshineTableApp.controller("mshineTableCtrl",function($scope,$http){
   shineData["args"]["table"] = "profile";
   shineData["args"]["columns"] = ["*"];
   shineData["args"]["where"] = {};
-  shineData["args"]["where"]["user_id"] = getCookie("hasura_id");
+  shineData["args"]["where"]["id"] = getCookie("hasura_id");
   shineData["args"]["columns"][1] = {};
   shineData["args"]["columns"][2] = {};
   shineData["args"]["columns"][1]["name"] = "posts";
@@ -4176,12 +4176,12 @@ searchApp.controller("searchCtrl",function($scope,$http){
     }).then(function mySuccess(response){
       ////console.log(response.data);
       if(response.data.length > 0 && $scope.searchip != "" ){
-        searchlist += "<li class = 'alert alert-info'><button onclick = 'angular.element(this).scope().cancelRequest("+each.profile[0].user_id+");' title = 'Cancel Request' class ='btn btn-info btn-sm' type = 'button'><i class='fas fa-minus-circle'></i></button> "+each.profile[0].fname+"<img src= '"+each.profile[0].proimage+"' class = 'chatdp'/></li>";
+        searchlist += "<li class = 'alert alert-info'><button onclick = 'angular.element(this).scope().cancelRequest("+each.profile[0].id+");' title = 'Cancel Request' class ='btn btn-info btn-sm' type = 'button'><i class='fas fa-minus-circle'></i></button> "+each.profile[0].fname+"<img src= '"+each.profile[0].proimage+"' class = 'chatdp'/></li>";
         document.getElementById("searchresults").innerHTML += searchlist;
         document.getElementById("searchresults").style = "height : auto";
       }
       else if($scope.searchip != "" ){
-        searchlist += "<li class = 'alert alert-info'><button onclick = 'angular.element(this).scope().addFriend("+each.profile[0].user_id+");' title = 'Add friend' class = 'btn btn-info btn-sm' type = 'button'><i class = 'fas fa-user-plus'></i></button> "+each.profile[0].fname+"<img src= '"+each.profile[0].proimage+"' class = 'chatdp'/></li>";
+        searchlist += "<li class = 'alert alert-info'><button onclick = 'angular.element(this).scope().addFriend("+each.profile[0].id+");' title = 'Add friend' class = 'btn btn-info btn-sm' type = 'button'><i class = 'fas fa-user-plus'></i></button> "+each.profile[0].fname+"<img src= '"+each.profile[0].proimage+"' class = 'chatdp'/></li>";
         document.getElementById("searchresults").innerHTML += searchlist;
         document.getElementById("searchresults").style = "height : auto";
       }
@@ -4199,7 +4199,7 @@ searchApp.controller("searchCtrl",function($scope,$http){
     userdata["args"]["columns"][1]["name"] = "myfriends";
     userdata["args"]["columns"][1]["columns"] = ["*"];
     userdata["args"]["where"] = {};
-    userdata["args"]["where"]["user_id"] = getCookie("hasura_id");
+    userdata["args"]["where"]["id"] = getCookie("hasura_id");
     userdata["args"]["where"]["myfriends"] = {};
     userdata["args"]["where"]["myfriends"]["friend_id"] = id;
     $http({
@@ -4246,7 +4246,7 @@ searchApp.controller("searchCtrl",function($scope,$http){
       userdata["args"]["where"]["$and"][0] = {};
       userdata["args"]["where"]["$and"][1] = {};
       userdata["args"]["where"]["$and"][1]["profile"] = {};
-      userdata["args"]["where"]["$and"][1]["profile"]["user_id"] = {};
+      userdata["args"]["where"]["$and"][1]["profile"]["id"] = {};
       userdata["args"]["where"]["$and"][0]["$or"] = [{}];
       userdata["args"]["where"]["$and"][0]["$or"][0] = {};
       userdata["args"]["where"]["$and"][0]["$or"][1] = {};
@@ -4260,7 +4260,7 @@ searchApp.controller("searchCtrl",function($scope,$http){
       userdata["args"]["where"]["$and"][0]["$or"][2]["profile"] = {};
       userdata["args"]["where"]["$and"][0]["$or"][2]["profile"]["fname"] = {};
       userdata["args"]["where"]["$and"][0]["$or"][2]["profile"]["fname"]["$like"] = $scope.searchip+'%';
-      userdata["args"]["where"]["$and"][1]["profile"]["user_id"]["$neq"] = getCookie("hasura_id");
+      userdata["args"]["where"]["$and"][1]["profile"]["id"]["$neq"] = getCookie("hasura_id");
       //////console.log(JSON.stringify(userdata));
       $http({
         method : "POST",
@@ -4318,11 +4318,11 @@ var mchatApp = angular.module("mchatApp",[]);
 mchatApp.controller("mchatCtrl",function($scope,$http){
   $scope.checkChat = function(newchats){
     for(each of newchats){
-      var newchaties = document.getElementsByClassName("newchat_"+each.friend_profile.user_id);
+      var newchaties = document.getElementsByClassName("newchat_"+each.friend_profile.id);
       if(each.friend_profile.sent.length != 0){
         console.log("new refresh");
         if(document.getElementById("chathead").innerHTML === "<strong>"+each.friend_profile.fname+"</strong>" || document.getElementById("mchathead").innerHTML === "<strong>"+each.friend_profile.fname+"</strong>" ){
-          $scope.getChats(each.friend_profile.user_id);
+          $scope.getChats(each.friend_profile.id);
         }
         for(news of newchaties){
           news.innerHTML = each.friend_profile.sent.length;
@@ -4332,7 +4332,7 @@ mchatApp.controller("mchatCtrl",function($scope,$http){
       }else{
         if(document.getElementById("chathead").innerHTML === "<strong>"+each.friend_profile.fname+"</strong>" || document.getElementById("mchathead").innerHTML === "<strong>"+each.friend_profile.fname+"</strong>" ){
           console.log("normal refresh");
-          $scope.getChats(each.friend_profile.user_id);
+          $scope.getChats(each.friend_profile.id);
         }
         for(news of newchaties){
           news.innerHTML = "";
@@ -4376,13 +4376,13 @@ mchatApp.controller("mchatCtrl",function($scope,$http){
     userdata["args"]["where"]["$or"][0]["$and"] = [{}];
     userdata["args"]["where"]["$or"][0]["$and"][0] = {};
     userdata["args"]["where"]["$or"][0]["$and"][1] = {};
-    userdata["args"]["where"]["$or"][0]["$and"][0]["user_id"] = getCookie("hasura_id");
+    userdata["args"]["where"]["$or"][0]["$and"][0]["id"] = getCookie("hasura_id");
     userdata["args"]["where"]["$or"][0]["$and"][1]["friend_id"] = id;
     userdata["args"]["where"]["$or"][1]["$and"] = [{}];
     userdata["args"]["where"]["$or"][1]["$and"][0] = {};
     userdata["args"]["where"]["$or"][1]["$and"][1] = {};
     userdata["args"]["where"]["$or"][1]["$and"][0]["friend_id"] = getCookie("hasura_id");
-    userdata["args"]["where"]["$or"][1]["$and"][1]["user_id"] = id;
+    userdata["args"]["where"]["$or"][1]["$and"][1]["id"] = id;
     userdata["args"]["columns"][1]={};
     userdata["args"]["columns"][1]["name"] = "sender";
     userdata["args"]["columns"][1]["columns"] = ["*"];
@@ -4404,9 +4404,9 @@ mchatApp.controller("mchatCtrl",function($scope,$http){
         document.getElementById("mchatlog").innerHTML = "";
         if(response.data.length > 0){
           for(each of response.data.reverse()){
-            if(each.sender.user_id === parseInt(getCookie("hasura_id")) && each.seen === null){
+            if(each.sender.id === parseInt(getCookie("hasura_id")) && each.seen === null){
               chatloglist+="<li class = 'mychat'><strong>"+each.text+"</strong><br><span class = 'chattime'>"+chat_ago(each.created)+"</span><br>Sent</li>";
-            }else if(each.sender.user_id === parseInt(getCookie("hasura_id"))){
+            }else if(each.sender.id === parseInt(getCookie("hasura_id"))){
               chatloglist+="<li class = 'mychat'><strong>"+each.text+"</strong><br><span class = 'chattime'>"+chat_ago(each.created)+"</span><br>Seen "+chat_ago(each.seen)+"</li>";
             }else{
               chatloglist+="<li class = 'youchat'><strong>"+each.text+"</strong><br><span class = 'chattime'>"+chat_ago(each.created)+"</span><br></li>";
@@ -4439,7 +4439,7 @@ mchatApp.controller("mchatCtrl",function($scope,$http){
       chatData["args"] = {};
       chatData["args"]["table"] = "chats";
       chatData["args"].objects =  [{
-          "user_id":getCookie("hasura_id"),
+          "id":getCookie("hasura_id"),
           "friend_id":id,
           "text":chat,
         }];
@@ -4531,11 +4531,11 @@ mchatListApp.controller("mchatListCtrl",function($scope,$http){
 }
   $scope.checkChat = function(newchats){
     for(each of newchats){
-      var newchaties = document.getElementsByClassName("newchat_"+each.friend_profile.user_id);
+      var newchaties = document.getElementsByClassName("newchat_"+each.friend_profile.id);
       if(each.friend_profile.sent.length != 0){
         console.log("new refresh");
         if(document.getElementById("chathead").innerHTML === "<strong>"+each.friend_profile.fname+"</strong>" || document.getElementById("mchathead").innerHTML === "<strong>"+each.friend_profile.fname+"</strong>" ){
-          $scope.getChats(each.friend_profile.user_id);
+          $scope.getChats(each.friend_profile.id);
         }
         for(news of newchaties){
           news.innerHTML = each.friend_profile.sent.length;
@@ -4546,7 +4546,7 @@ mchatListApp.controller("mchatListCtrl",function($scope,$http){
       }else{
         if(document.getElementById("chathead").innerHTML === "<strong>"+each.friend_profile.fname+"</strong>" || document.getElementById("mchathead").innerHTML === "<strong>"+each.friend_profile.fname+"</strong>" ){
           console.log("normal refresh");
-          $scope.getChats(each.friend_profile.user_id);
+          $scope.getChats(each.friend_profile.id);
         }
         for(news of newchaties){
           news.innerHTML = "";
@@ -4590,13 +4590,13 @@ mchatListApp.controller("mchatListCtrl",function($scope,$http){
     userdata["args"]["where"]["$or"][0]["$and"] = [{}];
     userdata["args"]["where"]["$or"][0]["$and"][0] = {};
     userdata["args"]["where"]["$or"][0]["$and"][1] = {};
-    userdata["args"]["where"]["$or"][0]["$and"][0]["user_id"] = getCookie("hasura_id");
+    userdata["args"]["where"]["$or"][0]["$and"][0]["id"] = getCookie("hasura_id");
     userdata["args"]["where"]["$or"][0]["$and"][1]["friend_id"] = id;
     userdata["args"]["where"]["$or"][1]["$and"] = [{}];
     userdata["args"]["where"]["$or"][1]["$and"][0] = {};
     userdata["args"]["where"]["$or"][1]["$and"][1] = {};
     userdata["args"]["where"]["$or"][1]["$and"][0]["friend_id"] = getCookie("hasura_id");
-    userdata["args"]["where"]["$or"][1]["$and"][1]["user_id"] = id;
+    userdata["args"]["where"]["$or"][1]["$and"][1]["id"] = id;
     userdata["args"]["columns"][1]={};
     userdata["args"]["columns"][1]["name"] = "sender";
     userdata["args"]["columns"][1]["columns"] = ["*"];
@@ -4618,9 +4618,9 @@ mchatListApp.controller("mchatListCtrl",function($scope,$http){
         document.getElementById("mchatlog").innerHTML = "";
         if(response.data.length > 0){
           for(each of response.data.reverse()){
-            if(each.sender.user_id === parseInt(getCookie("hasura_id")) && each.seen === null){
+            if(each.sender.id === parseInt(getCookie("hasura_id")) && each.seen === null){
               chatloglist+="<li class = 'mychat'><strong>"+each.text+"</strong><br><span class = 'chattime'>"+chat_ago(each.created)+"</span><br>Sent</li>";
-            }else if(each.sender.user_id === parseInt(getCookie("hasura_id"))){
+            }else if(each.sender.id === parseInt(getCookie("hasura_id"))){
               chatloglist+="<li class = 'mychat'><strong>"+each.text+"</strong><br><span class = 'chattime'>"+chat_ago(each.created)+"</span><br>Seen "+chat_ago(each.seen)+"</li>";
             }else{
               chatloglist+="<li class = 'youchat'><strong>"+each.text+"</strong><br><span class = 'chattime'>"+chat_ago(each.created)+"</span><br></li>";
@@ -4685,23 +4685,23 @@ mchatListApp.controller("mchatListCtrl",function($scope,$http){
       users = JSON.parse(users);
       //console.log(users);
       var limit = users.length;
-      //console.log("Adding "+each.friend_profile.user_id+"\n");
-        ////console.log("Info of "+each.friend_profile.user_id+"\n");
+      //console.log("Adding "+each.friend_profile.id+"\n");
+        ////console.log("Info of "+each.friend_profile.id+"\n");
         ////console.log(response);
         if(each.friend_profile.online.length > 0){
-          ////console.log(each.friend_profile.user_id+" is offline");
+          ////console.log(each.friend_profile.id+" is offline");
             var cr = each.friend_profile.online[0].created
             ////console.log(cr);
             if(time_ago(cr) === 1){
-              newlist = "<li class = 'alert alert-info users' title = '"+each.friend_profile.fname+"'> <i class = 'green fas fa-circle'></i> <img src = '"+each.friend_profile.proimage+"' class = 'chatdp'/> <span class = 'badge level'>"+each.friend_profile.level+"</span><span class = 'badge newchat newchat_"+each.friend_profile.user_id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+" <button onclick ='angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.user_id+")' type = 'button' class = 'chatbtn btn btn-success' title = 'Message "+each.friend_profile.fname+"'><i class = 'fa fa-comment'></i></button></strong></li>" + newlist;
+              newlist = "<li class = 'alert alert-info users' title = '"+each.friend_profile.fname+"'> <i class = 'green fas fa-circle'></i> <img src = '"+each.friend_profile.proimage+"' class = 'chatdp'/> <span class = 'badge level'>"+each.friend_profile.level+"</span><span class = 'badge newchat newchat_"+each.friend_profile.id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+" <button onclick ='angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.id+")' type = 'button' class = 'chatbtn btn btn-success' title = 'Message "+each.friend_profile.fname+"'><i class = 'fa fa-comment'></i></button></strong></li>" + newlist;
               $scope.newcount ++;
             }
             else{
-            newlist += "<li class = 'alert alert-info users' title = '"+each.friend_profile.fname+" online at "+chat_ago(cr)+"'> <i class = 'red far fa-circle'></i> <img src = '"+each.friend_profile.proimage+"' class = 'chatdp'/><span class = 'badge level'>"+each.friend_profile.level+"</span> <span class = 'badge newchat newchat_"+each.friend_profile.user_id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+" <button onclick = 'angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.user_id+")' type = 'button' class = 'chatbtn btn btn-info' title = 'Message "+each.friend_profile.fname+"'><i class = 'fa fa-comment'></i></button></strong></li>";
+            newlist += "<li class = 'alert alert-info users' title = '"+each.friend_profile.fname+" online at "+chat_ago(cr)+"'> <i class = 'red far fa-circle'></i> <img src = '"+each.friend_profile.proimage+"' class = 'chatdp'/><span class = 'badge level'>"+each.friend_profile.level+"</span> <span class = 'badge newchat newchat_"+each.friend_profile.id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+" <button onclick = 'angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.id+")' type = 'button' class = 'chatbtn btn btn-info' title = 'Message "+each.friend_profile.fname+"'><i class = 'fa fa-comment'></i></button></strong></li>";
             }
         }
         else{
-        newlist += "<li class = 'alert alert-info users' title = '"+each.friend_profile.fname+"'> <i class = 'red far fa-circle'></i> <img src = '"+each.friend_profile.proimage+"' class = 'chatdp'/><span class = 'badge level'>"+each.friend_profile.level+"</span> <span class = 'badge newchat newchat_"+each.friend_profile.user_id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+"  <button onclick = 'angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.user_id+")' type = 'button' class = 'chatbtn btn btn-info' title = 'Message "+each.friend_profile.fname+"'><i class = 'fa fa-comment'></i></button></strong></li>";
+        newlist += "<li class = 'alert alert-info users' title = '"+each.friend_profile.fname+"'> <i class = 'red far fa-circle'></i> <img src = '"+each.friend_profile.proimage+"' class = 'chatdp'/><span class = 'badge level'>"+each.friend_profile.level+"</span> <span class = 'badge newchat newchat_"+each.friend_profile.id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+"  <button onclick = 'angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.id+")' type = 'button' class = 'chatbtn btn btn-info' title = 'Message "+each.friend_profile.fname+"'><i class = 'fa fa-comment'></i></button></strong></li>";
         }
       //console.log(JSON.stringify(users));
         if(iterator+1 < limit){
@@ -4734,7 +4734,7 @@ mchatListApp.controller("mchatListCtrl",function($scope,$http){
     chatdata["args"]["table"] = "profile";
     chatdata["args"]["columns"]=["*"];
     chatdata["args"]["where"] = {};
-    chatdata["args"]["where"]["user_id"] = getCookie("hasura_id");
+    chatdata["args"]["where"]["id"] = getCookie("hasura_id");
     chatdata["args"]["columns"][1]={};
     chatdata["args"]["columns"][1]["name"] = "myfriends";
     chatdata["args"]["columns"][1]["columns"] = ["*"];
@@ -4745,7 +4745,7 @@ mchatListApp.controller("mchatListCtrl",function($scope,$http){
     chatdata["args"]["columns"][1]["columns"][1] = {};
     chatdata["args"]["columns"][1]["columns"][1]["name"] = "friend_profile";
     chatdata["args"]["columns"][1]["columns"][1]["columns"] = ["*"];
-    chatdata["args"]["columns"][1]["columns"][1]["columns"]["order_by"] = "-user_id";
+    chatdata["args"]["columns"][1]["columns"][1]["columns"]["order_by"] = "-id";
     chatdata["args"]["columns"][1]["columns"][1]["columns"][1] = {}
     chatdata["args"]["columns"][1]["columns"][1]["columns"][1]["name"] = "online";
     chatdata["args"]["columns"][1]["columns"][1]["columns"][1]["columns"] = ["*"];
@@ -4796,7 +4796,7 @@ mchatListApp.controller("mchatListCtrl",function($scope,$http){
     usedata["args"] = {};
     usedata["args"]["table"] = "status";
     usedata["args"].objects =  [{
-        "user_id":parseInt(getCookie("hasura_id")),
+        "id":parseInt(getCookie("hasura_id")),
         "current":"online",
       }];
       usedata["args"]["returning"] = ["created"];
@@ -4828,7 +4828,7 @@ mchatListApp.controller("mchatListCtrl",function($scope,$http){
     statdata["type"] = "delete";
     statdata["args"] = {};
     statdata["args"]["table"] = "status";
-    statdata["args"]["where"] = {"user_id" : getCookie("hasura_id")};
+    statdata["args"]["where"] = {"id" : getCookie("hasura_id")};
       $http({
         method : "POST",
         url : "https://data.unluckily34.hasura-app.io/v1/query",
@@ -4937,7 +4937,7 @@ $scope.getRequests = function(){
     acceptdata["args"] = {};
     acceptdata["args"]["table"] = "friends";
     acceptdata["args"].objects =  [{
-        "user_id":id1,
+        "id":id1,
         "friend_id":id2,
       }];
       $http({
