@@ -1742,6 +1742,7 @@ $scope.updateDP = function(){
       x.send();
 }
 $scope.getUserInfo = function(){
+  console.log(getCookie("auth_token"));
   $http({
     method : "GET",
     url : "https://auth.unluckily34.hasura-app.io/user/info",
@@ -1757,7 +1758,7 @@ $scope.getUserInfo = function(){
       window.location="/?mode=setup";
     }, 3000);
   },function myError(response){
-    sunNotify("response");
+    sunNotify("<strong>response</strong>","danger");
     setTimeout(function () {
       $scope.logout();
     }, 3000);
