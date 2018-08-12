@@ -410,6 +410,7 @@ border: 1px solid rgba0,0,0,0.3);
   margin-left: 1%;
 }
 .posttext{
+  word-wrap: normal;
   font-size: 12px;
   margin-left: 5%;
 }
