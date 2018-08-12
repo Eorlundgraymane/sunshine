@@ -2077,7 +2077,7 @@ muserProfileApp.controller("muserProfileCtrl",function($scope,$http){
         document.getElementById('labelmnewdp').innerHTML = "<i class = 'fa fa-spinner fa-spin'></i>";
         var dpurl = JSON.parse(getCookie("userdata"))[0].profile[0].proimg;
         $http({
-          method : "POST",
+          method : "DELETE",
           url : dpurl,
           withCredentials : true,
           headers:{
@@ -2472,7 +2472,7 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
         document.getElementById('labelnewdp').innerHTML = "<i class = 'fa fa-spinner fa-spin'></i>";
         var dpurl = JSON.parse(getCookie("userdata"))[0].profile[0].proimg;
         $http({
-          method : "POST",
+          method : "DELETE",
           url : dpurl,
           withCredentials : true,
           headers:{
