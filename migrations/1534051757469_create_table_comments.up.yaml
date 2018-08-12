@@ -1,0 +1,8 @@
+- args:
+    sql: CREATE TABLE "comments"("comment_id" serial NOT NULL, "post_id" integer NOT
+      NULL, "id" integer NOT NULL, "comment" text NOT NULL, "created" date NOT NULL
+      DEFAULT now(), PRIMARY KEY ("comment_id") )
+  type: run_sql
+- args:
+    name: comments
+  type: add_existing_table_or_view

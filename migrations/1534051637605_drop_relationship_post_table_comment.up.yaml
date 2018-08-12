@@ -1,0 +1,4 @@
+- args:
+    relationship: post
+    table: comment
+  type: drop_relationship

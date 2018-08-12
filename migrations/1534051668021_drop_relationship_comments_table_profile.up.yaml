@@ -1,0 +1,4 @@
+- args:
+    relationship: comments
+    table: profile
+  type: drop_relationship
