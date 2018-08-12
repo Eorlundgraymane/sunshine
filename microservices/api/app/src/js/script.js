@@ -516,7 +516,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
     deleteData["args"] = {};
     deleteData["args"]["table"] = "likes";
     deleteData["args"]["where"] = {};
-    deleteData["args"]["where"]["post_id"] = id;
+    deleteData["args"]["where"]["id"] = id;
     $http({
       method : "POST",
       url : "https://data.unluckily34.hasura-app.io/v1/query",
@@ -551,7 +551,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
     usedata["args"] = {};
     usedata["args"]["table"] = "likes";
     usedata["args"].objects =  [{
-        "post_id": id,
+        "id": id,
         "liker_id":getCookie("hasura_id"),
         "shine":shine
       }];
@@ -600,7 +600,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
     usedata["args"] = {};
     usedata["args"]["table"] = "likes";
     usedata["args"]["where"] = {};
-    usedata["args"]["where"]["post_id"] = id;
+    usedata["args"]["where"]["id"] = id;
     usedata["args"]["where"]["liker_id"] = getCookie("hasura_id");
     $http({
       method : "POST",
