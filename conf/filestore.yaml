@@ -18,7 +18,7 @@
 #
 # Default permissions are admin-only
 
-hookUrl: http://filestore.unluckily34/v1/hooks/public-read-user-write
+hookUrl: http://filestore.unluckily34.hasura-app.io/v1/hooks/public-read-user-write
 
 # volume
 # -------
