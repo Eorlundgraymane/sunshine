@@ -2594,7 +2594,7 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
       var template = "<strong><h3><span class = 'badge level'>Level "+response.data[0].profile[0].level+"</span></h3><h4><span class = 'badge shine'>Shine "+response.data[0].profile[0].shine+"</span></h4><p>"+response.data[0].profile[0].username+"<br></p></strong>";
       document.getElementById("userinfo").innerHTML=template;
       document.getElementById("muserinfo").innerHTML=template;
-      document.getElementById("user_commands").title = response.data[0].username;
+      document.getElementById("user_commands").title = response.data[0].profile[0].username;
     },function myError(response){
       proggy(0);
       if(response.data === null){
