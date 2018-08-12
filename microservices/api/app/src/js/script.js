@@ -2910,7 +2910,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
     userdata["args"]["columns"][2]={};
     userdata["args"]["columns"][2]["name"] = "recepient";
     userdata["args"]["columns"][2]["columns"] = ["*"];
-    userdata["args"]["order_by"] = "-id";
+    userdata["args"]["order_by"] = "-created";
     userdata["args"]["limit"] = "50";
     $http({
       method : "POST",
@@ -3346,7 +3346,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
     userdata["args"]["columns"][2]={};
     userdata["args"]["columns"][2]["name"] = "recepient";
     userdata["args"]["columns"][2]["columns"] = ["*"];
-    userdata["args"]["order_by"] = "-id";
+    userdata["args"]["order_by"] = "-created";
     userdata["args"]["limit"] = "50";
     $http({
       method : "POST",
@@ -4389,7 +4389,7 @@ mchatApp.controller("mchatCtrl",function($scope,$http){
     userdata["args"]["columns"][2]={};
     userdata["args"]["columns"][2]["name"] = "recepient";
     userdata["args"]["columns"][2]["columns"] = ["*"];
-    userdata["args"]["order_by"] = "-id";
+    userdata["args"]["order_by"] = "-created";
     userdata["args"]["limit"] = 50;
     $http({
       method : "POST",
@@ -4603,7 +4603,7 @@ mchatListApp.controller("mchatListCtrl",function($scope,$http){
     userdata["args"]["columns"][2]={};
     userdata["args"]["columns"][2]["name"] = "recepient";
     userdata["args"]["columns"][2]["columns"] = ["*"];
-    userdata["args"]["order_by"] = "-id";
+    userdata["args"]["order_by"] = "-created";
     userdata["args"]["limit"] = 50;
     $http({
       method : "POST",
