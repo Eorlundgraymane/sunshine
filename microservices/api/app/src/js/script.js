@@ -488,7 +488,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
         data: file,
         withCredentials : true,
         headers:{
-          'Content-type' : 'image/jpg','Authorization' : 'Bearer '+getCookie("auth_token")
+          'Content-type' : 'image/jpg','X-Hasura-Role' : 'user', 'X-Hasura-Id' : getCookie("hasura_id"),'Authorization' : 'Bearer '+getCookie("auth_token")
         }
       }).then(function mySuccess(response){
         document.getElementsByClassName("ppanel")[0].classList.add("postopen");
@@ -2054,7 +2054,7 @@ muserProfileApp.controller("muserProfileCtrl",function($scope,$http){
       data: file,
       withCredentials : true,
       headers:{
-        'Content-type' : 'image/jpg','Authorization' : 'Bearer '+getCookie("auth_token")
+        'Content-type' : 'image/jpg','X-Hasura-Role' : 'user', 'X-Hasura-Id' : getCookie("hasura_id"),'Authorization' : 'Bearer '+getCookie("auth_token")
       }
     }).then(function mySuccess(response){
       proggy(60);
