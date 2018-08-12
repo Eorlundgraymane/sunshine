@@ -2929,7 +2929,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
             if(each.sender.id === parseInt(getCookie("hasura_id")) && each.seen === null){
               chatloglist+="<li class = 'mychat'><strong>"+each.text+"</strong><br>"+chat_ago(each.created)+"<br>Sent</li>";
             }else if(each.sender.id === parseInt(getCookie("hasura_id"))){
-              chatloglist+="<li class = 'mychat'><strong>"+each.text+"</strong><br>"+chat_ago(each.created)+"<br>Seen "+chat_ago(each.seen)+"</li>";
+              chatloglist+="<li class = 'mychat'><strong>"+each.text+"</strong><br>"+chat_ago(each.created)+"<br>Seen </li>";
             }else{
               chatloglist+="<li class = 'youchat'><strong>"+each.text+"</strong><br>"+chat_ago(each.created)+"<br></li>";
               if(each.seen === null){
@@ -3365,7 +3365,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
           if(each.sender.id === parseInt(getCookie("hasura_id")) && each.seen === null){
             chatloglist+="<li class = 'mychat'><strong>"+each.text+"</strong><br>"+chat_ago(each.created)+"<br>Sent</li>";
           }else if(each.sender.id === parseInt(getCookie("hasura_id"))){
-            chatloglist+="<li class = 'mychat'><strong>"+each.text+"</strong><br>"+chat_ago(each.created)+"<br>Seen "+chat_ago(each.seen)+"</li>";
+            chatloglist+="<li class = 'mychat'><strong>"+each.text+"</strong><br>"+chat_ago(each.created)+"<br>Seen </li>";
           }else{
             chatloglist+="<li class = 'youchat'><strong>"+each.text+"</strong><br>"+chat_ago(each.created)+"<br></li>";
             if(each.seen === null){
@@ -4407,7 +4407,7 @@ mchatApp.controller("mchatCtrl",function($scope,$http){
             if(each.sender.id === parseInt(getCookie("hasura_id")) && each.seen === null){
               chatloglist+="<li class = 'mychat'><strong>"+each.text+"</strong><br><span class = 'chattime'>"+chat_ago(each.created)+"</span><br>Sent</li>";
             }else if(each.sender.id === parseInt(getCookie("hasura_id"))){
-              chatloglist+="<li class = 'mychat'><strong>"+each.text+"</strong><br><span class = 'chattime'>"+chat_ago(each.created)+"</span><br>Seen "+chat_ago(each.seen)+"</li>";
+              chatloglist+="<li class = 'mychat'><strong>"+each.text+"</strong><br><span class = 'chattime'>"+chat_ago(each.created)+"</span><br>Seen </li>";
             }else{
               chatloglist+="<li class = 'youchat'><strong>"+each.text+"</strong><br><span class = 'chattime'>"+chat_ago(each.created)+"</span><br></li>";
               if(each.seen === null){
@@ -4621,7 +4621,7 @@ mchatListApp.controller("mchatListCtrl",function($scope,$http){
             if(each.sender.id === parseInt(getCookie("hasura_id")) && each.seen === null){
               chatloglist+="<li class = 'mychat'><strong>"+each.text+"</strong><br><span class = 'chattime'>"+chat_ago(each.created)+"</span><br>Sent</li>";
             }else if(each.sender.id === parseInt(getCookie("hasura_id"))){
-              chatloglist+="<li class = 'mychat'><strong>"+each.text+"</strong><br><span class = 'chattime'>"+chat_ago(each.created)+"</span><br>Seen "+chat_ago(each.seen)+"</li>";
+              chatloglist+="<li class = 'mychat'><strong>"+each.text+"</strong><br><span class = 'chattime'>"+chat_ago(each.created)+"</span><br>Seen </li>";
             }else{
               chatloglist+="<li class = 'youchat'><strong>"+each.text+"</strong><br><span class = 'chattime'>"+chat_ago(each.created)+"</span><br></li>";
               if(each.seen === null){
