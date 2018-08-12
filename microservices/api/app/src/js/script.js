@@ -2495,6 +2495,9 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
           else{
             proggy(0);
               sunNotify("<strong>Some other problem occured</strong>","alert-danger");
+              setTimeout(function () {
+                $scope.uploadDP(file);
+              }, 3000);
           }
         })
       }
