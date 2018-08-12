@@ -480,7 +480,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
     var file = document.getElementById("newpostimg").files[0];
     var newimg  = $scope.newpostimg;
     var date = new Date();
-    var dpurl = "https://filestore.unluckily34.hasura-app.io/v1/file/"+JSON.parse(getCookie("userdata"))[0].id+"-"+date.getTime();
+    var dpurl = "http://filestore.unluckily34.hasura-app.io/v1/hooks/"+JSON.parse(getCookie("userdata"))[0].hasura_id+"-"+date.getTime();
       ////console.log(dpurl);
       $http({
         method : "POST",
@@ -2046,7 +2046,7 @@ muserProfileApp.controller("muserProfileCtrl",function($scope,$http){
     proggy(30+(i/1000));
   }
   var date = new Date();
-  var dpurl = "https://filestore.unluckily34.hasura-app.io/v1/file/"+JSON.parse(getCookie("userdata"))[0].hasura_id+"-"+date.getTime();
+  var dpurl = "http://filestore.unluckily34.hasura-app.io/v1/hooks/"+JSON.parse(getCookie("userdata"))[0].hasura_id+"-"+date.getTime();
     ////console.log(dpurl);
     $http({
       method : "POST",
@@ -2063,7 +2063,7 @@ muserProfileApp.controller("muserProfileCtrl",function($scope,$http){
     },function myError(response){
       proggy(0);
       ////console.log(response);
-      sunNotify("Couldn't Update your profile picture</strong>","alert-danger");
+      sunNotify("<Strong>Couldn't Update your profile picture"+response.data.message+"</strong>","alert-danger");
     });
   //  $scope.profileUpdate("proimage",response);
   }
@@ -2077,7 +2077,7 @@ muserProfileApp.controller("muserProfileCtrl",function($scope,$http){
         document.getElementById('labelmnewdp').innerHTML = "<i class = 'fa fa-spinner fa-spin'></i>";
         var dpurl = JSON.parse(getCookie("userdata"))[0].profile[0].proimg;
         $http({
-          method : "DELETE",
+          method : "POST",
           url : dpurl,
           withCredentials : true,
           headers:{
@@ -2441,7 +2441,7 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
   $scope.uploadDP = function(file){
     sunNotify("<i class = 'fa fa-spinner fa-spin'></i> <strong>Uploading...</strong>","alert-warning");
     var date = new Date();
-    var dpurl = "https://filestore.unluckily34.hasura-app.io/v1/file/"+JSON.parse(getCookie("userdata"))[0].hasura_id+"-"+date.getTime();
+    var dpurl = "http://filestore.unluckily34.hasura-app.io/v1/hooks/"+JSON.parse(getCookie("userdata"))[0].hasura_id+"-"+date.getTime();
       ////console.log(dpurl);
       $http({
         method : "POST",
@@ -2457,8 +2457,8 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
         $scope.profileUpdate("proimg",dpurl);
       },function myError(response){
         proggy(0);
-        ////console.log(response);
-        sunNotify("Couldn't Update your profile picture</strong>","alert-danger");
+        console.log(response);
+        sunNotify("<Strong>Couldn't Update your profile picture"+JSON.stringify(response)+"</strong>","alert-danger");
       })
   //  $scope.profileUpdate("proimage",response);
   }
@@ -2472,7 +2472,7 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
         document.getElementById('labelnewdp').innerHTML = "<i class = 'fa fa-spinner fa-spin'></i>";
         var dpurl = JSON.parse(getCookie("userdata"))[0].profile[0].proimg;
         $http({
-          method : "DELETE",
+          method : "POST",
           url : dpurl,
           withCredentials : true,
           headers:{
