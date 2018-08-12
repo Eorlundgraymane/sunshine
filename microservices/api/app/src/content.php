@@ -1,7 +1,7 @@
 
 <div class = 'fullscreen' id = 'fullscreen'>
 </div>
-<div id = "newspane" class = "container" >
+<div id = "newspane" class = "container_fluid" >
   <div id = "upperrow" class = "row">
       <div id = "userProfileDiv" ng-app = "userProfileApp" ng-controller = "userProfileCtrl" class= "profileDiv col-xs-0 col-md-3 col-lg-3 col-sm-3">
         <div class = 'img-wrapper'>
