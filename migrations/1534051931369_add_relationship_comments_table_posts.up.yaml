@@ -1,0 +1,8 @@
+- args:
+    name: comments
+    table: posts
+    using:
+      foreign_key_constraint_on:
+        column: post_id
+        table: comments
+  type: create_array_relationship
