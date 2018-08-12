@@ -697,7 +697,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
         }else{
           del = "";
         }
-        document.getElementById("cmtul"+id).innerHTML+= "<li class = 'comment' id = "+each.id+"><img src = '"+each.commentor.proimg+"' title = '"+each.commentor.fname+"' class = 'cmtdp'> "+each.comment+" "+del+"<div class = 'cmtts'>"+chat_ago(each.created)+"</div> </li><br>";
+        document.getElementById("cmtul"+id).innerHTML+= "<li class = 'comment' id = "+each.id+"><img src = '"+each.commentor.proimg+"' title = '"+each.commentor.username+"' class = 'cmtdp'> "+each.comment+" "+del+"<div class = 'cmtts'>"+chat_ago(each.created)+"</div> </li><br>";
       }
       document.getElementById('cmtbtn'+id).innerHTML = "<strong>"+ccount+" Comments</strong>";
     },function myError(response){
@@ -771,7 +771,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
           }else{
             del = "";
           }
-          document.getElementById("cmtul"+id).innerHTML+= "<li class = 'comment' id = "+each.id+"><img src = '"+each.commentor.proimg+"' title = '"+each.commentor.fname+"' class = 'cmtdp'> "+each.comment+" "+del+"<div class = 'cmtts'>"+chat_ago(each.created)+"</div></li><br>";
+          document.getElementById("cmtul"+id).innerHTML+= "<li class = 'comment' id = "+each.id+"><img src = '"+each.commentor.proimg+"' title = '"+each.commentor.username+"' class = 'cmtdp'> "+each.comment+" "+del+"<div class = 'cmtts'>"+chat_ago(each.created)+"</div></li><br>";
         }
         document.getElementById('cmtbtn'+id).innerHTML = "<strong>"+ccount+" Comments</strong>";
       }else{
@@ -850,7 +850,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
           }
           if(likerscount <=5){
             likerscount++;
-            liked += "<div class = 'shinecont'><img src = '"+each1.liker.proimg+"' class = 'likedp shineim' title = '"+each1.liker.fname+"'><div class = 'shinein'><span class = 'label label-"+shinecol+" likelabel'><i class = 'fas fa-"+shinebut+"'></i></span></div></div>";
+            liked += "<div class = 'shinecont'><img src = '"+each1.liker.proimg+"' class = 'likedp shineim' title = '"+each1.liker.username+"'><div class = 'shinein'><span class = 'label label-"+shinecol+" likelabel'><i class = 'fas fa-"+shinebut+"'></i></span></div></div>";
             likersmore = 0;
           }else{
             likersmore = 1;
@@ -902,7 +902,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
         }else{
           deletetext = "";
         }
-        newlist += "<li id = 'postid"+each.post_id+"' class = 'post'>"+deletetext+"<img src = '"+each.author.proimg+"' class = 'authdp'><span class = 'badge label label-warning level'>"+each.author.level+"</span><p class = 'author'><strong>"+each.author.fname+" "+each.author.lname+"</strong></p><p class = 'postago'><strong>"+chat_ago(each.created)+"</strong></p><h6 class = 'postimgdiv'>"+postimg+"</h6><p2 class = 'posttext'>"+each.posttext+"</p2><br><br>"+liketext+"<div id = 'liked"+each.post_id+"' class = 'likedlist'>"+liked+" </div><br><div class = 'cmtsctn' id = 'cmtlist"+each.post_id+"'><button id = 'cmtbtn"+each.post_id+"'type = 'button' onclick = 'angular.element(this).scope().getComments("+id+");' class = 'btn btn-default cmtbtn'><strong>"+each.comments.length+" Comments</strong></button></div></li>";
+        newlist += "<li id = 'postid"+each.post_id+"' class = 'post'>"+deletetext+"<img src = '"+each.author.proimg+"' class = 'authdp'><span class = 'badge label label-warning level'>"+each.author.level+"</span><p class = 'author'><strong>"+each.author.username+" "+each.author.lname+"</strong></p><p class = 'postago'><strong>"+chat_ago(each.created)+"</strong></p><h6 class = 'postimgdiv'>"+postimg+"</h6><p2 class = 'posttext'>"+each.posttext+"</p2><br><br>"+liketext+"<div id = 'liked"+each.post_id+"' class = 'likedlist'>"+liked+" </div><br><div class = 'cmtsctn' id = 'cmtlist"+each.post_id+"'><button id = 'cmtbtn"+each.post_id+"'type = 'button' onclick = 'angular.element(this).scope().getComments("+id+");' class = 'btn btn-default cmtbtn'><strong>"+each.comments.length+" Comments</strong></button></div></li>";
       }
       $('#postid'+id).replaceWith(newlist);
     },function myError(response)    {
@@ -976,7 +976,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
           }
           if(likerscount <=5){
             likerscount++;
-            liked += "<div class = 'shinecont'><img src = '"+each1.liker.proimg+"' class = 'likedp shineim' title = '"+each1.liker.fname+"'><div class = 'shinein'><span class = 'label label-"+shinecol+" likelabel'><i class = 'fas fa-"+shinebut+"'></i></span></div></div>";
+            liked += "<div class = 'shinecont'><img src = '"+each1.liker.proimg+"' class = 'likedp shineim' title = '"+each1.liker.username+"'><div class = 'shinein'><span class = 'label label-"+shinecol+" likelabel'><i class = 'fas fa-"+shinebut+"'></i></span></div></div>";
             likersmore = 0;
           }else{
             likersmore = 1;
@@ -1028,7 +1028,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
         }else{
           deletetext = "";
         }
-        newlist += "<li id = 'postid"+each.post_id+"' class = 'post'>"+deletetext+"<img src = '"+each.author.proimg+"' class = 'authdp'><span class = 'badge label label-warning level'>"+each.author.level+"</span><p class = 'author'><strong>"+each.author.fname+" "+each.author.lname+"</strong></p><p class = 'postago'><strong>"+chat_ago(each.created)+"</strong></p><h6 class = 'postimgdiv'>"+postimg+"</h6><p2 class = 'posttext'>"+each.posttext+"</p2><br><br>"+liketext+"<div id = 'liked"+each.post_id+"' class = 'likedlist'>"+liked+" </div><br><div class = 'cmtsctn' id = 'cmtlist"+each.post_id+"'><button id = 'cmtbtn"+each.post_id+"' type = 'button' onclick = 'angular.element(this).scope().getComments("+each.post_id+");' class = 'btn btn-default cmtbtn'><strong>"+each.comments.length+" Comments</strong></button></div></li>";
+        newlist += "<li id = 'postid"+each.post_id+"' class = 'post'>"+deletetext+"<img src = '"+each.author.proimg+"' class = 'authdp'><span class = 'badge label label-warning level'>"+each.author.level+"</span><p class = 'author'><strong>"+each.author.username+" "+each.author.lname+"</strong></p><p class = 'postago'><strong>"+chat_ago(each.created)+"</strong></p><h6 class = 'postimgdiv'>"+postimg+"</h6><p2 class = 'posttext'>"+each.posttext+"</p2><br><br>"+liketext+"<div id = 'liked"+each.post_id+"' class = 'likedlist'>"+liked+" </div><br><div class = 'cmtsctn' id = 'cmtlist"+each.post_id+"'><button id = 'cmtbtn"+each.post_id+"' type = 'button' onclick = 'angular.element(this).scope().getComments("+each.post_id+");' class = 'btn btn-default cmtbtn'><strong>"+each.comments.length+" Comments</strong></button></div></li>";
       }
       if(newlist !=  prevfeed){
         news.innerHTML = newlist;
@@ -2280,12 +2280,12 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
   $scope.checkRequests = function(id,each,searchlist){
       if(each.profile.length > 0){
         if(each.profile[0].requests.length === 1){
-          searchlist += "<li class = 'follows alert alert-info'><button onclick = 'angular.element(this).scope().cancelRequest("+each.profile[0].id+");' title = 'Cancel Request' class ='btn btn-info btn-sm' type = 'button'><i class='fas fa-minus-circle'></i></button> <img src= '"+each.profile[0].proimg+"' alt = 'No Image' class = 'chatdp'/> <strong>"+each.profile[0].fname+"</strong></li>";
+          searchlist += "<li class = 'follows alert alert-info'><button onclick = 'angular.element(this).scope().cancelRequest("+each.profile[0].id+");' title = 'Cancel Request' class ='btn btn-info btn-sm' type = 'button'><i class='fas fa-minus-circle'></i></button> <img src= '"+each.profile[0].proimg+"' alt = 'No Image' class = 'chatdp'/> <strong>"+each.profile[0].username+"</strong></li>";
           document.getElementById("followlist").innerHTML += searchlist;
         }
         else if(each.profile[0].requests.length === 0){
           $scope.sugcount++;
-          searchlist += "<li class = 'follows alert alert-info'><button onclick = 'angular.element(this).scope().addFriend("+each.profile[0].id+");' title = 'Add friend' class = 'btn btn-info btn-sm' type = 'button'><i class = 'fas fa-user-plus'></i></button> <img src= '"+each.profile[0].proimg+"' alt = 'No Image' class = 'chatdp'/><strong>"+each.profile[0].fname+"</strong> </li>";
+          searchlist += "<li class = 'follows alert alert-info'><button onclick = 'angular.element(this).scope().addFriend("+each.profile[0].id+");' title = 'Add friend' class = 'btn btn-info btn-sm' type = 'button'><i class = 'fas fa-user-plus'></i></button> <img src= '"+each.profile[0].proimg+"' alt = 'No Image' class = 'chatdp'/><strong>"+each.profile[0].username+"</strong> </li>";
           document.getElementById("followlist").innerHTML += searchlist;
         }
       }
