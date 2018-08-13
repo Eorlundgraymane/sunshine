@@ -1,0 +1,12 @@
+- args:
+    role: user
+    table: status
+  type: drop_delete_permission
+- args:
+    permission:
+      filter:
+        id:
+          $eq: X-HASURA-USER-ID
+    role: user
+    table: status
+  type: create_delete_permission
