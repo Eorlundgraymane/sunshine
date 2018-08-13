@@ -1,0 +1,14 @@
+- args:
+    role: user
+    table: chats
+  type: drop_update_permission
+- args:
+    permission:
+      columns:
+      - created
+      - seen
+      filter:
+        $or: []
+    role: user
+    table: chats
+  type: create_update_permission
