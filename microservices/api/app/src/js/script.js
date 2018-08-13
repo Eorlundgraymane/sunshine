@@ -2439,10 +2439,12 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
     })
   };
   $scope.uploadDP = function(file){
+    console.log("entered method");
     sunNotify("<i class = 'fa fa-spinner fa-spin'></i> <strong>Uploading...</strong>","alert-warning");
     var date = new Date();
     var dpurl = "https://filestore.unluckily34.hasura-app.io/v1/file/"+JSON.parse(getCookie("userdata"))[0].hasura_id+"-"+date.getTime();
       ////console.log(dpurl);
+      console.log("waiting for response");
       $http({
         method : "POST",
         url : dpurl,
@@ -2452,12 +2454,15 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
           'Content-type' : 'image/jpg','Authorization' : 'Bearer '+getCookie("auth_token")
         }
       }).then(function mySuccess(response){
+        console.log("success");
+        console.log(response);
         proggy(60);
         ////console.log(response);
         $scope.profileUpdate("proimg",dpurl);
       },function myError(response){
+        console.log("fail");
         proggy(0);
-        czonsole.log(response);
+        console.log(response);
         sunNotify("<Strong>Couldn't Update your profile picture"+JSON.stringify(response)+"</strong>","alert-danger");
       })
   //  $scope.profileUpdate("proimage",response);
@@ -2495,6 +2500,7 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
           else{
             proggy(0);
               sunNotify("<strong>Some other problem occured</strong>","alert-danger");
+              console.log(response.data);
               setTimeout(function () {
                 $scope.uploadDP(file);
               }, 3000);
