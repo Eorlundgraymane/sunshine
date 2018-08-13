@@ -1,0 +1,22 @@
+- args:
+    role: user
+    table: chats
+  type: drop_update_permission
+- args:
+    permission:
+      columns:
+      - created
+      - seen
+      - text
+      filter:
+        $and:
+        - sender:
+            id:
+              $eq: X-HASURA-USER-ID
+        - recepient:
+            myfriends:
+              friend_id:
+                $eq: X-HASURA-USER-ID
+    role: user
+    table: chats
+  type: create_update_permission

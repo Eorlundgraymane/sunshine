@@ -1,0 +1,14 @@
+- args:
+    role: user
+    table: comments
+  type: drop_insert_permission
+- args:
+    permission:
+      allow_upsert: true
+      check:
+        commentor:
+          id:
+            $eq: X-HASURA-USER-ID
+    role: user
+    table: comments
+  type: create_insert_permission

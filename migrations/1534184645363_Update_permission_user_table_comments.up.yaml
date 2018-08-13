@@ -1,0 +1,13 @@
+- args:
+    role: user
+    table: comments
+  type: drop_delete_permission
+- args:
+    permission:
+      filter:
+        commentor:
+          id:
+            $eq: X-HASURA-USER-ID
+    role: user
+    table: comments
+  type: create_delete_permission

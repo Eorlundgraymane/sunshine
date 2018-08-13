@@ -1,0 +1,24 @@
+- args:
+    role: user
+    table: chats
+  type: drop_select_permission
+- args:
+    permission:
+      columns:
+      - id
+      - friend_id
+      - seen
+      - created
+      - chat_id
+      - text
+      filter:
+        $or:
+        - sender:
+            id:
+              $eq: X-HASURA-USER-ID
+        - recepient:
+            id:
+              $eq: X-HASURA-USER-ID
+    role: user
+    table: chats
+  type: create_select_permission

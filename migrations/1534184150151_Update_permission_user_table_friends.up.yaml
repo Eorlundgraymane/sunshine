@@ -1,0 +1,13 @@
+- args:
+    role: user
+    table: friends
+  type: drop_delete_permission
+- args:
+    permission:
+      filter:
+        profile:
+          id:
+            $eq: X-HASURA-USER-ID
+    role: user
+    table: friends
+  type: create_delete_permission

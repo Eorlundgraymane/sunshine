@@ -1,0 +1,17 @@
+- args:
+    role: user
+    table: friends
+  type: drop_update_permission
+- args:
+    permission:
+      columns:
+      - created
+      - id
+      - friend_id
+      filter:
+        profile:
+          id:
+            $eq: X-HASURA-USER-ID
+    role: user
+    table: friends
+  type: create_update_permission

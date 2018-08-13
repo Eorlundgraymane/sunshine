@@ -1,0 +1,15 @@
+- args:
+    role: user
+    table: requests
+  type: drop_delete_permission
+- args:
+    permission:
+      filter:
+        $or:
+        - reqid:
+            $eq: X-HASURA-USER-ID
+        - recid:
+            $eq: X-HASURA-USER-ID
+    role: user
+    table: requests
+  type: create_delete_permission

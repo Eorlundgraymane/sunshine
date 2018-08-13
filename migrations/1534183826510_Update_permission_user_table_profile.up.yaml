@@ -1,0 +1,29 @@
+- args:
+    role: user
+    table: profile
+  type: drop_update_permission
+- args:
+    permission:
+      columns:
+      - charitymodified
+      - charityshine
+      - created
+      - dob
+      - earthmodified
+      - earthshine
+      - fname
+      - healthmodified
+      - healthshine
+      - level
+      - lname
+      - proimg
+      - shine
+      - socialmodified
+      - socialshine
+      - username
+      filter:
+        id:
+          $eq: X-HASURA-USER-ID
+    role: user
+    table: profile
+  type: create_update_permission

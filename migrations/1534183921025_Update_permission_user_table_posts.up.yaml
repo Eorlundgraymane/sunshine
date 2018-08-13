@@ -1,0 +1,19 @@
+- args:
+    role: user
+    table: posts
+  type: drop_update_permission
+- args:
+    permission:
+      columns:
+      - post_id
+      - posttext
+      - id
+      - created
+      - postimg
+      filter:
+        author:
+          id:
+            $eq: X-HASURA-USER-ID
+    role: user
+    table: posts
+  type: create_update_permission

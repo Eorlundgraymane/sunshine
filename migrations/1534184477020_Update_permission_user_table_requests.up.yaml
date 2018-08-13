@@ -1,0 +1,19 @@
+- args:
+    role: user
+    table: requests
+  type: drop_update_permission
+- args:
+    permission:
+      columns:
+      - recid
+      - created
+      - reqid
+      filter:
+        $or:
+        - reqid:
+            $eq: X-HASURA-USER-ID
+        - recid:
+            $eq: X-HASURA-USER-ID
+    role: user
+    table: requests
+  type: create_update_permission

@@ -1,0 +1,16 @@
+- args:
+    role: user
+    table: comments
+  type: drop_update_permission
+- args:
+    permission:
+      columns:
+      - comment
+      - created
+      filter:
+        commentor:
+          id:
+            $eq: X-HASURA-USER-ID
+    role: user
+    table: comments
+  type: create_update_permission

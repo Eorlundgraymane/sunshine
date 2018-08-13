@@ -1,0 +1,18 @@
+- args:
+    role: user
+    table: chats
+  type: drop_delete_permission
+- args:
+    permission:
+      filter:
+        $and:
+        - sender:
+            id:
+              $eq: X-HASURA-USER-ID
+        - recepient:
+            myfriends:
+              friend_id:
+                $eq: X-HASURA-USER-ID
+    role: user
+    table: chats
+  type: create_delete_permission

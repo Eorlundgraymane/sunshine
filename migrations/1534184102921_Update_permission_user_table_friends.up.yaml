@@ -1,0 +1,14 @@
+- args:
+    role: user
+    table: friends
+  type: drop_insert_permission
+- args:
+    permission:
+      allow_upsert: true
+      check:
+        profile:
+          id:
+            $eq: X-HASURA-USER-ID
+    role: user
+    table: friends
+  type: create_insert_permission
