@@ -2099,7 +2099,10 @@ muserProfileApp.controller("muserProfileCtrl",function($scope,$http){
           }
           else{
             proggy(0);
-              sunNotify("<strong>Some other problem occured</strong>","alert-danger");
+              sunNotify("<strong>Hey it's your first Upload !!! </strong>","alert-warning");
+              setTimeout(function () {
+                $scope.uploadDP(file);
+              }, 3000);
           }
         });
       }
@@ -2499,8 +2502,7 @@ userProfileApp.controller("userProfileCtrl",function($scope,$http){
           }
           else{
             proggy(0);
-              sunNotify("<strong>Some other problem occured</strong>","alert-danger");
-              console.log(response.data);
+              sunNotify("<strong>Hey it's your first Upload !!! </strong>","alert-warning");
               setTimeout(function () {
                 $scope.uploadDP(file);
               }, 3000);
