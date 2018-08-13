@@ -1,0 +1,24 @@
+- args:
+    role: user
+    table: posts
+  type: drop_select_permission
+- args:
+    permission:
+      columns:
+      - post_id
+      - posttext
+      - id
+      - created
+      - postimg
+      filter:
+        $or:
+        - author:
+            myfriends:
+              friend_id:
+                $eq: X-HASURA-USER-ID
+        - author:
+            id:
+              $eq: X-HASURA-USER-ID
+    role: user
+    table: posts
+  type: create_select_permission
