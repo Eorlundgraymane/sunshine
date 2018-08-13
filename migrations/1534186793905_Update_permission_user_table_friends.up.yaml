@@ -1,0 +1,21 @@
+- args:
+    role: user
+    table: friends
+  type: drop_select_permission
+- args:
+    permission:
+      columns:
+      - id
+      - friend_id
+      - created
+      filter:
+        $or:
+        - profile:
+            id:
+              $eq: X-HASURA-USER-ID
+        - friend_profile:
+            id:
+              $eq: X-HASURA-USER-ID
+    role: user
+    table: friends
+  type: create_select_permission
