@@ -1,0 +1,28 @@
+- args:
+    role: user
+    table: comments
+  type: drop_select_permission
+- args:
+    permission:
+      columns:
+      - comment_id
+      - post_id
+      - id
+      - comment
+      - created
+      filter:
+        $or:
+        - commentor:
+            mefriend:
+              friend_id:
+                $eq: X-HASURA-USER-ID
+        - commentor:
+            id:
+              $eq: X-HASURA-USER-ID
+        - post:
+            author:
+              id:
+                $eq: X-HASURA-USER-ID
+    role: user
+    table: comments
+  type: create_select_permission
