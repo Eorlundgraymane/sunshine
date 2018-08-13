@@ -4213,6 +4213,7 @@ searchApp.controller("searchCtrl",function($scope,$http){
     userdata["args"]["where"]["id"] = getCookie("hasura_id");
     userdata["args"]["where"]["myfriends"] = {};
     userdata["args"]["where"]["myfriends"]["friend_id"] = id;
+    console.log(userdata);
     $http({
       method : "POST",
       url : "https://data.unluckily34.hasura-app.io/v1/query",
@@ -4222,6 +4223,7 @@ searchApp.controller("searchCtrl",function($scope,$http){
         'Content-type' : 'application/json','Authorization' : 'Bearer '+getCookie("auth_token")
       }
     }).then(function mySuccess(response){
+      console.log(response);
       if(response.data.length > 0){
         if(response.data[0].myfriends.length > 0 && $scope.searchip != "" ){
             searchlist += "<li class = 'alert alert-info'><i class='far fa-check-circle'></i> "+each.profile[0].fname+"<img src= '"+each.profile[0].proimg+"' class = 'chatdp'/></li>";
@@ -4294,7 +4296,7 @@ searchApp.controller("searchCtrl",function($scope,$http){
           document.getElementById("searchresults").style = "height : 0";
           for(each of userlist)
           {
-            $scope.checkFriend(each.id,each,searchlist);
+            $scope.checkFriend(each.hasura_id,each,searchlist);
           }
         }
       },function myError(response){
