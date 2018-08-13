@@ -1,0 +1,19 @@
+- args:
+    role: user
+    table: likes
+  type: drop_select_permission
+- args:
+    permission:
+      columns:
+      - liker_id
+      - id
+      - created
+      - shine
+      filter:
+        liker:
+          myfriends:
+            friend_id:
+              $eq: X-HASURA-USER-ID
+    role: user
+    table: likes
+  type: create_select_permission
