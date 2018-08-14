@@ -434,7 +434,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
     text = text.replace("O_o" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
     text = text.replace("o_O" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
 
-    console.log(text);
+
     return text;
   }
   $scope.addPost = function(){
@@ -754,7 +754,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
     text = text.replace("O_o" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
     text = text.replace("o_O" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
 
-    console.log(text);
+
     return text;
   }
   $scope.comment = function(id){
@@ -804,7 +804,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
     text = text.replace("O_o" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
     text = text.replace("o_O" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
 
-    console.log(text);
+
     return text;
   }
   $scope.getComments = function(id){
@@ -880,7 +880,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
     text = text.replace("O_o" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
     text = text.replace("o_O" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
 
-    console.log(text);
+
     return text;
   }
   $scope.getPost = function(id){
@@ -1030,8 +1030,6 @@ newsApp.controller("newsCtrl",function($scope,$http){
     text = text.replace("o_0" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
     text = text.replace("O_o" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
     text = text.replace("o_O" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
-
-    console.log(text);
     return text;
   }
   $scope.getFeed = function(){
@@ -3038,7 +3036,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
     text = text.replace("0_o" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
     text = text.replace("o_0" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
     text = text.replace("O_o" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
-    text = text.replace("o_O" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");    
+    text = text.replace("o_O" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
     return text;
   }
   $scope.getChats = function(id){
@@ -3498,8 +3496,6 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
     text = text.replace("o_0" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
     text = text.replace("O_o" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
     text = text.replace("o_O" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
-
-    console.log(text);
     return text;
   }
   $scope.getChats = function(id){
@@ -3592,7 +3588,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
     text = text.replace("O_o" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
     text = text.replace("o_O" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
 
-    console.log(text);
+    
     return text;
   }
   $scope.sendChat = function(chat,id){
@@ -4661,7 +4657,7 @@ mchatApp.controller("mchatCtrl",function($scope,$http){
     text = text.replace("O_o" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
     text = text.replace("o_O" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
 
-    console.log(text);
+
     return text;
   }
   $scope.sendChat = function(chat,id){
