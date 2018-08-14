@@ -2846,7 +2846,7 @@ $scope.logout = function(){
     proggy(30);
     document.getElementById('resendbutton').innerHTML = "<strong><i class = 'fa fa-spinner fa-spin'></i> Resending OTP</strong>";
     var resend = {};
-    resend.mobile = $scope.newuser.verimobile;
+    resend.mobile = ""+$scope.newuser.verimobile;
     resend.country_code = "91";
     //////console.log(resend);
     $http({
