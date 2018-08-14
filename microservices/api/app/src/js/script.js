@@ -783,6 +783,11 @@ newsApp.controller("newsCtrl",function($scope,$http){
       console.log(response);
     });
   }
+  $scope.smilify = function(text){
+    text = text.replace(":-)" , "<img class = 'smilie' src = '/css/svg/032-happy-5.svg'>");
+    console.log(text);
+    return text;
+  }
   $scope.getPost = function(id){
     var newlist = "";
     var feedData = {};
@@ -902,12 +907,36 @@ newsApp.controller("newsCtrl",function($scope,$http){
         }else{
           deletetext = "";
         }
-        newlist += "<li id = 'postid"+each.post_id+"' class = 'post'>"+deletetext+"<img src = '"+each.author.proimg+"' class = 'authdp'><span class = 'badge label label-warning level'>"+each.author.level+"</span><p class = 'author'><strong>"+each.author.username+"</strong></p><p class = 'postago'><strong>"+chat_ago(each.created)+"</strong></p><h6 class = 'postimgdiv'>"+postimg+"</h6><p2 class = 'posttext'>"+each.posttext+"</p2><br><br>"+liketext+"<div id = 'liked"+each.post_id+"' class = 'likedlist'>"+liked+" </div><br><div class = 'cmtsctn' id = 'cmtlist"+each.post_id+"'><button id = 'cmtbtn"+each.post_id+"'type = 'button' onclick = 'angular.element(this).scope().getComments("+id+");' class = 'btn btn-default cmtbtn'><strong>"+each.comments.length+" Comments</strong></button></div></li>";
+        newlist += "<li id = 'postid"+each.post_id+"' class = 'post'>"+deletetext+"<img src = '"+each.author.proimg+"' class = 'authdp'><span class = 'badge label label-warning level'>"+each.author.level+"</span><p class = 'author'><strong>"+each.author.username+"</strong></p><p class = 'postago'><strong>"+chat_ago(each.created)+"</strong></p><h6 class = 'postimgdiv'>"+postimg+"</h6><p2 class = 'posttext'>"+$scope.smilify(each.posttext)+"</p2><br><br>"+liketext+"<div id = 'liked"+each.post_id+"' class = 'likedlist'>"+liked+" </div><br><div class = 'cmtsctn' id = 'cmtlist"+each.post_id+"'><button id = 'cmtbtn"+each.post_id+"'type = 'button' onclick = 'angular.element(this).scope().getComments("+id+");' class = 'btn btn-default cmtbtn'><strong>"+each.comments.length+" Comments</strong></button></div></li>";
       }
       $('#postid'+id).replaceWith(newlist);
     },function myError(response)    {
       sunNotify(response,"alert-danger");
     });
+  }
+  $scope.smilify = function(text){
+    text = text.replace(":-)" , "<img class = 'smilie' src = '/css/svg/032-happy-5.svg'>");
+    text = text.replace(":)" , "<img class = 'smilie' src = '/css/svg/032-happy-5.svg'>");
+    text = text.replace(":-(" , "<img class = 'smilie' src = '/css/svg/002-sad-14.svg'>");
+    text = text.replace(":(" , "<img class = 'smilie' src = '/css/svg/002-sad-14.svg'>");
+    text = text.replace(":-o" , "<img class = 'smilie' src = '/css/svg/052-shocked-2.svg'>");
+    text = text.replace(":o" , "<img class = 'smilie' src = '/css/svg/052-shocked-2.svg'>");
+    text = text.replace(":-D" , "<img class = 'smilie' src = '/css/svg/095-happy-2.svg'>");
+    text = text.replace(":D" , "<img class = 'smilie' src = '/css/svg/095-happy-2.svg'>");
+    text = text.replace("B-)" , "<img class = 'smilie' src = '/css/svg/084-cool.svg'>");
+    text = text.replace("B)" , "<img class = 'smilie' src = '/css/svg/084-cool.svg'>");
+    text = text.replace("-_-" , "<img class = 'smilie' src = '/css/svg/081-sleeping.svg'>");
+    text = text.replace("X-D" , "<img class = 'smilie' src = '/css/svg/092-laughing-1.svg'>");
+    text = text.replace("XD" , "<img class = 'smilie' src = '/css/svg/092-laughing-1.svg'>");
+    text = text.replace("o_o" , "<img class = 'smilie' src = '082-shocked.svg'>");
+    text = text.replace("0_0" , "<img class = 'smilie' src = '082-shocked.svg'>");
+    text = text.replace("0_o" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+    text = text.replace("o_0" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+    text = text.replace("O_o" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+    text = text.replace("o_O" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+
+    console.log(text);
+    return text;
   }
   $scope.getFeed = function(){
     var newlist = "";
@@ -1028,7 +1057,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
         }else{
           deletetext = "";
         }
-        newlist += "<li id = 'postid"+each.post_id+"' class = 'post'>"+deletetext+"<img src = '"+each.author.proimg+"' class = 'authdp'><span class = 'badge label label-warning level'>"+each.author.level+"</span><p class = 'author'><strong>"+each.author.username+"</strong></p><p class = 'postago'><strong>"+chat_ago(each.created)+"</strong></p><h6 class = 'postimgdiv'>"+postimg+"</h6><p2 class = 'posttext'>"+each.posttext+"</p2><br><br>"+liketext+"<div id = 'liked"+each.post_id+"' class = 'likedlist'>"+liked+" </div><br><div class = 'cmtsctn' id = 'cmtlist"+each.post_id+"'><button id = 'cmtbtn"+each.post_id+"' type = 'button' onclick = 'angular.element(this).scope().getComments("+each.post_id+");' class = 'btn btn-default cmtbtn'><strong>"+each.comments.length+" Comments</strong></button></div></li>";
+        newlist += "<li id = 'postid"+each.post_id+"' class = 'post'>"+deletetext+"<img src = '"+each.author.proimg+"' class = 'authdp'><span class = 'badge label label-warning level'>"+each.author.level+"</span><p class = 'author'><strong>"+each.author.username+"</strong></p><p class = 'postago'><strong>"+chat_ago(each.created)+"</strong></p><h6 class = 'postimgdiv'>"+postimg+"</h6><p2 class = 'posttext'>"+$scope.smilify(each.posttext)+"</p2><br><br>"+liketext+"<div id = 'liked"+each.post_id+"' class = 'likedlist'>"+liked+" </div><br><div class = 'cmtsctn' id = 'cmtlist"+each.post_id+"'><button id = 'cmtbtn"+each.post_id+"' type = 'button' onclick = 'angular.element(this).scope().getComments("+each.post_id+");' class = 'btn btn-default cmtbtn'><strong>"+each.comments.length+" Comments</strong></button></div></li>";
       }
       if(newlist !=  prevfeed){
         news.innerHTML = newlist;

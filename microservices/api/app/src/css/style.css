@@ -402,6 +402,9 @@ border: 1px solid rgba0,0,0,0.3);
   -ms-transform: translate(-50%, -50%);
   text-align: center;
 }
+.smilie{
+  width : 4%;
+}
 .likedp{
   object-fit: cover;
   width: 32px;
