@@ -25,13 +25,17 @@ function fullscreen(url){
     document.getElementById("fullscreen").innerHTML = "";
   }
 }
+var poppy = 0;
 function blinkTitle(name){
   if(blinkcount < 2){
     if(document.getElementById("sitetitle").innerHTML === "Sunshine"){
       blinkcount++;
       document.getElementById("sitetitle").innerHTML = name+" Messaged you";
       var aAudio = document.getElementById("popwav");
-      aAudio.play();
+      if(poppy == 0){
+          aAudio.play();
+          poppy = 1;
+      }
       setTimeout(function () {
         blinkTitle(name);
       }, 1000);
@@ -3010,6 +3014,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
         'Content-type' : 'application/json','Authorization' : 'Bearer '+getCookie("auth_token")
       }
     }).then(function mySuccess(response){
+      poppy = 0;
     },function myError(response){
       console.log("response");
     });
