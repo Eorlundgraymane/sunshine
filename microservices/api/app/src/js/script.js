@@ -409,6 +409,11 @@ newsApp.controller("newsCtrl",function($scope,$http){
       sunNotify("Post Delete Failed","alert-danger");
     });
   }
+  $scope.smilify = function(text){
+    text = text.replace(":-)" , "<img class = 'smilie' src = '/css/svg/032-happy-5.svg'>");
+    console.log(text);
+    return text;
+  }
   $scope.addPost = function(){
     var posttext = document.getElementById('newposttext').value;
     var postData = {};
@@ -417,7 +422,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
     postData["args"]["table"] = "posts";
     postData["args"].objects = [{
       "id":getCookie("hasura_id"),
-      "posttext":posttext,
+      "posttext":$scope.smilify(posttext),
       "postimg":upfileurl
     }];
     console.log(postData);
@@ -705,6 +710,11 @@ newsApp.controller("newsCtrl",function($scope,$http){
       console.log(response);
     });
   }
+  $scope.smilify = function(text){
+    text = text.replace(":-)" , "<img class = 'smilie' src = '/css/svg/032-happy-5.svg'>");
+    console.log(text);
+    return text;
+  }
   $scope.comment = function(id){
     console.log(document.getElementById("newcmt"+id).value);
     if(document.getElementById("newcmt"+id).value != "" || document.getElementById("newcmt"+id).value != null){
@@ -715,7 +725,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
       cmtdata["args"].objects =  [{
           "id":parseInt(getCookie("hasura_id")),
           "post_id":id,
-          "comment":document.getElementById("newcmt"+id).value
+          "comment":$scope.smilify(document.getElementById("newcmt"+id).value)
         }];
         $http({
           method : "POST",
@@ -730,6 +740,11 @@ newsApp.controller("newsCtrl",function($scope,$http){
         },function myError(response){
         });
       }
+  }
+  $scope.smilify = function(text){
+    text = text.replace(":-)" , "<img class = 'smilie' src = '/css/svg/032-happy-5.svg'>");
+    console.log(text);
+    return text;
   }
   $scope.getComments = function(id){
     var sav = document.getElementById("cmtbtn"+id).innerHTML;
@@ -771,7 +786,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
           }else{
             del = "";
           }
-          document.getElementById("cmtul"+id).innerHTML+= "<li class = 'comment' id = "+each.id+"><img src = '"+each.commentor.proimg+"' title = '"+each.commentor.username+"' class = 'cmtdp'> "+each.comment+" "+del+"<div class = 'cmtts'>"+chat_ago(each.created)+"</div></li><br>";
+          document.getElementById("cmtul"+id).innerHTML+= "<li class = 'comment' id = "+each.id+"><img src = '"+each.commentor.proimg+"' title = '"+each.commentor.username+"' class = 'cmtdp'> "+$scope.smilify(each.comment)+" "+del+"<div class = 'cmtts'>"+chat_ago(each.created)+"</div></li><br>";
         }
         document.getElementById('cmtbtn'+id).innerHTML = "<strong>"+ccount+" Comments</strong>";
       }else{
@@ -2923,6 +2938,11 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
       console.log("response");
     });
   }
+  $scope.smilify = function(text){
+    text = text.replace(":-)" , "<img class = 'smilie' src = '/css/svg/032-happy-5.svg'>");
+    console.log(text);
+    return text;
+  }
   $scope.getChats = function(id){
 
     var newchaties = document.getElementsByClassName("newchat_"+id);
@@ -2969,11 +2989,11 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
         if(response.data.length > 0){
           for(each of response.data.reverse()){
             if(each.sender.id === parseInt(getCookie("hasura_id")) && each.seen === null){
-              chatloglist+="<li class = 'mychat'><strong>"+each.text+"</strong><br>"+chat_ago(each.created)+"<br>Sent</li>";
+              chatloglist+="<li class = 'mychat'><strong>"+$scope.smilify(each.text)+"</strong><br>"+chat_ago(each.created)+"<br>Sent</li>";
             }else if(each.sender.id === parseInt(getCookie("hasura_id"))){
-              chatloglist+="<li class = 'mychat'><strong>"+each.text+"</strong><br>"+chat_ago(each.created)+"<br>Seen </li>";
+              chatloglist+="<li class = 'mychat'><strong>"+$scope.smilify(each.text)+"</strong><br>"+chat_ago(each.created)+"<br>Seen </li>";
             }else{
-              chatloglist+="<li class = 'youchat'><strong>"+each.text+"</strong><br>"+chat_ago(each.created)+"<br></li>";
+              chatloglist+="<li class = 'youchat'><strong>"+$scope.smilify(each.text)+"</strong><br>"+chat_ago(each.created)+"<br></li>";
               if(each.seen === null){
                 $scope.setSeen(each.id);
               }
@@ -3360,6 +3380,11 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
       console.log("response");
     });
   }
+  $scope.smilify = function(text){
+    text = text.replace(":-)" , "<img class = 'smilie' src = '/css/svg/032-happy-5.svg'>");
+    console.log(text);
+    return text;
+  }
   $scope.getChats = function(id){
     var newchaties = document.getElementsByClassName("newchat_"+id);
     var userdata = {};
@@ -3405,11 +3430,11 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
       if(response.data.length > 0){
         for(each of response.data.reverse()){
           if(each.sender.id === parseInt(getCookie("hasura_id")) && each.seen === null){
-            chatloglist+="<li class = 'mychat'><strong>"+each.text+"</strong><br>"+chat_ago(each.created)+"<br>Sent</li>";
+            chatloglist+="<li class = 'mychat'><strong>"+$scope.smilify(each.text)+"</strong><br>"+chat_ago(each.created)+"<br>Sent</li>";
           }else if(each.sender.id === parseInt(getCookie("hasura_id"))){
-            chatloglist+="<li class = 'mychat'><strong>"+each.text+"</strong><br>"+chat_ago(each.created)+"<br>Seen </li>";
+            chatloglist+="<li class = 'mychat'><strong>"+$scope.smilify(each.text)+"</strong><br>"+chat_ago(each.created)+"<br>Seen </li>";
           }else{
-            chatloglist+="<li class = 'youchat'><strong>"+each.text+"</strong><br>"+chat_ago(each.created)+"<br></li>";
+            chatloglist+="<li class = 'youchat'><strong>"+$scope.smilify(each.text)+"</strong><br>"+chat_ago(each.created)+"<br></li>";
             if(each.seen === null){
               $scope.setSeen(each.id);
             }
@@ -3429,6 +3454,11 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
       $scope.getRequests();
     });
   }
+  $scope.smilify = function(text){
+    text = text.replace(":-)" , "<img class = 'smilie' src = '/css/svg/032-happy-5.svg'>");
+    console.log(text);
+    return text;
+  }
   $scope.sendChat = function(chat,id){
     if(chat != ""){
       document.getElementById("chattext").value = "";
@@ -3440,7 +3470,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
       chatData["args"].objects =  [{
           "id":getCookie("hasura_id"),
           "friend_id":id,
-          "text":chat,
+          "text":$scope.smilify(chat),
         }];
         $http({
           method : "POST",
@@ -4474,6 +4504,11 @@ mchatApp.controller("mchatCtrl",function($scope,$http){
       $scope.getRequests();
     });
   }
+  $scope.smilify = function(text){
+    text = text.replace(":-)" , "<img class = 'smilie' src = '/css/svg/032-happy-5.svg'>");
+    console.log(text);
+    return text;
+  }
   $scope.sendChat = function(chat,id){
     if(chat != ""){
       document.getElementById("mchattext").value = "";
@@ -4485,7 +4520,7 @@ mchatApp.controller("mchatCtrl",function($scope,$http){
       chatData["args"].objects =  [{
           "id":getCookie("hasura_id"),
           "friend_id":id,
-          "text":chat,
+          "text":$scope.smilify(chat),
         }];
         $http({
           method : "POST",
