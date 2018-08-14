@@ -967,7 +967,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
           liked += "and others ";
         }
         if(ilike === 0 && (""+each.author.id != getCookie("hasura_id"))){
-          liketext = '<div class = "dropdown"><button id = "likeme'+each.post_id+'" type = "button" class = "likebutton btn btn-default dropdown-toggle" data-toggle = "dropdown"><strong>Like</strong></button><span class = "dropdown-menu"><button type = "button" class = "btn btn-danger" onclick = "angular.element(this).scope().addLike('+each.post_id+',\'health\')" ><i class = "fa fa-heart"></i></button> <button type = "button" class = "btn btn-success" onclick = "angular.element(this).scope().addLike('+each.post_id+',\'earth\')"><i class = "fa fa-leaf"></i></button> <button type = "button" class = "btn btn-warning" onclick = "angular.element(this).scope().addLike('+each.post_id+',\'charity\')"><i class = "fa fa-gift"></i></button> <button type = "button" class = "btn btn-primary" onclick = "angular.element(this).scope().addLike('+each.post_id+',\'social\')"><i class = "fa fa-globe"></i></button></span></div><br>';
+          liketext = '<div class = "dropdown"><button id = "likeme'+each.post_id+'" type = "button" title = "Give a shine for this post"  class = "likebutton btn btn-default dropdown-toggle" data-toggle = "dropdown"><strong>Shine</strong></button><span class = "dropdown-menu"><button type = "button" class = "btn btn-danger" onclick = "angular.element(this).scope().addLike('+each.post_id+',\'health\')" ><i class = "fa fa-heart"></i></button> <button type = "button" class = "btn btn-success" onclick = "angular.element(this).scope().addLike('+each.post_id+',\'earth\')"><i class = "fa fa-leaf"></i></button> <button type = "button" class = "btn btn-warning" onclick = "angular.element(this).scope().addLike('+each.post_id+',\'charity\')"><i class = "fa fa-gift"></i></button> <button type = "button" class = "btn btn-primary" onclick = "angular.element(this).scope().addLike('+each.post_id+',\'social\')"><i class = "fa fa-globe"></i></button></span></div><br>';
         }else if(""+each.author.id != getCookie("hasura_id")){
           switch(meshined){
             case "health":
@@ -1116,7 +1116,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
           liked += "and others ";
         }
         if(ilike === 0 && (""+each.author.id != getCookie("hasura_id"))){
-          liketext = '<div class = "dropdown"><button id = "likeme'+each.post_id+'" type = "button" class = "likebutton btn btn-default dropdown-toggle" data-toggle = "dropdown"><strong>Like</strong></button><span class = "dropdown-menu"><button type = "button" class = "btn btn-danger" onclick = "angular.element(this).scope().addLike('+each.post_id+',\'health\')" ><i class = "fa fa-heart"></i></button> <button type = "button" class = "btn btn-success" onclick = "angular.element(this).scope().addLike('+each.post_id+',\'earth\')"><i class = "fa fa-leaf"></i></button> <button type = "button" class = "btn btn-warning" onclick = "angular.element(this).scope().addLike('+each.post_id+',\'charity\')"><i class = "fa fa-gift"></i></button> <button type = "button" class = "btn btn-primary" onclick = "angular.element(this).scope().addLike('+each.post_id+',\'social\')"><i class = "fa fa-globe"></i></button></span></div><br>';
+          liketext = '<div class = "dropdown"><button id = "likeme'+each.post_id+'" title = "Give a shine for this post" type = "button" class = "likebutton btn btn-default dropdown-toggle" data-toggle = "dropdown"><strong>Shine</strong></button><span class = "dropdown-menu"><button type = "button" class = "btn btn-danger" onclick = "angular.element(this).scope().addLike('+each.post_id+',\'health\')" ><i class = "fa fa-heart"></i></button> <button type = "button" class = "btn btn-success" onclick = "angular.element(this).scope().addLike('+each.post_id+',\'earth\')"><i class = "fa fa-leaf"></i></button> <button type = "button" class = "btn btn-warning" onclick = "angular.element(this).scope().addLike('+each.post_id+',\'charity\')"><i class = "fa fa-gift"></i></button> <button type = "button" class = "btn btn-primary" onclick = "angular.element(this).scope().addLike('+each.post_id+',\'social\')"><i class = "fa fa-globe"></i></button></span></div><br>';
         }else if(""+each.author.id != getCookie("hasura_id")){
           switch(meshined){
             case "health":
@@ -3588,7 +3588,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
     text = text.replace("O_o" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
     text = text.replace("o_O" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
 
-    
+
     return text;
   }
   $scope.sendChat = function(chat,id){

@@ -49,7 +49,7 @@
             <table class = "table shinetable" id = "table">
               <thead><caption><strong>Shine Score</strong></caption></thead>
               <tr class = "row">
-                <th class = "col-xs-0 col-md-1 col-lg-1 col-sm-1"><span id = "hshinelabel" class = "label shinelabel label-danger">{{hshine}}</span></th>
+                <th class = "col-xs-0 col-md-1 col-lg-1 col-sm-1"><span id = "hshinelabel" title = 'Shine Points gained by gettings Health shines on your posts' class = "label shinelabel label-danger">{{hshine}}</span></th>
                 <td  class = "col-xs-0 col-md-11 col-lg-11 col-sm-11">
                   <div class = "row">
                     <div class = "container-fluid col-xs-12 col-md-12 col-sm-12 col-lg-12 ">
@@ -59,7 +59,7 @@
                 </td>
               </tr>
               <tr class = "row">
-                <th class = "col-xs-0 col-md-1 col-lg-1 col-sm-1"><span id = "eshinelabel"  class = "label shinelabel label-success">{{eshine}}</span></th>
+                <th class = "col-xs-0 col-md-1 col-lg-1 col-sm-1"><span id = "eshinelabel"  title = 'Shine Points gained by gettings Earth shines on your posts' class = "label shinelabel label-success">{{eshine}}</span></th>
                 <td  class = "col-xs-0 col-md-11 col-lg-11 col-sm-11">
                   <div class = "row">
                     <div class = "container-fluid col-xs-12 col-md-12 col-sm-12 col-lg-12 ">
@@ -69,7 +69,7 @@
                 </td>
               </tr>
               <tr class = "row">
-                <th class = "col-xs-0 col-md-1 col-lg-1 col-sm-1"><span id = "cshinelabel"  class = "label shinelabel label-warning">{{cshine}}</span></th>
+                <th class = "col-xs-0 col-md-1 col-lg-1 col-sm-1"><span id = "cshinelabel"  title = 'Shine Points gained by gettings Charity shines on your posts' class = "label shinelabel label-warning">{{cshine}}</span></th>
                 <td  class = "col-xs-0 col-md-11 col-lg-11 col-sm-11">
                   <div class = "row">
                     <div class = "container-fluid col-xs-12 col-md-12 col-sm-12 col-lg-12 ">
@@ -79,7 +79,7 @@
                 </td>
               </tr>
               <tr class = "row">
-                <th class = "col-xs-0 col-md-1 col-lg-1 col-sm-1"><span id = "sshinelabel"  class = "label shinelabel label-primary">{{sshine}}</span></th>
+                <th class = "col-xs-0 col-md-1 col-lg-1 col-sm-1"><span id = "sshinelabel"  title = 'Shine Points gained by gettings Social shines on your posts' class = "label shinelabel label-primary">{{sshine}}</span></th>
                 <td  class = "col-xs-0 col-md-11 col-lg-11 col-sm-11">
                   <div class = "row">
                     <div class = "container-fluid col-xs-12 col-md-12 col-sm-12 col-lg-12 ">
