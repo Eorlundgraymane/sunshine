@@ -45,7 +45,7 @@
       </div>
       <div id = "shinetable" ng-app = "shineTableApp" ng-controller = "shineTableCtrl" class = "col-xs-0 col-md-3 col-lg-3 col-sm-3">
         <div class = "row">
-          <div class = "bordered col-xs-10 col-md-10 col-lg-10 col-sm-10">
+          <div class = "bordered col-xs-8 col-md-8 col-lg-8 col-sm-8">
             <table class = "table shinetable" id = "table">
               <thead><caption><strong>Shine Score</strong></caption></thead>
               <tr class = "row">
@@ -90,7 +90,7 @@
               </tr>
             </table>
           </div>
-          <div id = "giftboxdiv" class = "bordered col-xs-0 col-md-2 col-lg-2 col-sm-2">
+          <div id = "giftboxdiv" class = "bordered col-xs-0 col-md-4 col-lg-4 col-sm-4">
             <ul id = "giftbox">
             </ul>
           </div>
