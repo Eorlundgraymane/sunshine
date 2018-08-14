@@ -38,7 +38,7 @@
     <div ng-app = "signupApp" ng-controller = "signupCtrl" id = "signupdiv" class = "col-sm-12 col-xs-12 col-lg-12 col-md-12">
         <form class = "hidden" ng-submit = "signup()" name = "signupForm" id = "signupform">
           <button onclick = "goindex();" type = "button" class = "btn btn-danger"><strong>Back</strong></button>
-          <button onclick = "goOTP();" type = "button" class = "btn btn-primary"><strong>OTP Verify / Request</strong></button>
+          <button onclick = "goOTP();" type = "button" class = "btn btn-primary"><strong>OTP Verify / Resend</strong></button>
           <legend align = "center"><strong>Sign Up</strong></legend>
           <div class = "col-xs-12 col-sm-12 col-md-12 col-lg-12 form-group">
             <label for = "cc">Country Code</label>
