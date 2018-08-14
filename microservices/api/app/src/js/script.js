@@ -3038,9 +3038,7 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
     text = text.replace("0_o" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
     text = text.replace("o_0" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
     text = text.replace("O_o" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
-    text = text.replace("o_O" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
-
-    console.log(text);
+    text = text.replace("o_O" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");    
     return text;
   }
   $scope.getChats = function(id){
