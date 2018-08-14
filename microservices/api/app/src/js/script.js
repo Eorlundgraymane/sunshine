@@ -910,6 +910,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
         newlist += "<li id = 'postid"+each.post_id+"' class = 'post'>"+deletetext+"<img src = '"+each.author.proimg+"' class = 'authdp'><span class = 'badge label label-warning level'>"+each.author.level+"</span><p class = 'author'><strong>"+each.author.username+"</strong></p><p class = 'postago'><strong>"+chat_ago(each.created)+"</strong></p><h6 class = 'postimgdiv'>"+postimg+"</h6><p2 class = 'posttext'>"+$scope.smilify(each.posttext)+"</p2><br><br>"+liketext+"<div id = 'liked"+each.post_id+"' class = 'likedlist'>"+liked+" </div><br><div class = 'cmtsctn' id = 'cmtlist"+each.post_id+"'><button id = 'cmtbtn"+each.post_id+"'type = 'button' onclick = 'angular.element(this).scope().getComments("+id+");' class = 'btn btn-default cmtbtn'><strong>"+each.comments.length+" Comments</strong></button></div></li>";
       }
       $('#postid'+id).replaceWith(newlist);
+      $
     },function myError(response)    {
       sunNotify(response,"alert-danger");
     });
@@ -2846,10 +2847,11 @@ $scope.logout = function(){
     document.getElementById('resendbutton').innerHTML = "<strong><i class = 'fa fa-spinner fa-spin'></i> Resending OTP</strong>";
     var resend = {};
     resend.mobile = $scope.newuser.verimobile;
+    resend.country_code = "91";
     //////console.log(resend);
     $http({
       method : "POST",
-      url : "https://auth.unluckily34.hasura-app.io/mobile/resend-otp",
+      url : "https://auth.unluckily34.hasura-app.io/v1/providers/mobile-password/resend-otp",
       data : JSON.stringify(resend),
       headers : {
         'Content-type' : 'application/json'
