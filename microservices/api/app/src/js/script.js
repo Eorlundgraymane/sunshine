@@ -411,6 +411,25 @@ newsApp.controller("newsCtrl",function($scope,$http){
   }
   $scope.smilify = function(text){
     text = text.replace(":-)" , "<img class = 'smilie' src = '/css/svg/032-happy-5.svg'>");
+    text = text.replace(":)" , "<img class = 'smilie' src = '/css/svg/032-happy-5.svg'>");
+    text = text.replace(":-(" , "<img class = 'smilie' src = '/css/svg/002-sad-14.svg'>");
+    text = text.replace(":(" , "<img class = 'smilie' src = '/css/svg/002-sad-14.svg'>");
+    text = text.replace(":-o" , "<img class = 'smilie' src = '/css/svg/052-shocked-2.svg'>");
+    text = text.replace(":o" , "<img class = 'smilie' src = '/css/svg/052-shocked-2.svg'>");
+    text = text.replace(":-D" , "<img class = 'smilie' src = '/css/svg/095-happy-2.svg'>");
+    text = text.replace(":D" , "<img class = 'smilie' src = '/css/svg/095-happy-2.svg'>");
+    text = text.replace("B-)" , "<img class = 'smilie' src = '/css/svg/084-cool.svg'>");
+    text = text.replace("B)" , "<img class = 'smilie' src = '/css/svg/084-cool.svg'>");
+    text = text.replace("-_-" , "<img class = 'smilie' src = '/css/svg/081-sleeping.svg'>");
+    text = text.replace("X-D" , "<img class = 'smilie' src = '/css/svg/092-laughing-1.svg'>");
+    text = text.replace("XD" , "<img class = 'smilie' src = '/css/svg/092-laughing-1.svg'>");
+    text = text.replace("o_o" , "<img class = 'smilie' src = '082-shocked.svg'>");
+    text = text.replace("0_0" , "<img class = 'smilie' src = '082-shocked.svg'>");
+    text = text.replace("0_o" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+    text = text.replace("o_0" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+    text = text.replace("O_o" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+    text = text.replace("o_O" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+
     console.log(text);
     return text;
   }
@@ -712,6 +731,25 @@ newsApp.controller("newsCtrl",function($scope,$http){
   }
   $scope.smilify = function(text){
     text = text.replace(":-)" , "<img class = 'smilie' src = '/css/svg/032-happy-5.svg'>");
+    text = text.replace(":)" , "<img class = 'smilie' src = '/css/svg/032-happy-5.svg'>");
+    text = text.replace(":-(" , "<img class = 'smilie' src = '/css/svg/002-sad-14.svg'>");
+    text = text.replace(":(" , "<img class = 'smilie' src = '/css/svg/002-sad-14.svg'>");
+    text = text.replace(":-o" , "<img class = 'smilie' src = '/css/svg/052-shocked-2.svg'>");
+    text = text.replace(":o" , "<img class = 'smilie' src = '/css/svg/052-shocked-2.svg'>");
+    text = text.replace(":-D" , "<img class = 'smilie' src = '/css/svg/095-happy-2.svg'>");
+    text = text.replace(":D" , "<img class = 'smilie' src = '/css/svg/095-happy-2.svg'>");
+    text = text.replace("B-)" , "<img class = 'smilie' src = '/css/svg/084-cool.svg'>");
+    text = text.replace("B)" , "<img class = 'smilie' src = '/css/svg/084-cool.svg'>");
+    text = text.replace("-_-" , "<img class = 'smilie' src = '/css/svg/081-sleeping.svg'>");
+    text = text.replace("X-D" , "<img class = 'smilie' src = '/css/svg/092-laughing-1.svg'>");
+    text = text.replace("XD" , "<img class = 'smilie' src = '/css/svg/092-laughing-1.svg'>");
+    text = text.replace("o_o" , "<img class = 'smilie' src = '082-shocked.svg'>");
+    text = text.replace("0_0" , "<img class = 'smilie' src = '082-shocked.svg'>");
+    text = text.replace("0_o" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+    text = text.replace("o_0" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+    text = text.replace("O_o" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+    text = text.replace("o_O" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+
     console.log(text);
     return text;
   }
@@ -743,6 +781,25 @@ newsApp.controller("newsCtrl",function($scope,$http){
   }
   $scope.smilify = function(text){
     text = text.replace(":-)" , "<img class = 'smilie' src = '/css/svg/032-happy-5.svg'>");
+    text = text.replace(":)" , "<img class = 'smilie' src = '/css/svg/032-happy-5.svg'>");
+    text = text.replace(":-(" , "<img class = 'smilie' src = '/css/svg/002-sad-14.svg'>");
+    text = text.replace(":(" , "<img class = 'smilie' src = '/css/svg/002-sad-14.svg'>");
+    text = text.replace(":-o" , "<img class = 'smilie' src = '/css/svg/052-shocked-2.svg'>");
+    text = text.replace(":o" , "<img class = 'smilie' src = '/css/svg/052-shocked-2.svg'>");
+    text = text.replace(":-D" , "<img class = 'smilie' src = '/css/svg/095-happy-2.svg'>");
+    text = text.replace(":D" , "<img class = 'smilie' src = '/css/svg/095-happy-2.svg'>");
+    text = text.replace("B-)" , "<img class = 'smilie' src = '/css/svg/084-cool.svg'>");
+    text = text.replace("B)" , "<img class = 'smilie' src = '/css/svg/084-cool.svg'>");
+    text = text.replace("-_-" , "<img class = 'smilie' src = '/css/svg/081-sleeping.svg'>");
+    text = text.replace("X-D" , "<img class = 'smilie' src = '/css/svg/092-laughing-1.svg'>");
+    text = text.replace("XD" , "<img class = 'smilie' src = '/css/svg/092-laughing-1.svg'>");
+    text = text.replace("o_o" , "<img class = 'smilie' src = '082-shocked.svg'>");
+    text = text.replace("0_0" , "<img class = 'smilie' src = '082-shocked.svg'>");
+    text = text.replace("0_o" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+    text = text.replace("o_0" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+    text = text.replace("O_o" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+    text = text.replace("o_O" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+
     console.log(text);
     return text;
   }
@@ -800,6 +857,25 @@ newsApp.controller("newsCtrl",function($scope,$http){
   }
   $scope.smilify = function(text){
     text = text.replace(":-)" , "<img class = 'smilie' src = '/css/svg/032-happy-5.svg'>");
+    text = text.replace(":)" , "<img class = 'smilie' src = '/css/svg/032-happy-5.svg'>");
+    text = text.replace(":-(" , "<img class = 'smilie' src = '/css/svg/002-sad-14.svg'>");
+    text = text.replace(":(" , "<img class = 'smilie' src = '/css/svg/002-sad-14.svg'>");
+    text = text.replace(":-o" , "<img class = 'smilie' src = '/css/svg/052-shocked-2.svg'>");
+    text = text.replace(":o" , "<img class = 'smilie' src = '/css/svg/052-shocked-2.svg'>");
+    text = text.replace(":-D" , "<img class = 'smilie' src = '/css/svg/095-happy-2.svg'>");
+    text = text.replace(":D" , "<img class = 'smilie' src = '/css/svg/095-happy-2.svg'>");
+    text = text.replace("B-)" , "<img class = 'smilie' src = '/css/svg/084-cool.svg'>");
+    text = text.replace("B)" , "<img class = 'smilie' src = '/css/svg/084-cool.svg'>");
+    text = text.replace("-_-" , "<img class = 'smilie' src = '/css/svg/081-sleeping.svg'>");
+    text = text.replace("X-D" , "<img class = 'smilie' src = '/css/svg/092-laughing-1.svg'>");
+    text = text.replace("XD" , "<img class = 'smilie' src = '/css/svg/092-laughing-1.svg'>");
+    text = text.replace("o_o" , "<img class = 'smilie' src = '082-shocked.svg'>");
+    text = text.replace("0_0" , "<img class = 'smilie' src = '082-shocked.svg'>");
+    text = text.replace("0_o" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+    text = text.replace("o_0" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+    text = text.replace("O_o" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+    text = text.replace("o_O" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+
     console.log(text);
     return text;
   }
@@ -2940,6 +3016,25 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
   }
   $scope.smilify = function(text){
     text = text.replace(":-)" , "<img class = 'smilie' src = '/css/svg/032-happy-5.svg'>");
+    text = text.replace(":)" , "<img class = 'smilie' src = '/css/svg/032-happy-5.svg'>");
+    text = text.replace(":-(" , "<img class = 'smilie' src = '/css/svg/002-sad-14.svg'>");
+    text = text.replace(":(" , "<img class = 'smilie' src = '/css/svg/002-sad-14.svg'>");
+    text = text.replace(":-o" , "<img class = 'smilie' src = '/css/svg/052-shocked-2.svg'>");
+    text = text.replace(":o" , "<img class = 'smilie' src = '/css/svg/052-shocked-2.svg'>");
+    text = text.replace(":-D" , "<img class = 'smilie' src = '/css/svg/095-happy-2.svg'>");
+    text = text.replace(":D" , "<img class = 'smilie' src = '/css/svg/095-happy-2.svg'>");
+    text = text.replace("B-)" , "<img class = 'smilie' src = '/css/svg/084-cool.svg'>");
+    text = text.replace("B)" , "<img class = 'smilie' src = '/css/svg/084-cool.svg'>");
+    text = text.replace("-_-" , "<img class = 'smilie' src = '/css/svg/081-sleeping.svg'>");
+    text = text.replace("X-D" , "<img class = 'smilie' src = '/css/svg/092-laughing-1.svg'>");
+    text = text.replace("XD" , "<img class = 'smilie' src = '/css/svg/092-laughing-1.svg'>");
+    text = text.replace("o_o" , "<img class = 'smilie' src = '082-shocked.svg'>");
+    text = text.replace("0_0" , "<img class = 'smilie' src = '082-shocked.svg'>");
+    text = text.replace("0_o" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+    text = text.replace("o_0" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+    text = text.replace("O_o" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+    text = text.replace("o_O" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+
     console.log(text);
     return text;
   }
@@ -3382,6 +3477,25 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
   }
   $scope.smilify = function(text){
     text = text.replace(":-)" , "<img class = 'smilie' src = '/css/svg/032-happy-5.svg'>");
+    text = text.replace(":)" , "<img class = 'smilie' src = '/css/svg/032-happy-5.svg'>");
+    text = text.replace(":-(" , "<img class = 'smilie' src = '/css/svg/002-sad-14.svg'>");
+    text = text.replace(":(" , "<img class = 'smilie' src = '/css/svg/002-sad-14.svg'>");
+    text = text.replace(":-o" , "<img class = 'smilie' src = '/css/svg/052-shocked-2.svg'>");
+    text = text.replace(":o" , "<img class = 'smilie' src = '/css/svg/052-shocked-2.svg'>");
+    text = text.replace(":-D" , "<img class = 'smilie' src = '/css/svg/095-happy-2.svg'>");
+    text = text.replace(":D" , "<img class = 'smilie' src = '/css/svg/095-happy-2.svg'>");
+    text = text.replace("B-)" , "<img class = 'smilie' src = '/css/svg/084-cool.svg'>");
+    text = text.replace("B)" , "<img class = 'smilie' src = '/css/svg/084-cool.svg'>");
+    text = text.replace("-_-" , "<img class = 'smilie' src = '/css/svg/081-sleeping.svg'>");
+    text = text.replace("X-D" , "<img class = 'smilie' src = '/css/svg/092-laughing-1.svg'>");
+    text = text.replace("XD" , "<img class = 'smilie' src = '/css/svg/092-laughing-1.svg'>");
+    text = text.replace("o_o" , "<img class = 'smilie' src = '082-shocked.svg'>");
+    text = text.replace("0_0" , "<img class = 'smilie' src = '082-shocked.svg'>");
+    text = text.replace("0_o" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+    text = text.replace("o_0" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+    text = text.replace("O_o" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+    text = text.replace("o_O" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+
     console.log(text);
     return text;
   }
@@ -3456,6 +3570,25 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
   }
   $scope.smilify = function(text){
     text = text.replace(":-)" , "<img class = 'smilie' src = '/css/svg/032-happy-5.svg'>");
+    text = text.replace(":)" , "<img class = 'smilie' src = '/css/svg/032-happy-5.svg'>");
+    text = text.replace(":-(" , "<img class = 'smilie' src = '/css/svg/002-sad-14.svg'>");
+    text = text.replace(":(" , "<img class = 'smilie' src = '/css/svg/002-sad-14.svg'>");
+    text = text.replace(":-o" , "<img class = 'smilie' src = '/css/svg/052-shocked-2.svg'>");
+    text = text.replace(":o" , "<img class = 'smilie' src = '/css/svg/052-shocked-2.svg'>");
+    text = text.replace(":-D" , "<img class = 'smilie' src = '/css/svg/095-happy-2.svg'>");
+    text = text.replace(":D" , "<img class = 'smilie' src = '/css/svg/095-happy-2.svg'>");
+    text = text.replace("B-)" , "<img class = 'smilie' src = '/css/svg/084-cool.svg'>");
+    text = text.replace("B)" , "<img class = 'smilie' src = '/css/svg/084-cool.svg'>");
+    text = text.replace("-_-" , "<img class = 'smilie' src = '/css/svg/081-sleeping.svg'>");
+    text = text.replace("X-D" , "<img class = 'smilie' src = '/css/svg/092-laughing-1.svg'>");
+    text = text.replace("XD" , "<img class = 'smilie' src = '/css/svg/092-laughing-1.svg'>");
+    text = text.replace("o_o" , "<img class = 'smilie' src = '082-shocked.svg'>");
+    text = text.replace("0_0" , "<img class = 'smilie' src = '082-shocked.svg'>");
+    text = text.replace("0_o" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+    text = text.replace("o_0" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+    text = text.replace("O_o" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+    text = text.replace("o_O" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+
     console.log(text);
     return text;
   }
@@ -4506,6 +4639,25 @@ mchatApp.controller("mchatCtrl",function($scope,$http){
   }
   $scope.smilify = function(text){
     text = text.replace(":-)" , "<img class = 'smilie' src = '/css/svg/032-happy-5.svg'>");
+    text = text.replace(":)" , "<img class = 'smilie' src = '/css/svg/032-happy-5.svg'>");
+    text = text.replace(":-(" , "<img class = 'smilie' src = '/css/svg/002-sad-14.svg'>");
+    text = text.replace(":(" , "<img class = 'smilie' src = '/css/svg/002-sad-14.svg'>");
+    text = text.replace(":-o" , "<img class = 'smilie' src = '/css/svg/052-shocked-2.svg'>");
+    text = text.replace(":o" , "<img class = 'smilie' src = '/css/svg/052-shocked-2.svg'>");
+    text = text.replace(":-D" , "<img class = 'smilie' src = '/css/svg/095-happy-2.svg'>");
+    text = text.replace(":D" , "<img class = 'smilie' src = '/css/svg/095-happy-2.svg'>");
+    text = text.replace("B-)" , "<img class = 'smilie' src = '/css/svg/084-cool.svg'>");
+    text = text.replace("B)" , "<img class = 'smilie' src = '/css/svg/084-cool.svg'>");
+    text = text.replace("-_-" , "<img class = 'smilie' src = '/css/svg/081-sleeping.svg'>");
+    text = text.replace("X-D" , "<img class = 'smilie' src = '/css/svg/092-laughing-1.svg'>");
+    text = text.replace("XD" , "<img class = 'smilie' src = '/css/svg/092-laughing-1.svg'>");
+    text = text.replace("o_o" , "<img class = 'smilie' src = '082-shocked.svg'>");
+    text = text.replace("0_0" , "<img class = 'smilie' src = '082-shocked.svg'>");
+    text = text.replace("0_o" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+    text = text.replace("o_0" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+    text = text.replace("O_o" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+    text = text.replace("o_O" , "<img class = 'smilie' src = '/css/svg/009-surprised.svg'>");
+
     console.log(text);
     return text;
   }
