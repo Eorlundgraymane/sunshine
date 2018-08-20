@@ -61,7 +61,7 @@ body{
   padding: 3%;
 }
 .gift{
-  text-align: center;  
+  text-align: center;
   padding-top: 35%;
 }
 .shineprog{
@@ -1013,6 +1013,10 @@ select,option{
   transition-timing-function: ease-in-out;
 }
 .footerlink:hover{
+  color: white;
+  font-size: 150%;
+}
+.footerlink:visited{
   color: white;
   font-size: 150%;
 }

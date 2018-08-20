@@ -821,7 +821,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
     cmtdata["args"]["columns"][1]["columns"] = ["*"];
     cmtdata["args"]["columns"][2]["name"] = "post";
     cmtdata["args"]["columns"][2]["columns"] = ["*"];
-    cmtdata["args"]["order_by"] = "-id";
+    cmtdata["args"]["order_by"] = "-created";
     cmtdata["args"]["where"] ={};
     cmtdata["args"]["where"]["post_id"] = id;
     $http({
@@ -988,7 +988,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
             break;
             default:console.log("invalid shine");
           }
-          liketext = '<div class = "unlikediv"><button id = "likeme'+each.post_id+'" onclick = "angular.element(this).scope().unLike('+each.post_id+')" type = "button" class = "likebutton btn btn-'+shinecol+'" ><i class = "fa fa-'+shinebut+'"></i></button></div><br>';
+          liketext = '<div class = "unlikediv"><button id = "likeme'+each.post_id+'" onclick = "angular.element(this).scope().unLike('+each.post_id+')" title = "Remove '+meshined+' Shine" type = "button" class = "likebutton btn btn-'+shinecol+'" ><i class = "fa fa-'+shinebut+'"></i></button></div><br>';
         }else{
           liketext = "";
         }
@@ -1002,7 +1002,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
         }else{
           deletetext = "";
         }
-        newlist += "<li id = 'postid"+each.post_id+"' class = 'post'>"+deletetext+"<img src = '"+each.author.proimg+"' class = 'authdp'><span class = 'badge label label-warning level'>"+each.author.level+"</span><p class = 'author'><strong>"+each.author.username+"</strong></p><p class = 'postago'><strong>"+chat_ago(each.created)+"</strong></p><h6 class = 'postimgdiv'>"+postimg+"</h6><p2 class = 'posttext'>"+$scope.smilify(each.posttext)+"</p2><br><br>"+liketext+"<div id = 'liked"+each.post_id+"' class = 'likedlist'>"+liked+" </div><br><div class = 'cmtsctn' id = 'cmtlist"+each.post_id+"'><button id = 'cmtbtn"+each.post_id+"'type = 'button' onclick = 'angular.element(this).scope().getComments("+id+");' class = 'btn btn-default cmtbtn'><strong>"+each.comments.length+" Comments</strong></button></div></li>";
+        newlist += "<li id = 'postid"+each.post_id+"' class = 'post'>"+deletetext+"<img src = '"+each.author.proimg+"' class = 'authdp'><span class = 'badge label label-warning level'>"+each.author.level+"</span><p class = 'author'><strong>"+each.author.username+"</strong></p><p class = 'postago'><strong>"+chat_ago(each.created)+"</strong></p><h6 class = 'postimgdiv'>"+postimg+"</h6><p2 class = 'posttext'>"+$scope.smilify(each.posttext)+"</p2><br><br>"+liketext+"<div id = 'liked"+each.post_id+"' class = 'likedlist'>"+liked+" </div><br><div class = 'cmtsctn' id = 'cmtlist"+each.post_id+"'><button id = 'cmtbtn"+each.post_id+"'type = 'button' onclick = 'angular.element(this).scope().getComments("+id+");' title = 'View Comments' class = 'btn btn-default cmtbtn'><strong>"+each.comments.length+" Comments</strong></button></div></li>";
       }
       $('#postid'+id).replaceWith(newlist);
       $
@@ -1137,7 +1137,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
             break;
             default:console.log("invalid shine");
           }
-          liketext = '<div class = "unlikediv"><button id = "likeme'+each.post_id+'" onclick = "angular.element(this).scope().unLike('+each.post_id+')" type = "button" class = "likebutton btn btn-'+shinecol+'" ><i class = "fa fa-'+shinebut+'"></i></button></div><br>';
+          liketext = '<div class = "unlikediv"><button id = "likeme'+each.post_id+'" onclick = "angular.element(this).scope().unLike('+each.post_id+')" title = "Remove '+meshined+' Shine" type = "button" class = "likebutton btn btn-'+shinecol+'" ><i class = "fa fa-'+shinebut+'"></i></button></div><br>';
         }else{
           liketext = "";
         }
@@ -1151,7 +1151,7 @@ newsApp.controller("newsCtrl",function($scope,$http){
         }else{
           deletetext = "";
         }
-        newlist += "<li id = 'postid"+each.post_id+"' class = 'post'>"+deletetext+"<img src = '"+each.author.proimg+"' class = 'authdp'><span class = 'badge label label-warning level'>"+each.author.level+"</span><p class = 'author'><strong>"+each.author.username+"</strong></p><p class = 'postago'><strong>"+chat_ago(each.created)+"</strong></p><h6 class = 'postimgdiv'>"+postimg+"</h6><p2 class = 'posttext'>"+$scope.smilify(each.posttext)+"</p2><br><br>"+liketext+"<div id = 'liked"+each.post_id+"' class = 'likedlist'>"+liked+" </div><br><div class = 'cmtsctn' id = 'cmtlist"+each.post_id+"'><button id = 'cmtbtn"+each.post_id+"' type = 'button' onclick = 'angular.element(this).scope().getComments("+each.post_id+");' class = 'btn btn-default cmtbtn'><strong>"+each.comments.length+" Comments</strong></button></div></li>";
+        newlist += "<li id = 'postid"+each.post_id+"' class = 'post'>"+deletetext+"<img src = '"+each.author.proimg+"' class = 'authdp'><span class = 'badge label label-warning level'>"+each.author.level+"</span><p class = 'author'><strong>"+each.author.username+"</strong></p><p class = 'postago'><strong>"+chat_ago(each.created)+"</strong></p><h6 class = 'postimgdiv'>"+postimg+"</h6><p2 class = 'posttext'>"+$scope.smilify(each.posttext)+"</p2><br><br>"+liketext+"<div id = 'liked"+each.post_id+"' class = 'likedlist'>"+liked+" </div><br><div class = 'cmtsctn' id = 'cmtlist"+each.post_id+"'><button id = 'cmtbtn"+each.post_id+"' type = 'button' onclick = 'angular.element(this).scope().getComments("+each.post_id+");' title = 'View Comments' class = 'btn btn-default cmtbtn'><strong>"+each.comments.length+" Comments</strong></button></div></li>";
       }
       if(newlist !=  prevfeed){
         news.innerHTML = newlist;
@@ -3362,15 +3362,15 @@ shineTableApp.controller("shineTableCtrl",function($scope,$http){
             var cr = each.friend_profile.online[0].created
             ////console.log(cr);
             if(time_ago(cr) === 1){
-              newlist = "<li class = 'alert alert-info users' title = '"+each.friend_profile.fname+"'> <i class = 'green fas fa-circle'></i> <img src = '"+each.friend_profile.proimg+"' class = 'chatdp'/><span class = 'badge level'>"+each.friend_profile.level+"</span><span class = 'badge newchat newchat_"+each.friend_profile.id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+"  <button onclick = 'angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.id+")' type = 'button' class = 'chatbtn btn btn-success'  ><i class = 'fa fa-comment'></i></button></strong></li>" + newlist;
+              newlist = "<li class = 'alert alert-info users' title = '"+each.friend_profile.fname+"'> <i class = 'green fas fa-circle'></i> <img src = '"+each.friend_profile.proimg+"' class = 'chatdp'/><span class = 'badge level'>"+each.friend_profile.level+"</span><span class = 'badge newchat newchat_"+each.friend_profile.id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+"  <button onclick = 'angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.id+")' type = 'button' class = 'chatbtn btn btn-success' title = 'Reply chat to "+each.friend_profile.fname+"'  ><i class = 'fa fa-comment'></i></button></strong></li>" + newlist;
               $scope.newcount ++;
             }
             else{
-            newlist += "<li class = 'alert alert-info users' title = '"+each.friend_profile.fname+" online "+chat_ago(cr)+"'> <i class = 'red far fa-circle'></i> <img src = '"+each.friend_profile.proimg+"' class = 'chatdp'/><span class = 'badge level'>"+each.friend_profile.level+"</span><span class = 'badge newchat newchat_"+each.friend_profile.id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+" <button onclick = 'angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.id+")' type = 'button' class = 'chatbtn btn btn-info'><i class = 'fa fa-comment'></i></button></strong></li>";
+            newlist += "<li class = 'alert alert-info users' title = '"+each.friend_profile.fname+" online "+chat_ago(cr)+"'> <i class = 'red far fa-circle'></i> <img src = '"+each.friend_profile.proimg+"' class = 'chatdp'/><span class = 'badge level'>"+each.friend_profile.level+"</span><span class = 'badge newchat newchat_"+each.friend_profile.id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+" <button onclick = 'angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.id+")' type = 'button' class = 'chatbtn btn btn-info' title = 'Send chat to "+each.friend_profile.fname+"'><i class = 'fa fa-comment'></i></button></strong></li>";
             }
         }
         else{
-        newlist += "<li class = 'alert alert-info users' title = '"+each.friend_profile.fname+"'> <i class = 'red far fa-circle'></i> <img src = '"+each.friend_profile.proimg+"' class = 'chatdp'/> <span class = 'badge level'>"+each.friend_profile.level+"</span><span class = 'badge newchat newchat_"+each.friend_profile.id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+" <button onclick = 'angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.id+")' type = 'button' class = 'chatbtn btn btn-info' ><i class = 'fa fa-comment'></i></button></strong></li>";
+        newlist += "<li class = 'alert alert-info users' title = '"+each.friend_profile.fname+"'> <i class = 'red far fa-circle'></i> <img src = '"+each.friend_profile.proimg+"' class = 'chatdp'/> <span class = 'badge level'>"+each.friend_profile.level+"</span><span class = 'badge newchat newchat_"+each.friend_profile.id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+" <button onclick = 'angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.id+")' type = 'button' class = 'chatbtn btn btn-info' title = 'Send chat to "+each.friend_profile.fname+"' ><i class = 'fa fa-comment'></i></button></strong></li>";
         }
       //console.log(JSON.stringify(users));
         if(iterator+1 < limit){
@@ -4923,15 +4923,15 @@ mchatListApp.controller("mchatListCtrl",function($scope,$http){
             var cr = each.friend_profile.online[0].created
             ////console.log(cr);
             if(time_ago(cr) === 1){
-              newlist = "<li class = 'alert alert-info users' title = '"+each.friend_profile.username+"'> <i class = 'green fas fa-circle'></i> <img src = '"+each.friend_profile.proimg+"' class = 'chatdp'/> <span class = 'badge level'>"+each.friend_profile.level+"</span><span class = 'badge newchat newchat_"+each.friend_profile.id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+" <button onclick ='angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.id+")' type = 'button' class = 'chatbtn btn btn-success' title = 'Message "+each.friend_profile.fname+"'><i class = 'fa fa-comment'></i></button></strong></li>" + newlist;
+              newlist = "<li class = 'alert alert-info users' title = '"+each.friend_profile.username+"'> <i class = 'green fas fa-circle'></i> <img src = '"+each.friend_profile.proimg+"' class = 'chatdp'/> <span class = 'badge level'>"+each.friend_profile.level+"</span><span class = 'badge newchat newchat_"+each.friend_profile.id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+" <button onclick ='angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.id+")' type = 'button' class = 'chatbtn btn btn-success' title = 'Reply chat to "+each.friend_profile.fname+"' title = 'Message "+each.friend_profile.fname+"'><i class = 'fa fa-comment'></i></button></strong></li>" + newlist;
               $scope.newcount ++;
             }
             else{
-            newlist += "<li class = 'alert alert-info users' title = '"+each.friend_profile.username+" online at "+chat_ago(cr)+"'> <i class = 'red far fa-circle'></i> <img src = '"+each.friend_profile.proimg+"' class = 'chatdp'/><span class = 'badge level'>"+each.friend_profile.level+"</span> <span class = 'badge newchat newchat_"+each.friend_profile.id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+" <button onclick = 'angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.id+")' type = 'button' class = 'chatbtn btn btn-info' title = 'Message "+each.friend_profile.fname+"'><i class = 'fa fa-comment'></i></button></strong></li>";
+            newlist += "<li class = 'alert alert-info users' title = '"+each.friend_profile.username+" online at "+chat_ago(cr)+"'> <i class = 'red far fa-circle'></i> <img src = '"+each.friend_profile.proimg+"' class = 'chatdp'/><span class = 'badge level'>"+each.friend_profile.level+"</span> <span class = 'badge newchat newchat_"+each.friend_profile.id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+" <button onclick = 'angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.id+")' type = 'button' class = 'chatbtn btn btn-info' title = 'Send chat to "+each.friend_profile.fname+"' title = 'Message "+each.friend_profile.fname+"'><i class = 'fa fa-comment'></i></button></strong></li>";
             }
         }
         else{
-        newlist += "<li class = 'alert alert-info users' title = '"+each.friend_profile.username+"'> <i class = 'red far fa-circle'></i> <img src = '"+each.friend_profile.proimg+"' class = 'chatdp'/><span class = 'badge level'>"+each.friend_profile.level+"</span> <span class = 'badge newchat newchat_"+each.friend_profile.id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+"  <button onclick = 'angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.id+")' type = 'button' class = 'chatbtn btn btn-info' title = 'Message "+each.friend_profile.fname+"'><i class = 'fa fa-comment'></i></button></strong></li>";
+        newlist += "<li class = 'alert alert-info users' title = '"+each.friend_profile.username+"'> <i class = 'red far fa-circle'></i> <img src = '"+each.friend_profile.proimg+"' class = 'chatdp'/><span class = 'badge level'>"+each.friend_profile.level+"</span> <span class = 'badge newchat newchat_"+each.friend_profile.id+"'></span> <strong class = 'fname'>"+each.friend_profile.fname+"  <button onclick = 'angular.element(this).scope().chatFunction(\""+each.friend_profile.fname+"\","+each.friend_profile.id+")' type = 'button' class = 'chatbtn btn btn-info' title = 'Send chat to "+each.friend_profile.fname+"' title = 'Message "+each.friend_profile.fname+"'><i class = 'fa fa-comment'></i></button></strong></li>";
         }
       //console.log(JSON.stringify(users));
         if(iterator+1 < limit){
