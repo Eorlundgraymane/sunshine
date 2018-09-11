@@ -38,7 +38,7 @@
     else{
       ?>
       <div id = "sitename" class = "col-sm-12 col-xs-12 col-lg-12 col-md-12">
-         <strong>Sunshine</strong>
+         <strong onclick = "goindex();">Sunshine</strong>
       </div>
       <?php
       }
