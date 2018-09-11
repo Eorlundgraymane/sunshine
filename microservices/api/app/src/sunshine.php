@@ -23,7 +23,12 @@
       <form  ng-submit = "reset()" name = "resetForm" id = "resetForm">
         <legend align = "center"><strong>Reset Password</strong></legend>
         <div class = "col-sm-12 col-xs-12 col-lg-12 col-md-12 form-group">
-          <input placeholder= "Token"ng-model = "resetuser.token" hidden ng-required = "true" value = "" type = "text" class = "form-control" id ="newtoken">
+          <label for = "resetcc">Country Code*:</label>
+          <input placeholder= "Counry Code Without + or 0 in front" ng-model = "resetuser.resetcc" ng-required = "true" value = "" type = "text" class = "form-control" id ="resetcc">
+          <label for = "resetmobile">Mobile*:</label>
+          <input placeholder= "Mobile" ng-model = "resetuser.resetmobile" ng-required = "true" value = "" type = "text" class = "form-control" id ="resetmobile">
+          <label for = "resetotp">OTP*:</label>
+          <input placeholder= "OTP" ng-model = "resetuser.resetotp" ng-required = "true" value = "" type = "text" class = "form-control" id ="resetotp">
           <label for = "resetnewpwd">New Password*:</label>
           <input ng-model = "resetuser.password" ng-required = "true" type = "password" class = "form-control" id ="resetnewpwd">
           <label for = "cnfresetnewpwd">Confirm New Password*:</label><span id = "resetpwdmatch" class = "hidden label label-danger">Passwords don't match</span>

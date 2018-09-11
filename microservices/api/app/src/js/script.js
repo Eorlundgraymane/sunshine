@@ -1533,13 +1533,14 @@ resetPwdApp.controller = resetPwdApp.controller("resetPwdCtrl",function($scope,$
   $scope.resetuser = {};
   $scope.reset = function(){
     document.getElementById('rstpwdbtn').innerHTML = "<strong><i class = 'fas fa-spinner fa-spin'></i> Changing Password...</strong>"
-    $scope.resetuser.token = document.getElementById("newtoken").value;
     var preset = {};
-    preset["token"] = $scope.resetuser.token;
+    preset["otp"] = $scope.resetuser.resetotp;
     preset["password"] = SHA256($scope.resetuser.password);
+    preset["country_code"] = $scope.resetuser.resetcc;
+    preset["mobile"] = $scope.resetuser.resetmobile;
       $http({
         method : "POST",
-        url : "https://auth.unluckily34.hasura-app.io/password/reset",
+        url : "https://auth.unluckily34.hasura-app.io/v1/providers/mobile-password/reset-password",
         data: JSON.stringify(preset),
         withCredentials : true,
         headers:{
@@ -1782,10 +1783,11 @@ $scope.pwdReset = function(){
     proggy(60);
     document.getElementById("resetpwd").innerHTML = "<strong><i class = 'fas fa-spinner fa-spin'></i> Sending token to Email...</strong>";
     var preset = {};
-    preset["email"] = $scope.user.primarykey;
+    preset["mobile"] = $scope.user.primarykey;
+    preset["country_code"] = $scope.user.cc;
     $http({
       method : "POST",
-      url : "https://auth.unluckily34.hasura-app.io/password/forgot",
+      url : "https://auth.unluckily34.hasura-app.io/v1/providers/mobile-password/forgot-password",
       data: JSON.stringify(preset),
       withCredentials : true,
       headers:{
@@ -1797,6 +1799,7 @@ $scope.pwdReset = function(){
       sunNotify("<strong>"+response.data.message+"</strong>","alert-success");
       setTimeout(function () {
         proggy(0);
+        window.location = "/?mode=resetpassword";
       }, 1000);
     },function myError(response){
       proggy(0);

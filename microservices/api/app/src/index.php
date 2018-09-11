@@ -22,9 +22,8 @@
     if(location.search.split('mode=')[1].split(";")[1]!= null && location.search.split('mode=')[1].split(";")[1]!= "undefined" && location.search.split('mode=')[1].split(";")[1]!= "")
     {document.getElementById("otp").value = location.search.split('mode=')[1].split(";")[1];}
   }
-  if(location.search.split('mode=')[1].split("&token")[0] === "resetpassword"){
-    resetPwdFormUp();
-    document.getElementById("newtoken").value = location.search.split('token=')[1];
+  if(location.search.split('mode=')[1] === "resetpassword"){
+    resetPwdFormUp();    
   }
   if(location.search.split('mode=')[1] === "login"){
     loginFormUp();
