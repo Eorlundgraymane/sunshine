@@ -5,7 +5,7 @@
         <legend align = "center"><strong>Log In</strong></legend>
         <div class = "col-sm-12 col-xs-12 col-lg-12 col-md-12 form-group">
           <label for = "cc">Country Code</label>
-          <input placeholder= "Country Code"ng-model = "user.cc"  ng-required = "true" type = "text" maxlength="2" class = "form-control" id ="cc">
+          <input placeholder= "Country Code"ng-model = "user.cc"  ng-required = "true" type = "text" maxlength="3" class = "form-control" id ="cc">
           <label for = "pkey">Mobile</label>
           <input placeholder= "Mobile"ng-model = "user.primarykey" ng-required = "true" type = "text" class = "form-control" id ="pkey">
           <label for = "loginpwd">Password:</label>
@@ -24,7 +24,7 @@
         <legend align = "center"><strong>Reset Password</strong></legend>
         <div class = "col-sm-12 col-xs-12 col-lg-12 col-md-12 form-group">
           <label for = "resetcc">Country Code*:</label>
-          <input placeholder= "Counry Code Without + or 0 in front" ng-model = "resetuser.resetcc" ng-required = "true" value = "" type = "text" maxlength = "2" class = "form-control" id ="resetcc">
+          <input placeholder= "Counry Code Without + or 0 in front" ng-model = "resetuser.resetcc" ng-required = "true" value = "" type = "text" maxlength = "3" class = "form-control" id ="resetcc">
           <label for = "resetmobile">Mobile*:</label>
           <input placeholder= "Mobile" ng-model = "resetuser.resetmobile" ng-required = "true" value = "" type = "text" class = "form-control" id ="resetmobile">
           <label for = "resetotp">OTP*:</label>
@@ -46,8 +46,8 @@
           <button onclick = "goOTP();" type = "button" class = "btn btn-primary"><strong>OTP Verify / Resend</strong></button>
           <legend align = "center"><strong>Sign Up</strong></legend>
           <div class = "col-xs-12 col-sm-12 col-md-12 col-lg-12 form-group">
-            <label for = "cc">Country Code</label>
-            <input placeholder= "Country Code"ng-model = "newuser.cc"  ng-required = "true" type = "text" maxlength="2" class = "form-control" id ="newcc">
+            <label for = "newcc">Country Code</label>
+            <input placeholder= "Country Code"ng-model = "newuser.cc"  ng-required = "true" type = "text" maxlength="3" class = "form-control" id ="newcc">
             <label for = "mobile">Mobile*:</label>
             <input ng-model = "newuser.mobile" ng-required = "true" type = "text" class = "form-control" id ="mobile" placeholder="Mobile">
             <label for = "pwd">Password*:</label>
@@ -61,6 +61,8 @@
           <button id = "cancelotpbutton" type = "button" onclick = "goSignUp()" class = "btn btn-danger"><strong>Back</strong></button>
           <legend align = "center"><strong>OTP</strong></legend>
           <div class = "form-group">
+            <label for = "vercc">Country Code</label>
+            <input placeholder= "Country Code"ng-model = "newuser.vericc"  ng-required = "true" type = "text" maxlength="3" class = "form-control" id ="vercc">
             <label for = "otp">Enter Mobile No:</label>
             <input ng-model = "newuser.verimobile" minlength= "10" ng-required = "true" type = "number" class = "form-control" id = "verify_mobile" placeholder="Mobile"><br>
             <label for = "otp">Enter OTP:</label>

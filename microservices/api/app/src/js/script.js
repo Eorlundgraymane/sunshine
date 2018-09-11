@@ -1786,7 +1786,11 @@ $scope.pwdReset = function(){
     document.getElementById("resetpwd").innerHTML = "<strong><i class = 'fas fa-spinner fa-spin'></i> Sending token to Email...</strong>";
     var preset = {};
     preset["mobile"] = $scope.user.primarykey;
-    preset["country_code"] = $scope.user.cc;
+    if($scope.user.cc.includes("+")){
+        preset["country_code"] = $scope.user.cc.split("+")[1];
+    }else{
+      preset["country_code"] = $scope.user.cc;
+    }
     $http({
       method : "POST",
       url : "https://auth.unluckily34.hasura-app.io/v1/providers/mobile-password/forgot-password",
@@ -1965,7 +1969,11 @@ $scope.getUserProfile = function(){
     logindata.data = {};
     logindata.data.mobile = $scope.user.primarykey;
     pkeyfield = "mobile";
-    logindata.data.country_code = $scope.user.cc;
+    if($scope.user.cc.includes("+")){
+        logindata.data.country_code = $scope.user.cc.split("+")[1];
+    }else{
+      logindata.data.country_code = $scope.user.cc;
+    }
     logindata.data.password = SHA256($scope.user.password);
     //make API Request Data package
     //////console.log(JSON.stringify(logindata));
@@ -2850,7 +2858,11 @@ $scope.logout = function(){
     data.provider = "mobile-password";
     data.data = {};
     data.data.mobile = $scope.newuser.mobile;
-    data.data.country_code = $scope.newuser.cc;
+    if($scope.newuser.cc.includes("+")){
+        data.data.country_code = $scope.newuser.cc.split("+")[1];
+    }else{
+      data.data.country_code = $scope.newuser.cc;
+    }
     data.data.password = SHA256($scope.newuser.password);
     console.log(data);
   //////console.log(JSON.stringify(data));
@@ -2914,7 +2926,11 @@ $scope.logout = function(){
     var otpdata = {};
     otpdata.mobile = data.mobile+"";
     otpdata.otp = data.otp+"";
-    otpdata.country_code = "91";
+    if($scope.newuser.vericc.includes("+")){
+        otpdata.country_code = $scope.newuser.vericc.split("+")[1];
+    }else{
+      otpdata.country_code = $scope.newuser.vericc;
+    }
     //////console.log(JSON.stringify(otpdata));
     $http({
       method : "POST",
@@ -2945,7 +2961,11 @@ $scope.logout = function(){
     document.getElementById('resendbutton').innerHTML = "<strong><i class = 'fa fa-spinner fa-spin'></i> Resending OTP</strong>";
     var resend = {};
     resend.mobile = ""+$scope.newuser.verimobile;
-    resend.country_code = "91";
+    if($scope.newuser.vericc.includes("+")){
+        resend.country_code = $scope.newuser.vericc.split("+")[1];
+    }else{
+      resend.country_code = $scope.newuser.vericc;
+    }
     //////console.log(resend);
     $http({
       method : "POST",
