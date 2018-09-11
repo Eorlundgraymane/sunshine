@@ -1538,6 +1538,7 @@ resetPwdApp.controller = resetPwdApp.controller("resetPwdCtrl",function($scope,$
     preset["password"] = SHA256($scope.resetuser.password);
     preset["country_code"] = $scope.resetuser.resetcc;
     preset["mobile"] = $scope.resetuser.resetmobile;
+    setTimeout(function(){
       $http({
         method : "POST",
         url : "https://auth.unluckily34.hasura-app.io/v1/providers/mobile-password/reset-password",
@@ -1562,6 +1563,7 @@ resetPwdApp.controller = resetPwdApp.controller("resetPwdCtrl",function($scope,$
         sunNotify("<strong>"+response.data.message+"</strong>","alert-danger");
       }
       });
+    },3000);
     }
     $scope.cmprpwd = function(){
       if($scope.resetuser.cnfpassword != $scope.resetuser.password){
