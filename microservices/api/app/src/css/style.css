@@ -10,7 +10,7 @@ body{
   height: 60%;
 }
 
-#cc{
+#cc,#resetcc{
   width: 20%;
 }
 #pkey{

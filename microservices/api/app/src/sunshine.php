@@ -24,7 +24,7 @@
         <legend align = "center"><strong>Reset Password</strong></legend>
         <div class = "col-sm-12 col-xs-12 col-lg-12 col-md-12 form-group">
           <label for = "resetcc">Country Code*:</label>
-          <input placeholder= "Counry Code Without + or 0 in front" ng-model = "resetuser.resetcc" ng-required = "true" value = "" type = "text" class = "form-control" id ="resetcc">
+          <input placeholder= "Counry Code Without + or 0 in front" ng-model = "resetuser.resetcc" ng-required = "true" value = "" type = "text" maxlength = "2" class = "form-control" id ="resetcc">
           <label for = "resetmobile">Mobile*:</label>
           <input placeholder= "Mobile" ng-model = "resetuser.resetmobile" ng-required = "true" value = "" type = "text" class = "form-control" id ="resetmobile">
           <label for = "resetotp">OTP*:</label>
