@@ -1,4 +1,4 @@
-<body style = "visibility : hidden" onload = "js_Load()" id = "body" class = "w3-theme-l3">
+<body style = "visibility : hidden" id = "body" class = "w3-theme-l3">
   <?php
   if($_GET['mode'] === "login" || $_GET['mode'] === "signup" || $_GET['mode'] === "setup" || explode(";",$_GET['mode'])[0] === "otp" || $_GET['mode'] === "resetpassword"){
     require_once 'headerprereq.php';
@@ -23,7 +23,7 @@
     {document.getElementById("otp").value = location.search.split('mode=')[1].split(";")[1];}
   }
   if(location.search.split('mode=')[1] === "resetpassword"){
-    resetPwdFormUp();    
+    resetPwdFormUp();
   }
   if(location.search.split('mode=')[1] === "login"){
     loginFormUp();

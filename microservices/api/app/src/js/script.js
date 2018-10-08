@@ -152,9 +152,6 @@ function time_ago(time) {
 for(each of document.getElementsByClassName('noshow')){
   each.classList.remove("hidden");
 }
-function js_Load(){
-    document.getElementById("body").style = "visibility : visible";
-}
 function SHA256(s){
  var chrsz  = 8;
  var hexcase = 0;
