@@ -1,4 +1,4 @@
-<body style = "visibility : hidden" id = "body" class = "w3-theme-l3">
+<body id = "body" class = "w3-theme-l3">
   <?php
   if($_GET['mode'] === "login" || $_GET['mode'] === "signup" || $_GET['mode'] === "setup" || explode(";",$_GET['mode'])[0] === "otp" || $_GET['mode'] === "resetpassword"){
     require_once 'headerprereq.php';
