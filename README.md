@@ -1,4 +1,4 @@
-# hello-php-apache
+# Sunshine Social Media Web App
 
 This project consists of a basic Hasura project with a simple PHP-Apache app running on it. Once this app is deployed on a Hasura cluster, you will have the app running at `https://api.<cluster-name>.hasura-app.io`
 
